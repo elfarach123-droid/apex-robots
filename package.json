@@ -1,0 +1,20 @@
+{
+  "name": "apex-robots",
+  "version": "1.0.0",
+  "description": "Apex Robots - Investissement automatique",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "axios": "^1.7.7",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0"
+  }
+}
