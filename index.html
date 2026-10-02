@@ -22,8 +22,6 @@ img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--maize);outline-offset:2px}
 svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-
-/* ============ TOP NAV ============ */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);color:#fff;padding-top:env(safe-area-inset-top);box-shadow:0 2px 12px rgba(11,18,38,.15)}
 .topnav .inner{max-width:1080px;margin:0 auto;height:var(--topnav);display:flex;align-items:center;gap:10px;padding:0 12px}
 .topnav .brand{display:flex;align-items:center;gap:8px;font-family:'Sora';font-weight:800;font-size:15px;margin-right:auto;flex-shrink:0}
@@ -44,8 +42,6 @@ svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke
   .topnav .burger{display:grid}
   .topnav .brand{font-size:14px}
 }
-
-/* ============ HERO ============ */
 .hero{position:relative;overflow:hidden;background:#0B1226;color:#fff;padding:0 0 60px}
 .hero-image{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.45}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,18,38,.4) 0%,rgba(11,18,38,.85) 60%,#0B1226 100%)}
@@ -58,8 +54,6 @@ svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke
 .hero .stats-hero .s b{display:block;font-family:'Sora';font-weight:800;font-size:18px;color:var(--maize)}
 .hero .stats-hero .s small{color:#B7C3DD;font-size:11.5px;font-weight:700;text-transform:uppercase}
 @media(min-width:760px){.hero{padding:40px 0 80px}}
-
-/* ============ QUICK ============ */
 .quick{position:relative;z-index:3;margin-top:-46px}
 .quick .box{background:var(--card);border-radius:var(--r);padding:16px 6px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 12px 30px rgba(11,18,38,.15);gap:4px}
 .qa{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:4px;text-align:center}
@@ -68,8 +62,6 @@ svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke
 .qa:nth-child(2) span{background:#D98A0F}
 .qa:nth-child(3) span{background:#25A244}
 .qa:nth-child(4) span{background:#2B8FD6}
-
-/* ============ SECTIONS ============ */
 h2.sec{font-size:23px;margin:26px 0 4px}
 p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .steps{display:grid;gap:10px;margin:8px 0}
@@ -78,8 +70,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .step em{font:800 17px 'Sora';font-style:normal;background:var(--maize);color:var(--navy);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none}
 .step b{display:block;font-size:14.5px}
 .step small{color:var(--mute);font-size:13px}
-
-/* ============ CALC ============ */
 .calc{background:var(--card);border-radius:20px;padding:18px;margin-top:8px}
 .calc .head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .calc .head b{font:800 18px 'Sora'}
@@ -88,8 +78,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .calc .out{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
 @media(min-width:640px){.calc .out{grid-template-columns:repeat(4,1fr)}}
 .calc .out .st{padding:12px;text-align:center}
-
-/* ============ PLANS ============ */
 .plans{display:grid;gap:16px}
 @media(min-width:560px){.plans{grid-template-columns:1fr 1fr}}
 @media(min-width:1020px){.plans{grid-template-columns:repeat(4,1fr)}}
@@ -112,8 +100,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .g.hl b{color:var(--maize)}
 .g.gr b{color:var(--ok)}
 .plan .btn{margin-top:auto}
-
-/* ============ INVEST ============ */
 .inv{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .inv .head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .inv .head b{font:800 16px 'Sora';flex:1}
@@ -122,8 +108,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .inv .nums2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .inv .nums2 .st{background:#F4F6FA;text-align:center;padding:10px 6px}
 .inv .nums2 .st b{font-size:13.5px}
-
-/* ============ BUTTONS ============ */
 .btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:13px;font-weight:800;background:var(--navy);color:#fff;transition:transform .12s,background .15s;text-align:center}
 .btn:active{transform:scale(.98)}
 .btn.maize{background:var(--maize);color:var(--navy)}
@@ -133,8 +117,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .btn.bad{background:var(--bad)}
 .btn.wa{background:#25A244}
 .btn:disabled{opacity:.45;cursor:not-allowed}
-
-/* ============ CARDS ============ */
 .card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .row{display:flex;align-items:center;gap:12px}
 .li{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:14px;padding:15px 16px;margin-bottom:10px;width:100%;text-align:left;font-weight:700}
@@ -160,8 +142,6 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .nums .st.hl small{color:#A9B7D6}
 .me{background:var(--navy);color:#fff;border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:center;margin:16px 0}
 .av{width:56px;height:56px;border-radius:50%;background:var(--maize);color:var(--navy);display:grid;place-items:center;font:800 22px 'Sora';flex-shrink:0}
-
-/* ============ FORMS ============ */
 label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
 label .req{color:var(--bad)}
 .in{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:0;font-size:15px}
@@ -181,8 +161,6 @@ select.in{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .tip-warn{color:#8F5E00;background:#FFF8E5;border-left:3px solid var(--maize);padding:8px 12px;border-radius:8px;font-size:12.5px;margin-top:8px;line-height:1.5}
 .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;cursor:pointer;font-size:14px;line-height:1.5}
 .check input{width:20px;height:20px;accent-color:var(--navy);flex-shrink:0;margin-top:2px}
-
-/* ============ MODALS ============ */
 .sheet-bg{position:fixed;inset:0;background:rgba(8,14,30,.7);z-index:80;display:flex;align-items:flex-end;justify-content:center;animation:fade .2s;backdrop-filter:blur(4px)}
 .sheet{background:#fff;width:100%;max-width:580px;border-radius:24px 24px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));max-height:92vh;overflow-y:auto;animation:up .25s}
 @media(min-width:640px){.sheet-bg{align-items:center;padding:20px}.sheet{border-radius:24px}}
@@ -192,19 +170,13 @@ select.in{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 @keyframes fade{from{opacity:0}}
 @keyframes up{from{transform:translateY(40px);opacity:0}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-
-/* ============ COUNTDOWN ============ */
 .countdown{text-align:center;padding:14px 0}
 .countdown .num{display:inline-grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--navy);color:var(--maize);font:800 36px 'Sora';margin:10px auto;animation:pulse 1s infinite}
 .countdown p{color:var(--mute);font-size:13.5px;margin-top:8px}
-
-/* ============ AUTH ============ */
 .auth{background:var(--navy);color:#fff;margin:-1px -16px 0;padding:0 16px calc(var(--botnav) + 20px)}
 .auth .hd{padding:22px 0 20px}
 .auth .box{background:#fff;color:var(--text);border-radius:24px 24px 0 0;padding:22px 18px 50px;min-height:62vh}
 .link{color:var(--blue);font-weight:800}
-
-/* ============ BOTTOM NAV ============ */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 20px rgba(11,18,38,.06)}
 .nav .in2{max-width:1080px;margin:0 auto;display:grid;height:var(--botnav);align-items:center}
 .nav button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:700;color:var(--mute);position:relative;padding:8px 0}
@@ -228,8 +200,6 @@ details p{margin-top:8px;color:var(--mute);font-size:14px}
 .privacy ul{padding-left:20px;margin-bottom:8px}
 .privacy li{margin-bottom:4px}
 .privacy .en{border-top:1px dashed var(--line);margin-top:14px;padding-top:14px;color:#555;font-style:italic}
-
-/* ============ PAY STEPS ============ */
 .pay-steps{background:#F4F6FA;border-radius:12px;padding:14px;margin:12px 0}
 .pay-step{display:flex;gap:10px;margin-bottom:12px}
 .pay-step:last-child{margin-bottom:0}
@@ -238,17 +208,7 @@ details p{margin-top:8px;color:var(--mute);font-size:14px}
 .pay-step .txt b{color:var(--navy)}
 .ussd-box{background:var(--navy);color:#fff;border-radius:10px;padding:12px;text-align:center;font-family:'Sora';font-weight:800;font-size:17px;letter-spacing:.02em;margin-top:6px;user-select:all;word-break:break-all}
 .copy-btn{display:inline-flex;align-items:center;gap:5px;background:var(--maize);color:var(--navy);font-weight:800;font-size:12px;padding:6px 12px;border-radius:8px;margin-top:8px}
-
-/* ============ RESPONSIVE ULTRA ============ */
-@media(max-width:360px){
-  .wrap{padding:0 12px}
-  h2.sec{font-size:20px}
-  .hero h2{font-size:24px}
-  .qa span{width:44px;height:44px}
-  .qa{font-size:11px}
-  .topnav .brand{font-size:13px}
-  .topnav .brand i{width:26px;height:26px;font-size:14px}
-}
+@media(max-width:360px){.wrap{padding:0 12px}h2.sec{font-size:20px}.hero h2{font-size:24px}.qa span{width:44px;height:44px}.qa{font-size:11px}.topnav .brand{font-size:13px}.topnav .brand i{width:26px;height:26px;font-size:14px}}
 @media(min-width:1200px){.wrap{max-width:1200px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media(max-height:500px) and (orientation:landscape){.hero{padding:20px 0 40px}.hero h2{font-size:22px}}
@@ -282,8 +242,10 @@ const CONFIG = {
   WHATSAPP: '237692574265',
   TELEGRAM: '237692574265',
   PROMOTER: 'M. TAWE BANTAR JOËL',
+  SITE_URL: 'https://apex-robots.onrender.com',
+  REFERRAL_BONUS: 1000,
+  REFERRAL_MIN_WITHDRAW: 10000,
 
-  // ==== COMPTE MARCHAND OM ASSO ====
   OM_ASSO_CODE: '1604864',
   OM_ASSO_USSD: '#150*46*1604864#',
 
@@ -376,7 +338,7 @@ function validatePhoneForCountry(phone, countryCode){
 ============================================================ */
 const T = {
 fr:{
-  home:'Accueil', orders:'Mes robots', help:'Aide', me:'Compte',
+  home:'Accueil', orders:'Mes robots', help:'Aide', me:'Compte', referral:'Parrainage',
   login:'Connexion', register:'Inscription', logout:'Déconnexion', admin:'Admin',
   heroT:'8 robots qui travaillent pour toi, jour et nuit.',
   heroS:"Choisis ton robot, paie par OM Asso, et ton robot démarre automatiquement.",
@@ -425,6 +387,30 @@ fr:{
   pass:'Mot de passe', pass2:'Confirmer le mot de passe',
   passTip:'🔒 Min 5 caractères, avec au moins une lettre et un chiffre. Ex: Apex2',
   loginReq:'Connecte-toi pour continuer',
+  referralCode:'Code de parrainage (optionnel)',
+  referralPlaceholder:'Ex: K7M3PQ',
+  referralTip:'Si un ami t\'a invité, entre son code ici.',
+  referralSection:'🎁 Parrainage',
+  referralDesc:'Invite tes amis avec ton code. Tu gagnes 1 000 FCFA pour chaque filleul qui active un robot.',
+  referralYourCode:'Ton code de parrainage',
+  referralYourLink:'Ton lien à partager',
+  referralShare:'Partager sur WhatsApp',
+  referralCopyLink:'📋 Copier le lien',
+  referralFilleuls:'Filleuls',
+  referralOrders:'Robots activés',
+  referralCommission:'Commissions',
+  referralAvailable:'Disponible au retrait',
+  referralMinWithdraw:'Minimum de retrait : 10 000 FCFA',
+  referralNeedMore:a=>`Il te manque ${a} pour pouvoir retirer.`,
+  referralWithdrawBtn:'💰 Demander le retrait',
+  referralWithdrawn:'Demande envoyée au promoteur ! Tu seras contacté bientôt.',
+  referralMsg:c=>`🚀 Rejoins Apex Robots avec mon code de parrainage ${c} et commence à investir dès 5 000 FCFA !\n\n👉 ${CONFIG.SITE_URL}?ref=${c}\n\n8 robots de trading automatiques. Paiement Mobile Money.`,
+  referralHowTo:'Comment ça marche ?',
+  referralHow1:'Partage ton lien avec tes amis',
+  referralHow2:'Ils s\'inscrivent et activent un robot',
+  referralHow3:'Tu gagnes 1 000 FCFA par filleul actif',
+  referralHow4:'Retire tes gains dès 10 000 FCFA',
+  referralCopied:'Lien copié !',
   faq:'Questions fréquentes',
   q1:'Comment fonctionne un robot ?', a1:"Chaque robot trade automatiquement pour toi pendant 8 jours.",
   q2:'Comment je paie ?', a2:"Tu composes le code USSD OM Asso, tu envoies le montant exact, puis tu nous envoies la capture d'écran de confirmation sur WhatsApp.",
@@ -450,10 +436,11 @@ fr:{
   aDeliver:'En cours', revenue:'Total encaissé',
   validate:'Valider', markDone:'Marquer terminé', reject:'Refuser',
   ok_st:'Commande mise à jour',
-  copied:'Copié !'
+  copied:'Copié !',
+  loading:'Chargement…'
 },
 en:{
-  home:'Home', orders:'My bots', help:'Help', me:'Account',
+  home:'Home', orders:'My bots', help:'Help', me:'Account', referral:'Referral',
   login:'Login', register:'Sign up', logout:'Logout', admin:'Admin',
   heroT:'8 robots working for you, day and night.',
   heroS:'Choose your robot, pay with OM Asso, and your robot starts automatically.',
@@ -502,6 +489,30 @@ en:{
   pass:'Password', pass2:'Confirm password',
   passTip:'🔒 Min 5 characters with at least one letter and one number. E.g.: Apex2',
   loginReq:'Log in to continue',
+  referralCode:'Referral code (optional)',
+  referralPlaceholder:'E.g.: K7M3PQ',
+  referralTip:'If a friend invited you, enter their code here.',
+  referralSection:'🎁 Referral',
+  referralDesc:'Invite friends with your code. You earn 1,000 FCFA per referral who activates a robot.',
+  referralYourCode:'Your referral code',
+  referralYourLink:'Your link to share',
+  referralShare:'Share on WhatsApp',
+  referralCopyLink:'📋 Copy link',
+  referralFilleuls:'Referrals',
+  referralOrders:'Robots activated',
+  referralCommission:'Commissions',
+  referralAvailable:'Available to withdraw',
+  referralMinWithdraw:'Minimum withdrawal: 10,000 FCFA',
+  referralNeedMore:a=>`You need ${a} more to withdraw.`,
+  referralWithdrawBtn:'💰 Request withdrawal',
+  referralWithdrawn:'Request sent to the promoter! You will be contacted soon.',
+  referralMsg:c=>`🚀 Join Apex Robots with my referral code ${c} and start investing from 5,000 FCFA!\n\n👉 ${CONFIG.SITE_URL}?ref=${c}\n\n8 automated trading robots. Mobile Money payment.`,
+  referralHowTo:'How does it work?',
+  referralHow1:'Share your link with friends',
+  referralHow2:'They sign up and activate a robot',
+  referralHow3:'You earn 1,000 FCFA per active referral',
+  referralHow4:'Withdraw your earnings from 10,000 FCFA',
+  referralCopied:'Link copied!',
   faq:'FAQ',
   q1:'How does a robot work?', a1:'Each robot trades automatically for you for 8 days.',
   q2:'How do I pay?', a2:'Dial the OM Asso USSD code, send the exact amount, then send us the screenshot on WhatsApp.',
@@ -527,7 +538,8 @@ en:{
   aDeliver:'In progress', revenue:'Total collected',
   validate:'Confirm', markDone:'Mark completed', reject:'Reject',
   ok_st:'Order updated',
-  copied:'Copied!'
+  copied:'Copied!',
+  loading:'Loading…'
 }
 };
 
@@ -600,7 +612,8 @@ const ICO = {
   out:'<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>',
   trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
   check:'<path d="M5 12l5 5 9-10"/>',
-  x:'<path d="M6 6l12 12M18 6L6 18"/>'
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  gift:'<path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>'
 };
 const ico = n => `<svg viewBox="0 0 24 24">${ICO[n]}</svg>`;
 
@@ -864,9 +877,102 @@ function vMe(){
       <div class="st"><b>${S.orders.filter(o => ['paid','active','completed'].includes(o.status)).length}</b><small>${t('activeN')}</small></div>
     </div>
     <button class="li" data-act="go" data-v="orders"><span class="ic">${ico('bot')}</span>${t('orders')}${ico('chev')}</button>
+    <button class="li" data-act="go" data-v="referral"><span class="ic" style="background:#E5F6EA;color:#14774A">${ico('gift')}</span>${t('referral')}${ico('chev')}</button>
     <button class="li" data-act="go" data-v="help"><span class="ic">${ico('help')}</span>${t('help')}${ico('chev')}</button>
     <button class="li" data-act="logout"><span class="ic">${ico('out')}</span>${t('logout')}${ico('chev')}</button>
   </main>`;
+}
+
+function vReferral(){
+  const u = S.user;
+  if (!u) return vAuth();
+  if (u.admin) return vAdmin();
+  return `<main class="wrap" style="padding-top:8px">
+    ${backBar(t('referral'))}
+    <div id="referral-content">
+      <div class="card" style="text-align:center;color:var(--mute);padding:24px">${t('loading')}</div>
+    </div>
+  </main>`;
+}
+
+async function loadReferralPage(){
+  const u = S.user;
+  if (!u || u.admin) return;
+  const el = document.getElementById('referral-content');
+  if (!el) return;
+  try {
+    const r = await fetch('/api/referral-stats/' + u.uid);
+    const data = await r.json();
+    if (!data.success) throw new Error();
+    const codeRef = data.referral_code || '—';
+    const shareUrl = `${CONFIG.SITE_URL}?ref=${codeRef}`;
+    const shareMsg = t('referralMsg', codeRef);
+    const canWithdraw = data.commission_earned >= CONFIG.REFERRAL_MIN_WITHDRAW;
+    const missing = Math.max(0, CONFIG.REFERRAL_MIN_WITHDRAW - data.commission_earned);
+
+    el.innerHTML = `
+      <div style="background:linear-gradient(135deg,#0B1226 0%,#1B3A8C 100%);color:#fff;border-radius:18px;padding:20px;margin-bottom:14px">
+        <h2 style="font:800 22px 'Sora';margin-bottom:6px">${t('referralSection')}</h2>
+        <p style="color:#B7C3DD;font-size:13.5px;line-height:1.5">${t('referralDesc')}</p>
+      </div>
+
+      <div class="card" style="text-align:center">
+        <small style="display:block;color:var(--mute);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">${t('referralYourCode')}</small>
+        <div style="font:800 32px 'Sora';color:var(--navy);letter-spacing:.15em;margin-bottom:14px">${codeRef}</div>
+
+        <div style="background:#F4F6FA;border-radius:10px;padding:10px;margin-bottom:12px;font-family:monospace;font-size:12px;color:var(--mute);word-break:break-all">
+          ${shareUrl}
+        </div>
+
+        <a class="btn wa" href="${waLink(shareMsg)}" target="_blank" rel="noopener" style="margin-bottom:8px">
+          ${ico('chat')} ${t('referralShare')}
+        </a>
+        <button class="btn ghost" data-act="copy" data-txt="${shareUrl}">
+          ${t('referralCopyLink')}
+        </button>
+      </div>
+
+      <div class="nums" style="grid-template-columns:repeat(3,1fr)">
+        <div class="st"><b>${data.filleuls_count}</b><small>${t('referralFilleuls')}</small></div>
+        <div class="st"><b>${data.orders_count}</b><small>${t('referralOrders')}</small></div>
+        <div class="st hl"><b>${fmt(data.commission_earned)}</b><small>${t('referralCommission')}</small></div>
+      </div>
+
+      <div class="card">
+        <div style="background:${canWithdraw ? '#D9F3E6' : '#FFF8E5'};border-left:4px solid ${canWithdraw ? 'var(--ok)' : 'var(--maize)'};padding:12px;border-radius:10px;margin-bottom:12px">
+          <b style="display:block;font-size:14px;color:${canWithdraw ? '#14774A' : '#5A3A00'}">${t('referralAvailable')}</b>
+          <div style="font:800 20px 'Sora';color:${canWithdraw ? 'var(--ok)' : '#8F5E00'};margin-top:4px">${fmt(data.commission_earned)}</div>
+          <small style="font-size:12px;color:var(--mute)">${t('referralMinWithdraw')}</small>
+        </div>
+        ${canWithdraw
+          ? `<button class="btn ok" data-act="requestWithdrawal" data-amount="${data.commission_earned}">${t('referralWithdrawBtn')}</button>`
+          : `<div class="tip" style="text-align:center;color:#8F5E00;padding:8px">${t('referralNeedMore', fmt(missing))}</div>`}
+      </div>
+
+      <div class="card">
+        <h3 style="font:800 16px 'Sora';margin-bottom:12px">${t('referralHowTo')}</h3>
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:flex-start">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--maize);color:var(--navy);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0">1</div>
+          <div style="font-size:14px;color:var(--text);padding-top:2px">${t('referralHow1')}</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:flex-start">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--maize);color:var(--navy);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0">2</div>
+          <div style="font-size:14px;color:var(--text);padding-top:2px">${t('referralHow2')}</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:10px;align-items:flex-start">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--maize);color:var(--navy);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0">3</div>
+          <div style="font-size:14px;color:var(--text);padding-top:2px">${t('referralHow3')}</div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <div style="width:26px;height:26px;border-radius:50%;background:var(--maize);color:var(--navy);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0">4</div>
+          <div style="font-size:14px;color:var(--text);padding-top:2px">${t('referralHow4')}</div>
+        </div>
+      </div>
+    `;
+  } catch (e) {
+    console.error(e);
+    el.innerHTML = `<div class="card" style="color:var(--mute);text-align:center">Impossible de charger le parrainage.</div>`;
+  }
 }
 
 function vAuth(){
@@ -927,6 +1033,10 @@ function vAuth(){
         ${reg ? `
           <label for="a-pass2">${t('pass2')} <span class="req">*</span></label>
           <input class="in" id="a-pass2" type="password" autocomplete="new-password" maxlength="60">
+
+          <label for="a-referral">${t('referralCode')}</label>
+          <input class="in" id="a-referral" placeholder="${t('referralPlaceholder')}" maxlength="10" style="text-transform:uppercase">
+          <div class="tip">${t('referralTip')}</div>
         ` : ''}
 
         <button class="btn maize" style="margin-top:20px" data-act="auth">${reg ? t('register') : t('login')}</button>
@@ -975,6 +1085,7 @@ function renderTopNav(){
     items.push({ id:'admin', label:t('admin'), icon:'shield' });
   } else {
     items.push({ id:'orders', label:t('orders'), icon:'bot' });
+    items.push({ id:'referral', label:t('referral'), icon:'gift' });
     items.push({ id:'help', label:t('help'), icon:'help' });
     items.push({ id:'me', label:t('me'), icon:'user' });
   }
@@ -1003,7 +1114,7 @@ function renderBottomNav(){
   const v = S.view;
   const items = u?.admin
     ? [['home','home','home'],['admin','admin','shield']]
-    : [['home','home','home'],['orders','orders','bot'],['help','help','help'],['me','me','user']];
+    : [['home','home','home'],['orders','orders','bot'],['referral','referral','gift'],['help','help','help'],['me','me','user']];
   const pend = u && !u.admin
     ? S.orders.filter(o => o.status === 'pending').length
     : (u?.admin ? S.orders.filter(o => o.status === 'paid').length : 0);
@@ -1021,14 +1132,15 @@ function render(){
   const v = S.view;
   let guard = v;
   if (v === 'admin' && !u?.admin) guard = 'home';
-  if ((v === 'orders' || v === 'me') && !u) guard = 'auth';
-  const views = { home:vHome, orders:vOrders, help:vHelp, me:vMe, admin:vAdmin, auth:vAuth };
+  if ((v === 'orders' || v === 'me' || v === 'referral') && !u) guard = 'auth';
+  const views = { home:vHome, orders:vOrders, help:vHelp, me:vMe, admin:vAdmin, auth:vAuth, referral:vReferral };
   $('#app').innerHTML = views[guard]();
   renderTopNav();
   renderBottomNav();
   $('#botnav').style.display = (guard === 'auth') ? 'none' : '';
   document.documentElement.lang = S.lang;
   if (guard === 'home') bindSlider();
+  if (guard === 'referral' && S.user && !S.user.admin) loadReferralPage();
 }
 
 function bindSlider(){
@@ -1059,7 +1171,7 @@ async function go(v){
   S.view = v;
   S.menuOpen = false;
   window.scrollTo(0, 0);
-  if (['orders','me','home'].includes(v)) await loadOrdersFromServer();
+  if (['orders','me','home','referral'].includes(v)) await loadOrdersFromServer();
   if (v === 'admin' || S.user?.admin) await loadOrdersFromServer();
   render();
 }
@@ -1302,7 +1414,8 @@ const ACT = {
         return toast(t('e_suspect'), true);
       }
 
-      S.pendingUser = { name, phone, pass, country, city };
+      const referralCode = ($('#a-referral')?.value || '').trim().toUpperCase();
+      S.pendingUser = { name, phone, pass, country, city, referralCode };
       showPrivacyPolicy(async () => { await ACT._doRegister(); });
       return;
     }
@@ -1326,7 +1439,8 @@ const ACT = {
         name: data.user.name,
         phone: data.user.phone,
         country: data.user.country || lCountry,
-        city: data.user.city || ''
+        city: data.user.city || '',
+        referral_code: data.user.referral_code || null
       };
       saveCurrentUser(S.user);
       await loadOrdersFromServer();
@@ -1345,12 +1459,12 @@ const ACT = {
   },
   _doRegister: async () => {
     if (!S.pendingUser) return;
-    const { name, phone, pass, country, city } = S.pendingUser;
+    const { name, phone, pass, country, city, referralCode } = S.pendingUser;
     try {
       const res = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, password: pass, country, city })
+        body: JSON.stringify({ name, phone, password: pass, country, city, referralCode: referralCode || null })
       });
       const data = await res.json();
       if (!data.success) {
@@ -1362,7 +1476,8 @@ const ACT = {
         name: data.user.name,
         phone: data.user.phone,
         country: data.user.country || country,
-        city: data.user.city || city
+        city: data.user.city || city,
+        referral_code: data.user.referral_code || null
       };
       saveCurrentUser(S.user);
       S.pendingUser = null;
@@ -1453,6 +1568,25 @@ const ACT = {
       }
     }, 5);
   },
+  requestWithdrawal: async (d) => {
+    const amount = Number(d.amount) || 0;
+    if (amount < CONFIG.REFERRAL_MIN_WITHDRAW) {
+      return toast(t('referralNeedMore', fmt(CONFIG.REFERRAL_MIN_WITHDRAW - amount)), true);
+    }
+    try {
+      const res = await fetch('/api/referral-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: S.user.uid, amount })
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error);
+      toast(t('referralWithdrawn'));
+    } catch (e) {
+      console.error(e);
+      toast(e.message || t('e_gen'), true);
+    }
+  },
   close: () => closeSheet(),
   finish: () => { closeSheet(); go('orders'); },
   filter: d => { S.filter = d.f; render(); }
@@ -1490,6 +1624,19 @@ document.addEventListener('keydown', e => {
 ============================================================ */
 (async function boot(){
   restoreSession();
+
+  // Détection du lien de parrainage dans l'URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const ref = urlParams.get('ref');
+  if (ref) {
+    S.authMode = 'register';
+    S.view = 'auth';
+    setTimeout(() => {
+      const el = document.getElementById('a-referral');
+      if (el) el.value = ref.toUpperCase();
+    }, 400);
+  }
+
   if (S.user?.admin) S.view = 'admin';
   if (S.user && !S.user.admin) await loadOrdersFromServer();
   render();
