@@ -22,13 +22,15 @@ img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--maize);outline-offset:2px}
 svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* ============ TOP NAV ============ */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);color:#fff;padding-top:env(safe-area-inset-top);box-shadow:0 2px 12px rgba(11,18,38,.15)}
 .topnav .inner{max-width:1080px;margin:0 auto;height:var(--topnav);display:flex;align-items:center;gap:10px;padding:0 12px}
 .topnav .brand{display:flex;align-items:center;gap:8px;font-family:'Sora';font-weight:800;font-size:15px;margin-right:auto;flex-shrink:0}
 .topnav .brand i{width:30px;height:30px;border-radius:9px;background:var(--maize);display:grid;place-items:center;font-style:normal;font-size:16px}
-.topnav .links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+.topnav .links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .topnav .links::-webkit-scrollbar{display:none}
-.topnav .links button,.topnav .links a{display:flex;align-items:center;gap:6px;padding:8px 11px;border-radius:99px;font-weight:700;font-size:13px;white-space:nowrap;color:#B7C3DD;transition:all .15s}
+.topnav .links button{display:flex;align-items:center;gap:6px;padding:8px 11px;border-radius:99px;font-weight:700;font-size:13px;white-space:nowrap;color:#B7C3DD;transition:all .15s}
 .topnav .links button:hover{background:rgba(255,255,255,.1);color:#fff}
 .topnav .links button.on{background:var(--maize);color:var(--navy)}
 .topnav .links button.cta{background:#25A244;color:#fff;font-weight:800}
@@ -36,28 +38,38 @@ svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke
 .topnav .links .lang{background:rgba(255,255,255,.12);color:#fff;padding:6px 10px;font-size:12px}
 .topnav .burger{display:none;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);place-items:center;flex-shrink:0}
 @media(max-width:720px){
-.topnav .links{position:fixed;top:calc(var(--topnav) + env(safe-area-inset-top));left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:2px;padding:8px 12px 16px;max-height:calc(100vh - var(--topnav));overflow-y:auto;transform:translateY(-10px);opacity:0;visibility:hidden;transition:all .2s;box-shadow:0 12px 30px rgba(0,0,0,.4)}
-.topnav .links.open{transform:translateY(0);opacity:1;visibility:visible}
-.topnav .links button{padding:14px 16px;border-radius:12px;font-size:15px}
-.topnav .burger{display:grid}.topnav .brand{font-size:14px}}
+  .topnav .links{position:fixed;top:calc(var(--topnav) + env(safe-area-inset-top));left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:2px;padding:8px 12px 16px;max-height:calc(100vh - var(--topnav));overflow-y:auto;transform:translateY(-10px);opacity:0;visibility:hidden;transition:all .2s;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .topnav .links.open{transform:translateY(0);opacity:1;visibility:visible}
+  .topnav .links button{padding:14px 16px;border-radius:12px;font-size:15px}
+  .topnav .burger{display:grid}
+  .topnav .brand{font-size:14px}
+}
+
+/* ============ HERO ============ */
 .hero{position:relative;overflow:hidden;background:#0B1226;color:#fff;padding:0 0 60px}
 .hero-image{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.45}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,18,38,.4) 0%,rgba(11,18,38,.85) 60%,#0B1226 100%)}
 .hero .wrap{position:relative;z-index:2;padding-top:24px}
 .hero .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(244,185,66,.15);border:1px solid rgba(244,185,66,.35);color:var(--maize);font-weight:800;font-size:12px;padding:6px 12px;border-radius:99px}
 .hero h2{font-size:clamp(26px,6.5vw,48px);max-width:18ch;margin-top:12px;text-shadow:0 4px 20px rgba(0,0,0,.5)}
-.hero p{color:#D5DCEE;max-width:46ch;margin-top:12px;font-size:15px}
+.hero p{color:#D5DCEE;max-width:46ch;margin-top:12px;font-size:15px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 .hero .stats-hero{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 .hero .stats-hero .s{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 14px;flex:1;min-width:100px}
 .hero .stats-hero .s b{display:block;font-family:'Sora';font-weight:800;font-size:18px;color:var(--maize)}
 .hero .stats-hero .s small{color:#B7C3DD;font-size:11.5px;font-weight:700;text-transform:uppercase}
 @media(min-width:760px){.hero{padding:40px 0 80px}}
+
+/* ============ QUICK ============ */
 .quick{position:relative;z-index:3;margin-top:-46px}
 .quick .box{background:var(--card);border-radius:var(--r);padding:16px 6px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 12px 30px rgba(11,18,38,.15);gap:4px}
 .qa{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:4px;text-align:center}
 .qa span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff}
-.qa:nth-child(1) span{background:var(--blue)}.qa:nth-child(2) span{background:#D98A0F}
-.qa:nth-child(3) span{background:#25A244}.qa:nth-child(4) span{background:#2B8FD6}
+.qa:nth-child(1) span{background:var(--blue)}
+.qa:nth-child(2) span{background:#D98A0F}
+.qa:nth-child(3) span{background:#25A244}
+.qa:nth-child(4) span{background:#2B8FD6}
+
+/* ============ SECTIONS ============ */
 h2.sec{font-size:23px;margin:26px 0 4px}
 p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .steps{display:grid;gap:10px;margin:8px 0}
@@ -66,6 +78,8 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .step em{font:800 17px 'Sora';font-style:normal;background:var(--maize);color:var(--navy);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none}
 .step b{display:block;font-size:14.5px}
 .step small{color:var(--mute);font-size:13px}
+
+/* ============ CALC ============ */
 .calc{background:var(--card);border-radius:20px;padding:18px;margin-top:8px}
 .calc .head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .calc .head b{font:800 18px 'Sora'}
@@ -74,6 +88,8 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .calc .out{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
 @media(min-width:640px){.calc .out{grid-template-columns:repeat(4,1fr)}}
 .calc .out .st{padding:12px;text-align:center}
+
+/* ============ PLANS ============ */
 .plans{display:grid;gap:16px}
 @media(min-width:560px){.plans{grid-template-columns:1fr 1fr}}
 @media(min-width:1020px){.plans{grid-template-columns:repeat(4,1fr)}}
@@ -91,9 +107,13 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .g{background:#F4F6FA;border-radius:11px;padding:9px 11px}
 .g small{display:block;color:var(--mute);font-size:11px;font-weight:700;text-transform:uppercase}
 .g b{display:block;font:800 14.5px 'Sora';color:var(--navy);margin-top:2px}
-.g.hl{background:var(--navy)}.g.hl small{color:#A9B7D6}.g.hl b{color:var(--maize)}
+.g.hl{background:var(--navy)}
+.g.hl small{color:#A9B7D6}
+.g.hl b{color:var(--maize)}
 .g.gr b{color:var(--ok)}
 .plan .btn{margin-top:auto}
+
+/* ============ INVEST ============ */
 .inv{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .inv .head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .inv .head b{font:800 16px 'Sora';flex:1}
@@ -102,21 +122,29 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .inv .nums2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .inv .nums2 .st{background:#F4F6FA;text-align:center;padding:10px 6px}
 .inv .nums2 .st b{font-size:13.5px}
-.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:13px;font-weight:800;background:var(--navy);color:#fff;transition:transform .12s;text-align:center}
+
+/* ============ BUTTONS ============ */
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:13px;font-weight:800;background:var(--navy);color:#fff;transition:transform .12s,background .15s;text-align:center}
 .btn:active{transform:scale(.98)}
 .btn.maize{background:var(--maize);color:var(--navy)}
 .btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn.sm{width:auto;padding:9px 14px;font-size:14px;border-radius:10px}
-.btn.ok{background:var(--ok)}.btn.bad{background:var(--bad)}.btn.wa{background:#25A244}
+.btn.ok{background:var(--ok)}
+.btn.bad{background:var(--bad)}
+.btn.wa{background:#25A244}
 .btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* ============ CARDS ============ */
 .card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .row{display:flex;align-items:center;gap:12px}
 .li{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:14px;padding:15px 16px;margin-bottom:10px;width:100%;text-align:left;font-weight:700}
 .li svg:last-child{margin-left:auto;color:var(--mute)}
 .li .ic{width:38px;height:38px;border-radius:11px;background:#FBF0D3;color:#8A6500;display:grid;place-items:center;flex-shrink:0}
 .status{font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px;white-space:nowrap}
-.s-pending{background:#FFF1D1;color:#8F5E00}.s-paid{background:#DCEBFA;color:#1D4F91}
-.s-active{background:#D9F3E6;color:#14774A}.s-completed{background:#E5E7EB;color:#374151}
+.s-pending{background:#FFF1D1;color:#8F5E00}
+.s-paid{background:#DCEBFA;color:#1D4F91}
+.s-active{background:#D9F3E6;color:#14774A}
+.s-completed{background:#E5E7EB;color:#374151}
 .s-rejected{background:#FCE0DA;color:#A52E1B}
 .empty{text-align:center;padding:50px 20px;color:var(--mute)}
 .empty .big{font-size:56px}
@@ -127,9 +155,13 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
 .nums .st{text-align:center;padding:12px 6px;background:#F4F6FA;border-radius:12px}
-.nums .st.hl{background:var(--navy)}.nums .st.hl b{color:var(--maize)}.nums .st.hl small{color:#A9B7D6}
+.nums .st.hl{background:var(--navy)}
+.nums .st.hl b{color:var(--maize)}
+.nums .st.hl small{color:#A9B7D6}
 .me{background:var(--navy);color:#fff;border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:center;margin:16px 0}
 .av{width:56px;height:56px;border-radius:50%;background:var(--maize);color:var(--navy);display:grid;place-items:center;font:800 22px 'Sora';flex-shrink:0}
+
+/* ============ FORMS ============ */
 label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
 label .req{color:var(--bad)}
 .in{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:0;font-size:15px}
@@ -149,30 +181,40 @@ select.in{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .tip-warn{color:#8F5E00;background:#FFF8E5;border-left:3px solid var(--maize);padding:8px 12px;border-radius:8px;font-size:12.5px;margin-top:8px;line-height:1.5}
 .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;cursor:pointer;font-size:14px;line-height:1.5}
 .check input{width:20px;height:20px;accent-color:var(--navy);flex-shrink:0;margin-top:2px}
+
+/* ============ MODALS ============ */
 .sheet-bg{position:fixed;inset:0;background:rgba(8,14,30,.7);z-index:80;display:flex;align-items:flex-end;justify-content:center;animation:fade .2s;backdrop-filter:blur(4px)}
 .sheet{background:#fff;width:100%;max-width:580px;border-radius:24px 24px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));max-height:92vh;overflow-y:auto;animation:up .25s}
 @media(min-width:640px){.sheet-bg{align-items:center;padding:20px}.sheet{border-radius:24px}}
 .sheet h3{font-size:22px;margin-bottom:6px}
 .sum{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px;gap:12px}
 .sum.t{font:800 19px 'Sora';border:0;padding-top:12px}
-.countdown{text-align:center;padding:14px 0}
-.countdown .num{display:inline-grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--navy);color:var(--maize);font:800 36px 'Sora';margin:10px auto;animation:pulse 1s infinite}
-.countdown p{color:var(--mute);font-size:13.5px;margin-top:8px}
 @keyframes fade{from{opacity:0}}
 @keyframes up{from{transform:translateY(40px);opacity:0}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+/* ============ COUNTDOWN ============ */
+.countdown{text-align:center;padding:14px 0}
+.countdown .num{display:inline-grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--navy);color:var(--maize);font:800 36px 'Sora';margin:10px auto;animation:pulse 1s infinite}
+.countdown p{color:var(--mute);font-size:13.5px;margin-top:8px}
+
+/* ============ AUTH ============ */
 .auth{background:var(--navy);color:#fff;margin:-1px -16px 0;padding:0 16px calc(var(--botnav) + 20px)}
 .auth .hd{padding:22px 0 20px}
 .auth .box{background:#fff;color:var(--text);border-radius:24px 24px 0 0;padding:22px 18px 50px;min-height:62vh}
 .link{color:var(--blue);font-weight:800}
+
+/* ============ BOTTOM NAV ============ */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 20px rgba(11,18,38,.06)}
 .nav .in2{max-width:1080px;margin:0 auto;display:grid;height:var(--botnav);align-items:center}
 .nav button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:700;color:var(--mute);position:relative;padding:8px 0}
 .nav button span{width:50px;height:32px;border-radius:99px;display:grid;place-items:center}
-.nav button.on{color:var(--navy)}.nav button.on span{background:var(--maize)}
+.nav button.on{color:var(--navy)}
+.nav button.on span{background:var(--maize)}
 .dot{position:absolute;top:2px;right:calc(50% - 28px);min-width:18px;height:18px;border-radius:9px;background:var(--bad);color:#fff;font-size:11px;font-style:normal;display:grid;place-items:center;padding:0 5px;font-weight:800}
 .toast{position:fixed;left:50%;bottom:calc(var(--botnav) + 24px);transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;z-index:100;font-weight:700;font-size:14px;max-width:90vw;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:up .25s}
-.toast.err{background:var(--bad)}.toast.ok{background:var(--ok)}
+.toast.err{background:var(--bad)}
+.toast.ok{background:var(--ok)}
 .backbar{display:flex;align-items:center;gap:10px;padding:14px 0 6px;margin-bottom:6px}
 .backbar button{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:99px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:13.5px;color:var(--navy)}
 .backbar .title{font:800 16px 'Sora';color:var(--text)}
@@ -186,16 +228,30 @@ details p{margin-top:8px;color:var(--mute);font-size:14px}
 .privacy ul{padding-left:20px;margin-bottom:8px}
 .privacy li{margin-bottom:4px}
 .privacy .en{border-top:1px dashed var(--line);margin-top:14px;padding-top:14px;color:#555;font-style:italic}
+
+/* ============ PAY STEPS ============ */
 .pay-steps{background:#F4F6FA;border-radius:12px;padding:14px;margin:12px 0}
 .pay-step{display:flex;gap:10px;margin-bottom:12px}
 .pay-step:last-child{margin-bottom:0}
 .pay-step .num{width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--maize);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0}
 .pay-step .txt{flex:1;font-size:13.5px;line-height:1.5}
 .pay-step .txt b{color:var(--navy)}
-.ussd-box{background:var(--navy);color:#fff;border-radius:10px;padding:12px;text-align:center;font-family:'Sora';font-weight:800;font-size:17px;letter-spacing:.02em;margin-top:6px;user-select:all}
+.ussd-box{background:var(--navy);color:#fff;border-radius:10px;padding:12px;text-align:center;font-family:'Sora';font-weight:800;font-size:17px;letter-spacing:.02em;margin-top:6px;user-select:all;word-break:break-all}
 .copy-btn{display:inline-flex;align-items:center;gap:5px;background:var(--maize);color:var(--navy);font-weight:800;font-size:12px;padding:6px 12px;border-radius:8px;margin-top:8px}
-@media(max-width:360px){.wrap{padding:0 12px}.hero h2{font-size:24px}.qa span{width:44px;height:44px}}
+
+/* ============ RESPONSIVE ULTRA ============ */
+@media(max-width:360px){
+  .wrap{padding:0 12px}
+  h2.sec{font-size:20px}
+  .hero h2{font-size:24px}
+  .qa span{width:44px;height:44px}
+  .qa{font-size:11px}
+  .topnav .brand{font-size:13px}
+  .topnav .brand i{width:26px;height:26px;font-size:14px}
+}
+@media(min-width:1200px){.wrap{max-width:1200px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-height:500px) and (orientation:landscape){.hero{padding:20px 0 40px}.hero h2{font-size:22px}}
 </style>
 </head>
 <body>
@@ -230,7 +286,6 @@ const CONFIG = {
   // ==== COMPTE MARCHAND OM ASSO ====
   OM_ASSO_CODE: '1604864',
   OM_ASSO_USSD: '#150*46*1604864#',
-  OM_ASSO_HOLDER: 'Apex Robots (via OM Asso)',
 
   HERO_IMG: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=1600&q=80&auto=format&fit=crop',
 
@@ -271,13 +326,12 @@ const CONFIG = {
       badge:B('Complet','Complete') }
   ],
 
-  // Pays avec format de numéro propre
   COUNTRIES: [
-    { code:'CM', name:'Cameroun',      dial:'+237', flag:'🇨🇲', len:9,  prefix:'6',        hint:'Ex: 677123456' },
-    { code:'CI', name:"Côte d'Ivoire", dial:'+225', flag:'🇨🇮', len:10, prefix:'',         hint:'Ex: 0701234567' },
-    { code:'SN', name:'Sénégal',       dial:'+221', flag:'🇸🇳', len:9,  prefix:'7',        hint:'Ex: 771234567' },
-    { code:'GA', name:'Gabon',         dial:'+241', flag:'🇬🇦', len:8,  prefix:'',         hint:'Ex: 60123456' },
-    { code:'TD', name:'Tchad',         dial:'+235', flag:'🇹🇩', len:8,  prefix:'6',        hint:'Ex: 60123456' }
+    { code:'CM', name:'Cameroun',      dial:'+237', flag:'🇨🇲', len:9,  prefix:'6', hint:'677123456' },
+    { code:'CI', name:"Côte d'Ivoire", dial:'+225', flag:'🇨🇮', len:10, prefix:'',  hint:'0701234567' },
+    { code:'SN', name:'Sénégal',       dial:'+221', flag:'🇸🇳', len:9,  prefix:'7', hint:'771234567' },
+    { code:'GA', name:'Gabon',         dial:'+241', flag:'🇬🇦', len:8,  prefix:'',  hint:'60123456' },
+    { code:'TD', name:'Tchad',         dial:'+235', flag:'🇹🇩', len:8,  prefix:'6', hint:'60123456' }
   ],
 
   CAMEROON_CITIES: [
@@ -308,7 +362,6 @@ const maxPrice = () => CONFIG.PLANS[CONFIG.PLANS.length - 1].price;
 const getCities = c => !c ? [] : (c === 'CM' ? CONFIG.CAMEROON_CITIES : (CONFIG.CITIES[c] || []));
 const getCountry = c => CONFIG.COUNTRIES.find(x => x.code === c) || null;
 
-/* Validation téléphone par pays */
 function validatePhoneForCountry(phone, countryCode){
   const c = getCountry(countryCode);
   if (!c) return false;
@@ -319,68 +372,50 @@ function validatePhoneForCountry(phone, countryCode){
 }
 
 /* ============================================================
-   TRADUCTIONS FR / EN
+   TRADUCTIONS
 ============================================================ */
 const T = {
 fr:{
   home:'Accueil', orders:'Mes robots', help:'Aide', me:'Compte',
   login:'Connexion', register:'Inscription', logout:'Déconnexion', admin:'Admin',
-
   heroT:'8 robots qui travaillent pour toi, jour et nuit.',
   heroS:"Choisis ton robot, paie par OM Asso, et ton robot démarre automatiquement.",
   tag:'Paiement Orange Money · OM Asso',
-
   levelsT:'Les 8 robots', levelsS:'Chaque robot génère un bénéfice quotidien pendant 8 jours.',
   how:'Comment ça marche',
   s1:'Choisis ton robot', s1d:'8 niveaux, de 5 000 à 1 000 000 FCFA.',
   s2:'Paie par OM Asso', s2d:'Compose le code USSD et envoie le montant exact.',
   s3:'Ton robot démarre', s3d:'Valide ta transaction, ton robot démarre aussitôt.',
-
   calcT:'Simulateur rapide', calcD:'Déplace le curseur pour voir les gains selon le montant.',
-
   level:'Robot', price:'Mise', daily:'Gain / jour', days:'Durée', total:'Total reçu',
   net:'Bénéfice net', roi:'Rendement', choose:'Activer ce robot', owned:'Robot actif',
   getBooks:'Contacter le support', days_unit:'jours',
-
-  checkoutT:'Paiement OM Asso', payWith:'Mode de paiement', phonePay:'Ton numéro Mobile Money',
-  phonePayTip:'Entre ton numéro de téléphone actif.',
-  payBtn:a=>`Payer ${a}`,
-  secure:"Le paiement se fait directement depuis ton téléphone via OM Asso.",
+  checkoutT:'Paiement OM Asso', phonePay:'Ton numéro Mobile Money',
   sending:'Traitement…', close:'Fermer', back:'Retour',
-
   payStepTitle:'Comment effectuer le paiement',
   payStep1:'Compose ce code sur ton téléphone :',
-  payStep2:'Entre le montant exact :',
   payStep3:'Confirme avec ton code secret.',
-  payStep4:'Colle la référence reçue dans le SMS ci-dessous.',
+  payStep4:'Une fois payé, envoie-nous la capture d\'écran sur WhatsApp.',
   payCopyUssd:'📋 Copier le code USSD',
-  payCopyCode:'📋 Copier le code marchand',
-  payRefLabel:'Référence de la transaction',
-  payRefPlaceholder:'Ex: 1604864-XXXX-XXXX',
   payConfirm:'J\'ai payé, valider ma commande',
-  payUssdHint:'Ouvre le clavier de ton téléphone et compose ce code.',
-
-  waitT:'Commande enregistrée',
-  waitD:'Ta commande est enregistrée et en attente de validation par le support. Nous vérifions ton paiement.',
+  payUssdHint:'Le montant est déjà inclus dans le code.',
+  payScreenshot:'📸 Envoie-nous une capture d\'écran sur WhatsApp',
+  payScreenshotD:'Prends une capture du SMS de confirmation et envoie-la sur WhatsApp avec le bouton ci-dessous.',
+  payAstuce:'Astuce : Si le code complet ne marche pas, compose simplement',
+  payAstuce2:'puis saisis le montant',
+  payAstuce3:'quand demandé.',
   countdownTitle:'Vérification en cours',
   countdownText:'Nous enregistrons ta commande en toute sécurité…',
   countdownSec:'secondes',
-
-  failT:'Commande non aboutie',
-  failD:'Une erreur est survenue. Contacte le support.',
   doneT:'Commande enregistrée',
-  doneD:'Merci ! Ta commande est en cours de validation. Tu seras contacté dès confirmation.',
-  code:'N° de commande', myOrders:'Voir mes robots', pay:'Payer',
-
+  doneD:'Merci ! Ta commande est en cours de validation. Envoie ta capture d\'écran sur WhatsApp.',
+  code:'N° de commande', myOrders:'Voir mes robots',
   st:{pending:'En attente', paid:'En cours', active:'Robot actif', completed:'Terminé', rejected:'Refusée'},
   day:'Jour', earned:'Déjà gagné', remaining:'Reste à recevoir', ends:'Fin le',
-
   noOrders:'Aucun robot actif', noOrdersD:'Active un robot pour commencer à générer des gains.',
   seeLevels:'Voir les robots',
-
   account:'Mon compte', ordersN:'Robots', pendingN:'En attente', activeN:'Actifs',
   contact:'Nous contacter',
-
   fullName:'Nom complet', phoneLogin:'Téléphone',
   country:'Pays', city:'Ville',
   chooseCountry:'— Choisis ton pays —',
@@ -390,33 +425,27 @@ fr:{
   pass:'Mot de passe', pass2:'Confirmer le mot de passe',
   passTip:'🔒 Min 5 caractères, avec au moins une lettre et un chiffre. Ex: Apex2',
   loginReq:'Connecte-toi pour continuer',
-
   faq:'Questions fréquentes',
   q1:'Comment fonctionne un robot ?', a1:"Chaque robot trade automatiquement pour toi pendant 8 jours.",
-  q2:'Comment je paie ?', a2:"Tu composes le code USSD OM Asso, tu envoies le montant exact, puis tu colles la référence de la transaction.",
+  q2:'Comment je paie ?', a2:"Tu composes le code USSD OM Asso, tu envoies le montant exact, puis tu nous envoies la capture d'écran de confirmation sur WhatsApp.",
   q3:'Comment je reçois mes gains ?', a3:"Tes gains s'accumulent. À la fin des 8 jours, tu récupères ton capital + bénéfices.",
   q4:'Mon paiement est-il vérifié ?', a4:"Oui, nous vérifions chaque transaction avant d'activer ton robot.",
-
-  e_fields:'Remplis tous les champs.', 
+  e_fields:'Remplis tous les champs.',
   e_phone:'Numéro invalide pour ce pays.',
-  e_pass:'Mot de passe trop court (5 caractères minimum).', 
+  e_pass:'Mot de passe trop court (5 caractères minimum).',
   e_pass_format:'Le mot de passe doit contenir au moins une lettre et un chiffre.',
   e_match:'Les mots de passe ne correspondent pas.',
   e_name:'Indique ton nom.', e_country:'Choisis ton pays.', e_city:'Choisis ta ville.',
   e_used:'Ce numéro a déjà un compte.', e_bad:'Numéro ou mot de passe incorrect.',
   e_gen:'Une erreur est survenue. Réessaie.',
   e_suspect:'Vérification de sécurité échouée. Contacte le support.',
-  e_ref:'Entre la référence de la transaction.',
-
   privacyT:'Politique de confidentialité',
   privacyIntro:"Avant de finaliser ton inscription, merci de lire et accepter notre politique de confidentialité.",
   privacyAccept:"J'accepte la politique de confidentialité",
   privacyRefuse:'Refuser',
   privacyAcceptBtn:'Accepter et continuer',
-
   trustTitle:'Paiement 100% sécurisé via OM Asso',
   trustMsg:n=>`Votre dépôt est pris en charge par notre promoteur ${n}, pour le compte de l'entreprise Apex Robots.`,
-
   aAll:'Toutes', aActive:'Actifs', aPending:'En attente', aDone:'Terminés',
   aDeliver:'En cours', revenue:'Total encaissé',
   validate:'Valider', markDone:'Marquer terminé', reject:'Refuser',
@@ -426,62 +455,44 @@ fr:{
 en:{
   home:'Home', orders:'My bots', help:'Help', me:'Account',
   login:'Login', register:'Sign up', logout:'Logout', admin:'Admin',
-
   heroT:'8 robots working for you, day and night.',
   heroS:'Choose your robot, pay with OM Asso, and your robot starts automatically.',
   tag:'Orange Money payment · OM Asso',
-
   levelsT:'The 8 robots', levelsS:'Each robot generates a fixed daily profit for 8 days.',
   how:'How it works',
   s1:'Pick your robot', s1d:'8 levels, from 5,000 to 1,000,000 FCFA.',
   s2:'Pay with OM Asso', s2d:'Dial the USSD code and send the exact amount.',
   s3:'Your robot starts', s3d:'Validate your transaction, your robot starts immediately.',
-
   calcT:'Quick simulator', calcD:'Drag the slider to preview your earnings.',
-
   level:'Robot', price:'Stake', daily:'Profit / day', days:'Duration', total:'Total received',
   net:'Net profit', roi:'Return', choose:'Activate this robot', owned:'Active robot',
   getBooks:'Contact support', days_unit:'days',
-
-  checkoutT:'OM Asso payment', payWith:'Payment method', phonePay:'Your Mobile Money number',
-  phonePayTip:'Enter your active phone number.',
-  payBtn:a=>`Pay ${a}`,
-  secure:'Payment is done directly from your phone via OM Asso.',
+  checkoutT:'OM Asso payment', phonePay:'Your Mobile Money number',
   sending:'Processing…', close:'Close', back:'Back',
-
   payStepTitle:'How to pay',
   payStep1:'Dial this code on your phone:',
-  payStep2:'Enter the exact amount:',
   payStep3:'Confirm with your secret code.',
-  payStep4:'Paste the reference you received in the SMS below.',
+  payStep4:'Once paid, send us the screenshot on WhatsApp.',
   payCopyUssd:'📋 Copy USSD code',
-  payCopyCode:'📋 Copy merchant code',
-  payRefLabel:'Transaction reference',
-  payRefPlaceholder:'E.g.: 1604864-XXXX-XXXX',
   payConfirm:'I paid, validate my order',
-  payUssdHint:'Open your phone dialer and dial this code.',
-
-  waitT:'Order registered',
-  waitD:'Your order is registered and pending validation. We are verifying your payment.',
+  payUssdHint:'The amount is already included in the code.',
+  payScreenshot:'📸 Send us a screenshot on WhatsApp',
+  payScreenshotD:'Take a screenshot of the confirmation SMS and send it on WhatsApp with the button below.',
+  payAstuce:'Tip: If the full code does not work, dial',
+  payAstuce2:'then enter the amount',
+  payAstuce3:'when asked.',
   countdownTitle:'Processing',
   countdownText:'Saving your order securely…',
   countdownSec:'seconds',
-
-  failT:'Order failed',
-  failD:'An error occurred. Contact support.',
   doneT:'Order registered',
-  doneD:'Thank you! Your order is being validated. You will be contacted once confirmed.',
-  code:'Order no.', myOrders:'View my bots', pay:'Pay',
-
+  doneD:'Thank you! Your order is being validated. Send your screenshot on WhatsApp.',
+  code:'Order no.', myOrders:'View my bots',
   st:{pending:'Pending', paid:'Processing', active:'Robot active', completed:'Completed', rejected:'Rejected'},
   day:'Day', earned:'Earned so far', remaining:'Remaining', ends:'Ends on',
-
   noOrders:'No active robots', noOrdersD:'Activate a robot to start earning.',
   seeLevels:'See the robots',
-
   account:'My account', ordersN:'Robots', pendingN:'Pending', activeN:'Active',
   contact:'Contact us',
-
   fullName:'Full name', phoneLogin:'Phone',
   country:'Country', city:'City',
   chooseCountry:'— Choose your country —',
@@ -491,13 +502,11 @@ en:{
   pass:'Password', pass2:'Confirm password',
   passTip:'🔒 Min 5 characters with at least one letter and one number. E.g.: Apex2',
   loginReq:'Log in to continue',
-
   faq:'FAQ',
   q1:'How does a robot work?', a1:'Each robot trades automatically for you for 8 days.',
-  q2:'How do I pay?', a2:'Dial the OM Asso USSD code, send the exact amount, then paste the transaction reference.',
+  q2:'How do I pay?', a2:'Dial the OM Asso USSD code, send the exact amount, then send us the screenshot on WhatsApp.',
   q3:'How do I get my earnings?', a3:'Your earnings accumulate. At the end of the 8 days, you recover your capital + profit.',
   q4:'Is my payment verified?', a4:'Yes, we verify every transaction before activating your robot.',
-
   e_fields:'Please fill in all fields.',
   e_phone:'Invalid number for this country.',
   e_pass:'Password too short (5 characters minimum).',
@@ -507,17 +516,13 @@ en:{
   e_used:'This number already has an account.', e_bad:'Wrong number or password.',
   e_gen:'Something went wrong. Please retry.',
   e_suspect:'Security check failed. Contact support.',
-  e_ref:'Enter the transaction reference.',
-
   privacyT:'Privacy Policy',
   privacyIntro:'Before completing your registration, please read and accept our privacy policy.',
   privacyAccept:'I accept the privacy policy',
   privacyRefuse:'Decline',
   privacyAcceptBtn:'Accept and continue',
-
   trustTitle:'100% secure payment via OM Asso',
   trustMsg:n=>`Your deposit is handled by our promoter ${n}, on behalf of Apex Robots.`,
-
   aAll:'All', aActive:'Active', aPending:'Pending', aDone:'Completed',
   aDeliver:'In progress', revenue:'Total collected',
   validate:'Confirm', markDone:'Mark completed', reject:'Reject',
@@ -526,9 +531,6 @@ en:{
 }
 };
 
-/* ============================================================
-   POLITIQUE DE CONFIDENTIALITÉ
-============================================================ */
 const PRIVACY_HTML = `
 <div class="privacy" id="privacyBox">
   <h4>1. Collecte des informations</h4>
@@ -569,9 +571,9 @@ const S = {
   filter: 'pending',
   after: null,
   authMode: 'login',
-  selectedCountry: '',  // inscription
+  selectedCountry: '',
   selectedCity: '',
-  loginCountry: '',     // connexion
+  loginCountry: '',
   pendingUser: null,
   menuOpen: false,
   lang: localStorage.getItem('aa_lang') || ((navigator.language || 'fr').startsWith('en') ? 'en' : 'fr')
@@ -586,9 +588,6 @@ const fmt = n => Number(n || 0).toLocaleString('en-US').replace(/,/g, S.lang ===
 const code = o => String(o.id || '').slice(-6).toUpperCase();
 const waLink = (msg, num = CONFIG.WHATSAPP) => `https://wa.me/${num}?text=${encodeURIComponent(msg || '')}`;
 
-/* ============================================================
-   ICÔNES
-============================================================ */
 const ICO = {
   home:'<path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/>',
   bot:'<rect x="4" y="8" width="16" height="12" rx="3"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="15" cy="14" r="1.3" fill="currentColor"/><path d="M12 4v4M8 20v1M16 20v1"/>',
@@ -605,9 +604,6 @@ const ICO = {
 };
 const ico = n => `<svg viewBox="0 0 24 24">${ICO[n]}</svg>`;
 
-/* ============================================================
-   TOAST
-============================================================ */
 function toast(msg, err){
   document.querySelectorAll('.toast').forEach(x => x.remove());
   const d = document.createElement('div');
@@ -617,9 +613,6 @@ function toast(msg, err){
   setTimeout(() => d.remove(), 3600);
 }
 
-/* ============================================================
-   SESSION
-============================================================ */
 function saveCurrentUser(u){
   if (u) localStorage.setItem('apex_current_user', JSON.stringify(u));
   else localStorage.removeItem('apex_current_user');
@@ -628,14 +621,7 @@ function restoreSession(){
   try { const s = localStorage.getItem('apex_current_user'); if (s) S.user = JSON.parse(s); } catch {}
 }
 
-/* ============================================================
-   ANTI-FRAUDE
-============================================================ */
-const SUSPECT_PATTERNS = [
-  /(?:script|select|insert|update|delete|drop|union|exec)/i,
-  /[<>{}\[\]\\]/,
-  /(.)\1{5,}/
-];
+const SUSPECT_PATTERNS = [/(?:script|select|insert|update|delete|drop|union|exec)/i, /[<>{}\[\]\\]/, /(.)\1{5,}/];
 function isSuspect(v){
   if (!v) return false;
   const s = String(v).trim();
@@ -643,14 +629,13 @@ function isSuspect(v){
   for (const p of SUSPECT_PATTERNS) if (p.test(s)) return true;
   return false;
 }
-/* Mot de passe : min 5, au moins 1 lettre + 1 chiffre */
 function validPassword(p){
   if (!p || p.length < 5) return false;
   if (!/[a-zA-Z]/.test(p)) return false;
   if (!/\d/.test(p)) return false;
   return true;
 }
-function validateAntiFraud({ name, phone, pass, country, city, countryFormat }){
+function validateAntiFraud({ name, phone, pass, country, city }){
   const errors = [];
   if (!name || isSuspect(name)) errors.push('name');
   if (!country) errors.push('country');
@@ -660,9 +645,6 @@ function validateAntiFraud({ name, phone, pass, country, city, countryFormat }){
   return { ok: errors.length === 0, errors };
 }
 
-/* ============================================================
-   CALCULS INVESTISSEMENT
-============================================================ */
 function invStats(o){
   const p = planById(o.planId);
   if (!p) return { day:0, days:0, earned:0, remaining:0, total:0, pct:0, done:false, ends:null };
@@ -677,24 +659,21 @@ function invStats(o){
   return { day:dayNow, days:p.days, earned, remaining, total, pct, done:dayNow >= p.days, ends };
 }
 
-/* ============================================================
-   CHARGEMENT DES COMMANDES
-============================================================ */
 async function loadOrdersFromServer(){
   if (!S.user) { S.orders = []; return; }
   try {
     const r = await fetch('/api/orders/' + S.user.uid);
     const data = await r.json();
     S.orders = (data || []).map(o => ({
-      ...o,
-      planId: o.plan_id,
-      planName: o.plan_name,
+      ...o, planId: o.plan_id, planName: o.plan_name,
       createdAt: new Date(o.created_at).getTime(),
       paidAt: o.paid_at ? new Date(o.paid_at).getTime() : null
     }));
   } catch (e) { console.error(e); S.orders = []; }
-}/* ============================================================
-   HELPERS
+}
+
+/* ============================================================
+   HELPERS VUES
 ============================================================ */
 const stat = s => `<span class="status s-${s}">${t('st')[s]}</span>`;
 const activeRobot = id => S.orders.some(o => o.planId === id && ['paid','active','completed'].includes(o.status));
@@ -707,9 +686,6 @@ function backBar(title){
   </div>`;
 }
 
-/* ============================================================
-   CARTE ROBOT
-============================================================ */
 function planCard(p, i){
   const g = CONFIG.TIERS[i] || CONFIG.TIERS[0];
   const have = activeRobot(p.id);
@@ -733,9 +709,6 @@ function planCard(p, i){
   </article>`;
 }
 
-/* ============================================================
-   VUE ACCUEIL
-============================================================ */
 function vHome(){
   return `<header class="hero">
     <div class="hero-image" style="background-image:url('${CONFIG.HERO_IMG}')"></div>
@@ -788,9 +761,6 @@ function vHome(){
   </main>`;
 }
 
-/* ============================================================
-   CARTES COMMANDE
-============================================================ */
 function invCard(o){
   const p = planById(o.planId);
   if (!p) return '';
@@ -826,8 +796,7 @@ function orderCard(o, admin){
     <div style="margin-top:6px;font-weight:700">${planLabel(o)}</div>
     <small style="color:var(--mute)">
       ${new Date(o.createdAt).toLocaleString(S.lang === 'en' ? 'en-GB' : 'fr-FR')}
-      · ${esc(o.method === 'orange' ? 'Orange Money' : 'OM Asso')}
-      ${o.reference ? ` · Réf: ${esc(o.reference)}` : ''}
+      · OM Asso
       ${admin ? ` · ${esc(o.name || '')} · ${esc(o.payPhone || o.phone || '')}` : ''}
     </small>
     ${admin ? `
@@ -839,9 +808,6 @@ function orderCard(o, admin){
   </div>`;
 }
 
-/* ============================================================
-   VUE MES ROBOTS
-============================================================ */
 function vOrders(){
   return `<main class="wrap" style="padding-top:8px">
     ${backBar(t('orders'))}
@@ -856,9 +822,6 @@ function vOrders(){
   </main>`;
 }
 
-/* ============================================================
-   VUE AIDE
-============================================================ */
 function vHelp(){
   return `<main class="wrap" style="padding-top:8px">
     ${backBar(t('help'))}
@@ -873,24 +836,18 @@ function vHelp(){
   </main>`;
 }
 
-/* ============================================================
-   VUE COMPTE
-============================================================ */
 function vMe(){
   const u = S.user;
   if (!u) return vAuth();
   if (u.admin) return vAdmin();
-
   const c = s => S.orders.filter(o => o.status === s).length;
   const totalEarned = S.orders
     .filter(o => ['paid','active','completed'].includes(o.status))
     .reduce((sum, o) => sum + invStats(o).earned, 0);
-
   const countryInfo = getCountry(u.country);
   const location = countryInfo
     ? `${countryInfo.flag} ${u.city ? esc(u.city) + ', ' : ''}${esc(countryInfo.name)}`
     : '';
-
   return `<main class="wrap" style="padding-top:8px">
     ${backBar(t('account'))}
     <div class="me">
@@ -912,10 +869,6 @@ function vMe(){
   </main>`;
 }
 
-/* ============================================================
-   VUE AUTH (Inscription + Connexion)
-   Avec fix : le select ne se ferme plus au clic
-============================================================ */
 function vAuth(){
   const reg = S.authMode === 'register';
   const countryCode = reg ? S.selectedCountry : S.loginCountry;
@@ -939,7 +892,7 @@ function vAuth(){
 
   const dialCode = countryInfo ? countryInfo.dial : '+---';
   const dialFlag = countryInfo ? countryInfo.flag : '🌍';
-  const phonePlaceholder = countryInfo ? countryInfo.hint.replace('Ex: ','') : '677123456';
+  const phonePlaceholder = countryInfo ? countryInfo.hint : '677123456';
 
   return `<div class="auth">
     <div class="hd">
@@ -948,7 +901,6 @@ function vAuth(){
     </div>
     <div class="box">
       <div style="max-width:480px;margin:0 auto">
-
         ${reg ? `
           <label for="a-name">${t('fullName')} <span class="req">*</span></label>
           <input class="in" id="a-name" autocomplete="name" maxlength="60">
@@ -989,9 +941,6 @@ function vAuth(){
   </div>`;
 }
 
-/* ============================================================
-   VUE ADMIN
-============================================================ */
 function vAdmin(){
   const f = S.filter;
   const a = S.orders;
@@ -1002,7 +951,6 @@ function vAdmin(){
     ['pending', 'aPending'], ['paid', 'aDeliver'],
     ['active', 'aActive'], ['completed', 'aDone'], ['all', 'aAll']
   ];
-
   return `<main class="wrap" style="padding-top:8px">
     ${backBar(t('admin'))}
     <div class="nums">
@@ -1019,9 +967,6 @@ function vAdmin(){
   </main>`;
 }
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
 function renderTopNav(){
   const u = S.user;
   const v = S.view;
@@ -1033,7 +978,6 @@ function renderTopNav(){
     items.push({ id:'help', label:t('help'), icon:'help' });
     items.push({ id:'me', label:t('me'), icon:'user' });
   }
-
   const navItems = items.map(({ id, label, icon }) => {
     const on = v === id ? ' on' : '';
     return `<button data-act="go" data-v="${id}" class="${on}">${ico(icon)}<span>${label}</span></button>`;
@@ -1049,9 +993,7 @@ function renderTopNav(){
       <button data-act="goLogin" class="${loginOn}">${ico('user')}<span>${t('login')}</span></button>
       <button data-act="goRegister" class="cta ${regOn}">${ico('check')}<span>${t('register')}</span></button>`;
   }
-
   const langBtn = `<button data-act="lang" class="lang">${S.lang === 'fr' ? 'EN' : 'FR'}</button>`;
-
   $('#toplinks').innerHTML = navItems + authLinks + langBtn;
   $('#toplinks').classList.toggle('open', S.menuOpen);
 }
@@ -1062,11 +1004,9 @@ function renderBottomNav(){
   const items = u?.admin
     ? [['home','home','home'],['admin','admin','shield']]
     : [['home','home','home'],['orders','orders','bot'],['help','help','help'],['me','me','user']];
-
   const pend = u && !u.admin
     ? S.orders.filter(o => o.status === 'pending').length
     : (u?.admin ? S.orders.filter(o => o.status === 'paid').length : 0);
-
   $('#botnav').innerHTML = `<div class="in2" style="grid-template-columns:repeat(${items.length},1fr)">
     ${items.map(([id, k, i]) => `
       <button data-act="go" data-v="${id}" class="${v === id ? 'on' : ''}">
@@ -1076,40 +1016,27 @@ function renderBottomNav(){
   </div>`;
 }
 
-/* ============================================================
-   RENDER GLOBAL
-============================================================ */
 function render(){
   const u = S.user;
   const v = S.view;
-
   let guard = v;
   if (v === 'admin' && !u?.admin) guard = 'home';
   if ((v === 'orders' || v === 'me') && !u) guard = 'auth';
-
   const views = { home:vHome, orders:vOrders, help:vHelp, me:vMe, admin:vAdmin, auth:vAuth };
   $('#app').innerHTML = views[guard]();
-
   renderTopNav();
   renderBottomNav();
   $('#botnav').style.display = (guard === 'auth') ? 'none' : '';
-
   document.documentElement.lang = S.lang;
-
   if (guard === 'home') bindSlider();
 }
 
-/* ============================================================
-   SLIDER
-============================================================ */
 function bindSlider(){
   const sl = $('#slider');
   if (!sl) return;
   const upd = () => {
     const v = Number(sl.value);
-    const p = CONFIG.PLANS.reduce((best, x) =>
-      Math.abs(x.price - v) < Math.abs(best.price - v) ? x : best
-    );
+    const p = CONFIG.PLANS.reduce((best, x) => Math.abs(x.price - v) < Math.abs(best.price - v) ? x : best);
     $('#sv').textContent = fmt(v);
     $('#sp').textContent = `${t('level')} ${p.id} · ${L(p.name)}`;
     const ratio = v / p.price;
@@ -1126,24 +1053,17 @@ function bindSlider(){
   upd();
 }
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
 async function go(v){
   if (v === 'login') { S.authMode = 'login'; v = 'auth'; }
   if (v === 'register') { S.authMode = 'register'; v = 'auth'; }
-
   S.view = v;
   S.menuOpen = false;
   window.scrollTo(0, 0);
-
   if (['orders','me','home'].includes(v)) await loadOrdersFromServer();
   if (v === 'admin' || S.user?.admin) await loadOrdersFromServer();
-
   render();
-}/* ============================================================
-   COMPTE À REBOURS (5 secondes)
-============================================================ */
+}
+
 function startSecurityCountdown(callback, seconds = 5){
   let remaining = seconds;
   const renderCountdown = () => {
@@ -1161,21 +1081,13 @@ function startSecurityCountdown(callback, seconds = 5){
     </div>`;
   };
   renderCountdown();
-
   const interval = setInterval(() => {
     remaining--;
-    if (remaining <= 0) {
-      clearInterval(interval);
-      callback();
-    } else {
-      renderCountdown();
-    }
+    if (remaining <= 0) { clearInterval(interval); callback(); }
+    else { renderCountdown(); }
   }, 1000);
 }
 
-/* ============================================================
-   POLITIQUE DE CONFIDENTIALITÉ
-============================================================ */
 function showPrivacyPolicy(onAccept){
   $('#layer').innerHTML = `<div class="sheet-bg">
     <div class="sheet" role="dialog" aria-modal="true" style="max-width:600px">
@@ -1197,31 +1109,24 @@ function showPrivacyPolicy(onAccept){
   window.__privacyAcceptCallback = onAccept;
 }
 
-/* ============================================================
-   FEUILLE DE PAIEMENT OM ASSO
-============================================================ */
 function openPay(planId, order = null){
   const p = planById(planId);
   S.planId = planId;
   S.cur = order;
+  const ussdWithAmount = `#150*46*${CONFIG.OM_ASSO_CODE}*${p.price}#`;
+  const ussdSimple = `#150*46*${CONFIG.OM_ASSO_CODE}#`;
 
   $('#layer').innerHTML = `<div class="sheet-bg" data-act="close">
     <div class="sheet" role="dialog" aria-modal="true">
       <h3>${t('checkoutT')}</h3>
-
       <div class="sum">
         <span>${t('level')} ${p.id} · ${esc(L(p.name))}</span>
         <span>${p.days} ${t('days_unit')}</span>
       </div>
-      <div class="sum" style="border:0">
-        <span>${t('daily')}</span>
-        <span>${fmt(p.daily)}</span>
-      </div>
-      <div class="sum t" style="padding-top:0">
+      <div class="sum t" style="border:0;padding-top:8px">
         <span>${t('price')}</span>
-        <span>${fmt(p.price)}</span>
+        <span style="color:var(--navy);font-size:24px">${fmt(p.price)}</span>
       </div>
-
       <div class="trust-box">
         <div class="trust-icon">🛡️</div>
         <div>
@@ -1229,42 +1134,31 @@ function openPay(planId, order = null){
           <p>${t('trustMsg', CONFIG.PROMOTER)}</p>
         </div>
       </div>
-
       <h4 style="margin-top:18px;font:800 15px 'Sora'">${t('payStepTitle')}</h4>
       <div class="pay-steps">
         <div class="pay-step">
           <div class="num">1</div>
           <div class="txt">
             <b>${t('payStep1')}</b>
-            <div class="ussd-box">${CONFIG.OM_ASSO_USSD}</div>
-            <button class="copy-btn" data-act="copy" data-txt="${CONFIG.OM_ASSO_USSD}">
-              ${t('payCopyUssd')}
-            </button>
+            <div class="ussd-box">${ussdWithAmount}</div>
+            <button class="copy-btn" data-act="copy" data-txt="${ussdWithAmount}">${t('payCopyUssd')}</button>
+            <p style="font-size:12px;color:var(--mute);margin-top:8px">${t('payUssdHint')}</p>
           </div>
         </div>
         <div class="pay-step">
           <div class="num">2</div>
-          <div class="txt">
-            <b>${t('payStep2')}</b>
-            <div class="ussd-box" style="background:#1F9D63">${fmt(p.price)}</div>
-          </div>
+          <div class="txt"><b>${t('payStep3')}</b></div>
         </div>
         <div class="pay-step">
           <div class="num">3</div>
-          <div class="txt">${t('payStep3')}</div>
-        </div>
-        <div class="pay-step">
-          <div class="num">4</div>
           <div class="txt">${t('payStep4')}</div>
         </div>
       </div>
-
-      <label for="c-ref">${t('payRefLabel')} <span class="req">*</span></label>
-      <input class="in" id="c-ref" placeholder="${t('payRefPlaceholder')}" maxlength="60">
-
+      <div class="tip" style="background:#FFF8E5;padding:10px 12px;border-radius:10px;border-left:3px solid var(--maize);color:#5A3A00">
+        💡 <b>${t('payAstuce')}</b> <code style="background:#fff;padding:2px 6px;border-radius:4px;font-weight:700">${ussdSimple}</code> ${t('payAstuce2')} <b>${fmt(p.price)}</b> ${t('payAstuce3')}
+      </div>
       <label for="c-phone">${t('phonePay')}</label>
-      <input class="in" id="c-phone" inputmode="tel" placeholder="677123456" value="${esc(S.user.phone || '')}" maxlength="15">
-
+      <input class="in" id="c-phone" inputmode="tel" placeholder="${S.user.country === 'CM' ? '677123456' : ''}" value="${esc(S.user.phone || '')}" maxlength="15">
       <button class="btn maize" id="c-go" style="margin-top:16px" data-act="pay">
         ${ico('check')} ${t('payConfirm')}
       </button>
@@ -1273,10 +1167,8 @@ function openPay(planId, order = null){
   </div>`;
 }
 
-/* ============================================================
-   ÉCRAN SUCCÈS
-============================================================ */
 function showSuccessPayment(order){
+  const waMsg = `Bonjour, je viens de payer ma commande #${code(order)} (Apex Robots).\n\n📋 Commande : #${code(order)}\n🤖 Robot : ${planLabel(order)}\n💰 Montant : ${fmt(order.total)}\n📱 Numéro : ${order.phone || order.payPhone || ''}\n\nVoici ma capture d'écran de confirmation 👇`;
   $('#layer').innerHTML = `<div class="sheet-bg">
     <div class="sheet" role="dialog" aria-modal="true" style="text-align:center">
       <div style="font-size:54px">✅</div>
@@ -1286,35 +1178,79 @@ function showSuccessPayment(order){
         <small>${t('code')}</small>
         <b>#${code(order)}</b>
       </div>
-      <a class="btn wa" href="${waLink(`Bonjour, ma commande #${code(order)} (${planLabel(order)}) est en attente. Référence: ${order.reference || ''}`)}" target="_blank" rel="noopener">
-        ${ico('chat')} WhatsApp
+      <div style="background:#EAF3FF;border-radius:12px;padding:14px;margin-bottom:14px;text-align:left">
+        <b style="display:block;color:var(--navy);font-size:14px;margin-bottom:6px">${t('payScreenshot')}</b>
+        <p style="font-size:13px;color:#3D4A66;line-height:1.5">${t('payScreenshotD')}</p>
+      </div>
+      <a class="btn wa" href="${waLink(waMsg)}" target="_blank" rel="noopener" style="margin-bottom:8px">
+        ${ico('chat')} ${t('payScreenshot')}
       </a>
-      <button class="btn ghost" style="margin-top:8px" data-act="finish">${t('myOrders')}</button>
+      <button class="btn ghost" data-act="finish">${t('myOrders')}</button>
     </div>
   </div>`;
 }
 
 function closeSheet(){ $('#layer').innerHTML = ''; }
 
-/* ============================================================
-   ACTIONS
-============================================================ */
+function fallbackCopy(txt){
+  const ta = document.createElement('textarea');
+  ta.value = txt;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); toast(t('copied')); }
+  catch { toast('Copie échouée', true); }
+  document.body.removeChild(ta);
+}
+
+function onCountryChange(countryCode){
+  if (S.authMode === 'register') {
+    S.selectedCountry = countryCode;
+    S.selectedCity = '';
+  } else {
+    S.loginCountry = countryCode;
+  }
+  const info = getCountry(countryCode);
+  const dialEl = document.getElementById('dial-display');
+  if (dialEl) dialEl.textContent = info ? `${info.flag} ${info.dial}` : '🌍 +---';
+  const phoneInput = document.getElementById('a-phone');
+  if (phoneInput) {
+    phoneInput.placeholder = info ? info.hint : '677123456';
+    phoneInput.maxLength = info ? info.len + 3 : 15;
+  }
+  if (S.authMode === 'register') {
+    const citySel = document.getElementById('a-city');
+    if (citySel) {
+      if (!countryCode) {
+        citySel.innerHTML = `<option value="">${t('selectCountryFirst')}</option>`;
+        citySel.disabled = true;
+      } else {
+        const cities = getCities(countryCode);
+        if (cities.length) {
+          citySel.innerHTML = `<option value="">${t('chooseCity')}</option>` +
+            cities.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+        } else {
+          citySel.innerHTML = `<option value="">${t('noCities')}</option>`;
+        }
+        citySel.disabled = false;
+      }
+    }
+  }
+}
+
 const ACT = {
   go: d => go(d.v),
   back: () => { S.menuOpen = false; go('home'); },
   scroll: () => document.getElementById('levels')?.scrollIntoView({ behavior:'smooth' }),
   toggleMenu: () => { S.menuOpen = !S.menuOpen; renderTopNav(); },
-
   goLogin: () => { S.authMode = 'login'; go('auth'); },
   goRegister: () => { S.authMode = 'register'; go('auth'); },
-
   lang: () => {
     S.lang = S.lang === 'fr' ? 'en' : 'fr';
     localStorage.setItem('aa_lang', S.lang);
     render();
   },
-
-  /* ============ Copier dans le presse-papier ============ */
   copy: (d) => {
     const txt = d.txt || '';
     if (!txt) return;
@@ -1324,7 +1260,6 @@ const ACT = {
       fallbackCopy(txt);
     }
   },
-
   authmode: () => {
     S.authMode = S.authMode === 'login' ? 'register' : 'login';
     S.selectedCountry = '';
@@ -1332,16 +1267,12 @@ const ACT = {
     S.loginCountry = '';
     render();
   },
-
   cancelauth: () => { S.after = null; go('home'); },
-
-  /* ============ INSCRIPTION / CONNEXION ============ */
   auth: async () => {
     const val = id => ($('#' + id)?.value || '').trim();
     const phone = val('a-phone').replace(/\D/g, '');
     const pass = $('#a-pass').value;
 
-    // Admin par code secret
     if (phone === CONFIG.ADMIN_CODE || val('a-phone') === CONFIG.ADMIN_CODE) {
       S.user = { uid:'admin', name:'Admin', phone:'', admin:true };
       saveCurrentUser(S.user);
@@ -1351,7 +1282,6 @@ const ACT = {
       return;
     }
 
-    /* ======== INSCRIPTION ======== */
     if (S.authMode === 'register') {
       const name = val('a-name');
       const pass2 = $('#a-pass2').value;
@@ -1377,7 +1307,6 @@ const ACT = {
       return;
     }
 
-    /* ======== CONNEXION ======== */
     const lCountry = $('#a-country')?.value || '';
     if (!lCountry) return toast(t('e_country'), true);
     if (!validatePhoneForCountry(phone, lCountry)) return toast(t('e_phone'), true);
@@ -1400,9 +1329,7 @@ const ACT = {
         city: data.user.city || ''
       };
       saveCurrentUser(S.user);
-
       await loadOrdersFromServer();
-
       if (S.after) {
         const id = S.after;
         S.after = null;
@@ -1416,11 +1343,9 @@ const ACT = {
       toast(e.message || t('e_bad'), true);
     }
   },
-
   _doRegister: async () => {
     if (!S.pendingUser) return;
     const { name, phone, pass, country, city } = S.pendingUser;
-
     try {
       const res = await fetch('/api/register', {
         method: 'POST',
@@ -1428,12 +1353,10 @@ const ACT = {
         body: JSON.stringify({ name, phone, password: pass, country, city })
       });
       const data = await res.json();
-
       if (!data.success) {
         if (res.status === 409) throw new Error(t('e_used'));
         throw new Error(data.error || t('e_gen'));
       }
-
       S.user = {
         uid: data.user.id,
         name: data.user.name,
@@ -1444,9 +1367,7 @@ const ACT = {
       saveCurrentUser(S.user);
       S.pendingUser = null;
       closeSheet();
-
       await loadOrdersFromServer();
-
       if (S.after) {
         const id = S.after;
         S.after = null;
@@ -1462,7 +1383,6 @@ const ACT = {
       toast(e.message || t('e_gen'), true);
     }
   },
-
   acceptPrivacy: () => {
     if (typeof window.__privacyAcceptCallback === 'function') {
       const fn = window.__privacyAcceptCallback;
@@ -1470,7 +1390,6 @@ const ACT = {
       fn();
     }
   },
-
   refusePrivacy: () => {
     S.pendingUser = null;
     window.__privacyAcceptCallback = null;
@@ -1479,7 +1398,6 @@ const ACT = {
     go('home');
     toast(S.lang === 'en' ? 'You declined the privacy policy.' : 'Tu as refusé la politique.', true);
   },
-
   logout: () => {
     S.user = null;
     saveCurrentUser(null);
@@ -1488,7 +1406,6 @@ const ACT = {
     S.menuOpen = false;
     render();
   },
-
   setst: d => {
     const o = S.orders.find(x => x.id === d.id);
     if (!o) return;
@@ -1497,7 +1414,6 @@ const ACT = {
     render();
     toast(t('ok_st'));
   },
-
   buy: d => {
     if (!S.user) {
       S.after = Number(d.id);
@@ -1506,19 +1422,10 @@ const ACT = {
     }
     openPay(Number(d.id));
   },
-
-  /* ============ PAIEMENT OM ASSO ============ */
   pay: async () => {
-    const ref = ($('#c-ref')?.value || '').trim();
     const phone = ($('#c-phone')?.value || '').replace(/\D/g, '');
-
-    if (!ref || ref.length < 4) return toast(t('e_ref'), true);
     if (!validatePhoneForCountry(phone, S.user.country)) return toast(t('e_phone'), true);
-    if (isSuspect(ref)) return toast(t('e_suspect'), true);
-
     const p = planById(S.planId);
-
-    // Compte à rebours de sécurité de 5 secondes
     startSecurityCountdown(async () => {
       try {
         const res = await fetch('/api/orders', {
@@ -1531,12 +1438,11 @@ const ACT = {
             total: p.price,
             method: 'om_asso',
             phone: phone,
-            reference: ref
+            reference: 'SCREENSHOT_PENDING_' + Date.now()
           })
         });
         const data = await res.json();
         if (!data.success) throw new Error(data.error || t('e_gen'));
-
         await loadOrdersFromServer();
         closeSheet();
         showSuccessPayment(data.order);
@@ -1547,31 +1453,11 @@ const ACT = {
       }
     }, 5);
   },
-
   close: () => closeSheet(),
   finish: () => { closeSheet(); go('orders'); },
-  filter: d => { S.filter = d.f; render(); },
-  check: () => toast('Vérification en attente', true)
+  filter: d => { S.filter = d.f; render(); }
 };
 
-/* ============================================================
-   FALLBACK copie
-============================================================ */
-function fallbackCopy(txt){
-  const ta = document.createElement('textarea');
-  ta.value = txt;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try { document.execCommand('copy'); toast(t('copied')); }
-  catch { toast('Copie échouée', true); }
-  document.body.removeChild(ta);
-}
-
-/* ============================================================
-   ÉVÉNEMENTS GLOBAUX
-============================================================ */
 document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]');
   if (!el) return;
@@ -1580,14 +1466,15 @@ document.addEventListener('click', e => {
   if (typeof fn === 'function') fn(el.dataset, el, e);
 });
 
-/* ============================================================
-   CHANGEMENT DE PAYS (selects) — Fixe : le select reste ouvert
-   Utilise 'change' plutôt que 'click' pour ne pas interférer
-============================================================ */
+document.addEventListener('change', e => {
+  if (e.target.id === 'a-country') onCountryChange(e.target.value);
+  if (e.target.id === 'a-city') S.selectedCity = e.target.value;
+  if (e.target.id === 'priv-accept') {
+    const btn = $('#btn-accept');
+    if (btn) btn.disabled = !e.target.checked;
+  }
+});
 
-/* ============================================================
-   CLAVIER
-============================================================ */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeSheet();
@@ -1596,94 +1483,15 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.closest('.auth') && e.target.tagName === 'INPUT') {
     ACT.auth();
   }
-});/* ============================================================
-   CORRECTION : Gestion du changement de pays SANS re-render
-   (Évite que le select se referme au clic)
-============================================================ */
-// On retire l'ancien listener de changement en clonant... 
-// Plus simple : on réécrit le comportement via une fonction dédiée
-function onCountryChange(countryCode){
-  if (S.authMode === 'register') {
-    S.selectedCountry = countryCode;
-    S.selectedCity = '';
-  } else {
-    S.loginCountry = countryCode;
-  }
-
-  const info = getCountry(countryCode);
-
-  // 1) Met à jour l'indicatif affiché
-  const dialEl = document.getElementById('dial-display');
-  if (dialEl) {
-    dialEl.textContent = info ? `${info.flag} ${info.dial}` : '🌍 +---';
-  }
-
-  // 2) Met à jour le placeholder du téléphone
-  const phoneInput = document.getElementById('a-phone');
-  if (phoneInput) {
-    phoneInput.placeholder = info ? info.hint.replace('Ex: ', '') : '677123456';
-    phoneInput.maxLength = info ? info.len + 3 : 15;
-  }
-
-  // 3) Met à jour la ville (uniquement à l'inscription)
-  if (S.authMode === 'register') {
-    const citySel = document.getElementById('a-city');
-    if (citySel) {
-      if (!countryCode) {
-        citySel.innerHTML = `<option value="">${t('selectCountryFirst')}</option>`;
-        citySel.disabled = true;
-      } else {
-        const cities = getCities(countryCode);
-        if (cities.length) {
-          citySel.innerHTML = `<option value="">${t('chooseCity')}</option>` +
-            cities.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
-        } else {
-          citySel.innerHTML = `<option value="">${t('noCities')}</option>`;
-        }
-        citySel.disabled = false;
-      }
-    }
-  }
-}
-
-// Nouveau listener 'change' qui n'entraîne PAS de re-render
-// ⚠️ On supprime l'ancien en réinitialisant via un flag
-window.__countryListenerAttached = false;
-
-function attachCountryListener(){
-  if (window.__countryListenerAttached) return;
-  window.__countryListenerAttached = true;
-
-  document.addEventListener('change', e => {
-    if (e.target.id === 'a-country') {
-      onCountryChange(e.target.value);
-    }
-    if (e.target.id === 'a-city') {
-      S.selectedCity = e.target.value;
-    }
-    if (e.target.id === 'priv-accept') {
-      const btn = $('#btn-accept');
-      if (btn) btn.disabled = !e.target.checked;
-    }
-  });
-}
+});
 
 /* ============================================================
    DÉMARRAGE
 ============================================================ */
 (async function boot(){
   restoreSession();
-
-  attachCountryListener();
-
-  if (S.user?.admin) {
-    S.view = 'admin';
-  }
-
-  if (S.user && !S.user.admin) {
-    await loadOrdersFromServer();
-  }
-
+  if (S.user?.admin) S.view = 'admin';
+  if (S.user && !S.user.admin) await loadOrdersFromServer();
   render();
 })();
 </script>
