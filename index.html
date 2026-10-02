@@ -2,30 +2,18 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0B1226">
-<meta name="description" content="Apex Robots – 8 robots de trading automatiques. Investissement Mobile Money dès 5 000 FCFA.">
+<meta name="description" content="Apex Robots – 8 robots de trading automatiques.">
 <title>Apex Robots – Investissement automatique</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0B1226; --blue:#2B59C3; --maize:#F4B942; --coral:#E8453C; --green:#1F9D63;
-  --bg:#F2F4F8; --card:#fff; --text:#161F33; --mute:#667087; --line:#E0E5EE; --ok:#1F9D63; --bad:#D6452F;
-  --r:18px; --topnav:60px; --botnav:72px;
-  --shadow:0 4px 20px rgba(11,18,38,.08);
-}
+:root{--navy:#0B1226;--blue:#2B59C3;--maize:#F4B942;--green:#1F9D63;--bg:#F2F4F8;--card:#fff;--text:#161F33;--mute:#667087;--line:#E0E5EE;--ok:#1F9D63;--bad:#D6452F;--r:18px;--topnav:60px;--botnav:72px}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%}
-body{
-  font-family:'Manrope',system-ui,-apple-system,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.5;
-  padding-top:var(--topnav);
-  padding-bottom:calc(var(--botnav) + env(safe-area-inset-bottom) + 14px);
-  min-height:100vh;
-  overflow-x:hidden;
-}
+body{font-family:'Manrope',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding-top:var(--topnav);padding-bottom:calc(var(--botnav) + env(safe-area-inset-bottom) + 14px);min-height:100vh;overflow-x:hidden}
 h1,h2,h3,.disp{font-family:'Sora','Manrope',sans-serif;line-height:1.12;font-weight:800;letter-spacing:-.015em}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 input,select,textarea{font:inherit;color:inherit}
@@ -33,94 +21,43 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--maize);outline-offset:2px}
 svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
-svg.art{width:100%;height:100%;stroke:none;stroke-width:0}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-
-/* ===== TOP NAVIGATION (toujours visible) ===== */
-.topnav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:var(--navy);color:#fff;
-  padding-top:env(safe-area-inset-top);
-  box-shadow:0 2px 12px rgba(11,18,38,.15);
-}
-.topnav .inner{
-  max-width:1080px;margin:0 auto;
-  height:var(--topnav);
-  display:flex;align-items:center;gap:10px;padding:0 12px;
-}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--navy);color:#fff;padding-top:env(safe-area-inset-top);box-shadow:0 2px 12px rgba(11,18,38,.15)}
+.topnav .inner{max-width:1080px;margin:0 auto;height:var(--topnav);display:flex;align-items:center;gap:10px;padding:0 12px}
 .topnav .brand{display:flex;align-items:center;gap:8px;font-family:'Sora';font-weight:800;font-size:15px;margin-right:auto;flex-shrink:0}
 .topnav .brand i{width:30px;height:30px;border-radius:9px;background:var(--maize);display:grid;place-items:center;font-style:normal;font-size:16px}
-.topnav .links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.topnav .links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
 .topnav .links::-webkit-scrollbar{display:none}
-.topnav .links button,.topnav .links a{
-  display:flex;align-items:center;gap:6px;
-  padding:8px 11px;border-radius:99px;
-  font-weight:700;font-size:13px;white-space:nowrap;
-  color:#B7C3DD;transition:all .15s;
-}
-.topnav .links button:hover,.topnav .links a:hover{background:rgba(255,255,255,.1);color:#fff}
-.topnav .links button.on,.topnav .links a.on{background:var(--maize);color:var(--navy)}
+.topnav .links button,.topnav .links a{display:flex;align-items:center;gap:6px;padding:8px 11px;border-radius:99px;font-weight:700;font-size:13px;white-space:nowrap;color:#B7C3DD;transition:all .15s}
+.topnav .links button:hover{background:rgba(255,255,255,.1);color:#fff}
+.topnav .links button.on{background:var(--maize);color:var(--navy)}
 .topnav .links button.cta{background:#25A244;color:#fff;font-weight:800}
-.topnav .links button.cta:hover{background:#1F8B39}
 .topnav .links button.out{color:#F4B942}
 .topnav .links .lang{background:rgba(255,255,255,.12);color:#fff;padding:6px 10px;font-size:12px}
-.topnav .burger{
-  display:none;width:36px;height:36px;border-radius:10px;
-  background:rgba(255,255,255,.1);place-items:center;flex-shrink:0
-}
+.topnav .burger{display:none;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);place-items:center;flex-shrink:0}
 @media(max-width:720px){
-  .topnav .links{
-    position:fixed;top:calc(var(--topnav) + env(safe-area-inset-top));
-    left:0;right:0;background:var(--navy);
-    flex-direction:column;align-items:stretch;
-    gap:2px;padding:8px 12px 16px;
-    max-height:calc(100vh - var(--topnav));
-    overflow-y:auto;
-    transform:translateY(-10px);opacity:0;visibility:hidden;
-    transition:all .2s;
-    box-shadow:0 12px 30px rgba(0,0,0,.4);
-  }
-  .topnav .links.open{transform:translateY(0);opacity:1;visibility:visible}
-  .topnav .links button,.topnav .links a{padding:14px 16px;border-radius:12px;font-size:15px}
-  .topnav .burger{display:grid}
-  .topnav .brand{font-size:14px}
-}
-
-/* ===== HERO ===== */
-.hero{position:relative;overflow:hidden;background:#0B1226;color:#fff;padding:0 0 60px;margin-top:-1px}
-.hero-image{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  opacity:.45;z-index:0;
-}
-.hero:before{
-  content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(160deg,rgba(11,18,38,.4) 0%,rgba(11,18,38,.85) 60%,#0B1226 100%);
-}
-.hero .wrap{position:relative;z-index:2;display:grid;gap:16px;align-items:center;padding-top:24px}
+.topnav .links{position:fixed;top:calc(var(--topnav) + env(safe-area-inset-top));left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:2px;padding:8px 12px 16px;max-height:calc(100vh - var(--topnav));overflow-y:auto;transform:translateY(-10px);opacity:0;visibility:hidden;transition:all .2s;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.topnav .links.open{transform:translateY(0);opacity:1;visibility:visible}
+.topnav .links button{padding:14px 16px;border-radius:12px;font-size:15px}
+.topnav .burger{display:grid}.topnav .brand{font-size:14px}}
+.hero{position:relative;overflow:hidden;background:#0B1226;color:#fff;padding:0 0 60px}
+.hero-image{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.45}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,18,38,.4) 0%,rgba(11,18,38,.85) 60%,#0B1226 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:24px}
 .hero .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(244,185,66,.15);border:1px solid rgba(244,185,66,.35);color:var(--maize);font-weight:800;font-size:12px;padding:6px 12px;border-radius:99px}
 .hero h2{font-size:clamp(26px,6.5vw,48px);max-width:18ch;margin-top:12px;text-shadow:0 4px 20px rgba(0,0,0,.5)}
-.hero p{color:#D5DCEE;max-width:46ch;margin-top:12px;font-size:15px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.hero p{color:#D5DCEE;max-width:46ch;margin-top:12px;font-size:15px}
 .hero .stats-hero{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
-.hero .stats-hero .s{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:12px;padding:10px 14px;flex:1;min-width:100px}
+.hero .stats-hero .s{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:10px 14px;flex:1;min-width:100px}
 .hero .stats-hero .s b{display:block;font-family:'Sora';font-weight:800;font-size:18px;color:var(--maize)}
-.hero .stats-hero .s small{color:#B7C3DD;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-@media(min-width:760px){
-  .hero .wrap{grid-template-columns:1.1fr 1fr;gap:30px}
-  .hero{padding:40px 0 80px}
-}
-
-/* ===== QUICK ===== */
+.hero .stats-hero .s small{color:#B7C3DD;font-size:11.5px;font-weight:700;text-transform:uppercase}
+@media(min-width:760px){.hero{padding:40px 0 80px}}
 .quick{position:relative;z-index:3;margin-top:-46px}
 .quick .box{background:var(--card);border-radius:var(--r);padding:16px 6px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 12px 30px rgba(11,18,38,.15);gap:4px}
 .qa{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:4px;text-align:center}
 .qa span{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff}
-.qa:nth-child(1) span{background:var(--blue)}
-.qa:nth-child(2) span{background:#D98A0F}
-.qa:nth-child(3) span{background:#25A244}
-.qa:nth-child(4) span{background:#2B8FD6}
-
-/* ===== SECTIONS ===== */
+.qa:nth-child(1) span{background:var(--blue)}.qa:nth-child(2) span{background:#D98A0F}
+.qa:nth-child(3) span{background:#25A244}.qa:nth-child(4) span{background:#2B8FD6}
 h2.sec{font-size:23px;margin:26px 0 4px}
 p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .steps{display:grid;gap:10px;margin:8px 0}
@@ -129,9 +66,7 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .step em{font:800 17px 'Sora';font-style:normal;background:var(--maize);color:var(--navy);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none}
 .step b{display:block;font-size:14.5px}
 .step small{color:var(--mute);font-size:13px}
-
-/* ===== CALCULATEUR ===== */
-.calc{background:var(--card);border-radius:20px;padding:18px;box-shadow:var(--shadow);margin-top:8px}
+.calc{background:var(--card);border-radius:20px;padding:18px;margin-top:8px}
 .calc .head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .calc .head b{font:800 18px 'Sora'}
 .calc input[type=range]{width:100%;accent-color:var(--blue);margin:14px 0 6px}
@@ -139,32 +74,26 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .calc .out{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
 @media(min-width:640px){.calc .out{grid-template-columns:repeat(4,1fr)}}
 .calc .out .st{padding:12px;text-align:center}
-
-/* ===== CARTES ROBOTS ===== */
 .plans{display:grid;gap:16px}
 @media(min-width:560px){.plans{grid-template-columns:1fr 1fr}}
 @media(min-width:1020px){.plans{grid-template-columns:repeat(4,1fr)}}
-.plan{background:var(--card);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;box-shadow:0 2px 0 var(--line);overflow:hidden}
+.plan{background:var(--card);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;overflow:hidden}
 .ban{border-radius:13px;position:relative;overflow:hidden;aspect-ratio:5/3;background:#0B1226}
 .ban img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .plan:hover .ban img{transform:scale(1.06)}
-.ban .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,38,.1) 0%,rgba(11,18,38,.85) 100%);z-index:1}
-.ban .cap{position:absolute;left:12px;bottom:10px;color:#fff;z-index:2}
-.ban .cap small{display:block;font-weight:800;font-size:11.5px;opacity:.9;text-transform:uppercase;letter-spacing:.05em}
+.ban .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,38,.1) 0%,rgba(11,18,38,.85) 100%)}
+.ban .cap{position:absolute;left:12px;bottom:10px;color:#fff}
+.ban .cap small{display:block;font-weight:800;font-size:11.5px;opacity:.9;text-transform:uppercase}
 .ban .cap b{font:800 22px 'Sora';text-shadow:0 2px 10px rgba(0,0,0,.5)}
-.ban .badge{position:absolute;right:0;top:0;background:var(--maize);color:var(--navy);font-weight:800;font-size:11.5px;padding:6px 12px;border-radius:0 13px 0 13px;z-index:3}
-.plan .desc{color:var(--mute);font-size:13px;margin:10px 2px 10px;min-height:36px}
+.ban .badge{position:absolute;right:0;top:0;background:var(--maize);color:var(--navy);font-weight:800;font-size:11.5px;padding:6px 12px;border-radius:0 13px 0 13px}
+.plan .desc{color:var(--mute);font-size:13px;margin:10px 2px;min-height:36px}
 .grid4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}
 .g{background:#F4F6FA;border-radius:11px;padding:9px 11px}
-.g small{display:block;color:var(--mute);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.g small{display:block;color:var(--mute);font-size:11px;font-weight:700;text-transform:uppercase}
 .g b{display:block;font:800 14.5px 'Sora';color:var(--navy);margin-top:2px}
-.g.hl{background:var(--navy)}
-.g.hl small{color:#A9B7D6}
-.g.hl b{color:var(--maize)}
+.g.hl{background:var(--navy)}.g.hl small{color:#A9B7D6}.g.hl b{color:var(--maize)}
 .g.gr b{color:var(--ok)}
 .plan .btn{margin-top:auto}
-
-/* ===== CARTE INVESTISSEMENT ===== */
 .inv{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .inv .head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .inv .head b{font:800 16px 'Sora';flex:1}
@@ -173,29 +102,21 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .inv .nums2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
 .inv .nums2 .st{background:#F4F6FA;text-align:center;padding:10px 6px}
 .inv .nums2 .st b{font-size:13.5px}
-
-/* ===== BOUTONS ===== */
-.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:13px;font-weight:800;background:var(--navy);color:#fff;transition:transform .12s,background .15s;text-align:center}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:13px;font-weight:800;background:var(--navy);color:#fff;transition:transform .12s;text-align:center}
 .btn:active{transform:scale(.98)}
 .btn.maize{background:var(--maize);color:var(--navy)}
 .btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn.sm{width:auto;padding:9px 14px;font-size:14px;border-radius:10px}
-.btn.ok{background:var(--ok)}
-.btn.bad{background:var(--bad)}
-.btn.wa{background:#25A244}
+.btn.ok{background:var(--ok)}.btn.bad{background:var(--bad)}.btn.wa{background:#25A244}
 .btn:disabled{opacity:.45;cursor:not-allowed}
-
-/* ===== CARTES & LISTES ===== */
 .card{background:var(--card);border-radius:var(--r);padding:16px;margin-bottom:12px}
 .row{display:flex;align-items:center;gap:12px}
 .li{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:14px;padding:15px 16px;margin-bottom:10px;width:100%;text-align:left;font-weight:700}
 .li svg:last-child{margin-left:auto;color:var(--mute)}
 .li .ic{width:38px;height:38px;border-radius:11px;background:#FBF0D3;color:#8A6500;display:grid;place-items:center;flex-shrink:0}
 .status{font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px;white-space:nowrap}
-.s-pending{background:#FFF1D1;color:#8F5E00}
-.s-paid{background:#DCEBFA;color:#1D4F91}
-.s-active{background:#D9F3E6;color:#14774A}
-.s-completed{background:#E5E7EB;color:#374151}
+.s-pending{background:#FFF1D1;color:#8F5E00}.s-paid{background:#DCEBFA;color:#1D4F91}
+.s-active{background:#D9F3E6;color:#14774A}.s-completed{background:#E5E7EB;color:#374151}
 .s-rejected{background:#FCE0DA;color:#A52E1B}
 .empty{text-align:center;padding:50px 20px;color:var(--mute)}
 .empty .big{font-size:56px}
@@ -206,121 +127,79 @@ p.sub{color:var(--mute);margin-bottom:14px;font-size:14.5px}
 .chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
 .nums .st{text-align:center;padding:12px 6px;background:#F4F6FA;border-radius:12px}
-.nums .st.hl{background:var(--navy)}
-.nums .st.hl b{color:var(--maize)}
-.nums .st.hl small{color:#A9B7D6}
+.nums .st.hl{background:var(--navy)}.nums .st.hl b{color:var(--maize)}.nums .st.hl small{color:#A9B7D6}
 .me{background:var(--navy);color:#fff;border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:center;margin:16px 0}
 .av{width:56px;height:56px;border-radius:50%;background:var(--maize);color:var(--navy);display:grid;place-items:center;font:800 22px 'Sora';flex-shrink:0}
-
-/* ===== FORMULAIRES ===== */
 label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
 label .req{color:var(--bad)}
 .in{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:0;font-size:15px}
 .in:focus{border-color:var(--navy)}
+.in:disabled{background:#F4F6FA;color:var(--mute);cursor:not-allowed}
 select.in{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23667087' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
-.pay{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.pay label{margin:0;border:1.5px solid var(--line);border-radius:12px;padding:14px 12px;display:flex;gap:8px;align-items:center;cursor:pointer;font-size:14px;font-weight:700}
-.pay input{accent-color:var(--navy)}
-.pay label:has(input:checked){border-color:var(--navy);background:#EAF0FB}
 .tip{font-size:13px;color:var(--mute);margin-top:6px}
-
-/* ===== CHECKBOX ===== */
+.phone-group{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;transition:border-color .2s}
+.phone-group:focus-within{border-color:var(--navy)}
+.phone-group .dial{padding:13px 12px;background:#F4F6FA;font-weight:800;font-size:14px;color:var(--navy);border-right:1.5px solid var(--line);white-space:nowrap;flex-shrink:0}
+.phone-group .in{border:0;border-radius:0;flex:1;padding-left:12px;background:transparent}
+.phone-group .in:focus{border-color:transparent}
+.trust-box{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(135deg,#EAF3FF 0%,#F4F6FA 100%);border:1.5px solid #B8D4F5;border-radius:14px;padding:14px;margin:14px 0}
+.trust-box .trust-icon{font-size:24px;width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(43,89,195,.15);flex-shrink:0}
+.trust-box b{display:block;color:var(--navy);font-size:14.5px;margin-bottom:4px}
+.trust-box p{color:#3D4A66;font-size:13px;line-height:1.5}
+.tip-warn{color:#8F5E00;background:#FFF8E5;border-left:3px solid var(--maize);padding:8px 12px;border-radius:8px;font-size:12.5px;margin-top:8px;line-height:1.5}
 .check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;cursor:pointer;font-size:14px;line-height:1.5}
 .check input{width:20px;height:20px;accent-color:var(--navy);flex-shrink:0;margin-top:2px}
-.check b{font-weight:800}
-
-/* ===== MODALES ===== */
 .sheet-bg{position:fixed;inset:0;background:rgba(8,14,30,.7);z-index:80;display:flex;align-items:flex-end;justify-content:center;animation:fade .2s;backdrop-filter:blur(4px)}
 .sheet{background:#fff;width:100%;max-width:580px;border-radius:24px 24px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));max-height:92vh;overflow-y:auto;animation:up .25s}
 @media(min-width:640px){.sheet-bg{align-items:center;padding:20px}.sheet{border-radius:24px}}
 .sheet h3{font-size:22px;margin-bottom:6px}
 .sum{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px;gap:12px}
 .sum.t{font:800 19px 'Sora';border:0;padding-top:12px}
-.spin{width:54px;height:54px;border:5px solid #DCE6F8;border-top-color:var(--blue);border-radius:50%;margin:6px auto 18px;animation:rot 1s linear infinite}
-@keyframes fade{from{opacity:0}}
-@keyframes up{from{transform:translateY(40px);opacity:0}}
-@keyframes rot{to{transform:rotate(360deg)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-
-/* ===== COMPTE À REBOURS ===== */
 .countdown{text-align:center;padding:14px 0}
 .countdown .num{display:inline-grid;place-items:center;width:80px;height:80px;border-radius:50%;background:var(--navy);color:var(--maize);font:800 36px 'Sora';margin:10px auto;animation:pulse 1s infinite}
 .countdown p{color:var(--mute);font-size:13.5px;margin-top:8px}
-
-/* ===== AUTH ===== */
+@keyframes fade{from{opacity:0}}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .auth{background:var(--navy);color:#fff;margin:-1px -16px 0;padding:0 16px calc(var(--botnav) + 20px)}
 .auth .hd{padding:22px 0 20px}
 .auth .box{background:#fff;color:var(--text);border-radius:24px 24px 0 0;padding:22px 18px 50px;min-height:62vh}
 .link{color:var(--blue);font-weight:800}
-
-/* ===== BOTTOM NAV ===== */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -4px 20px rgba(11,18,38,.06)}
 .nav .in2{max-width:1080px;margin:0 auto;display:grid;height:var(--botnav);align-items:center}
 .nav button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:700;color:var(--mute);position:relative;padding:8px 0}
 .nav button span{width:50px;height:32px;border-radius:99px;display:grid;place-items:center}
-.nav button.on{color:var(--navy)}
-.nav button.on span{background:var(--maize)}
+.nav button.on{color:var(--navy)}.nav button.on span{background:var(--maize)}
 .dot{position:absolute;top:2px;right:calc(50% - 28px);min-width:18px;height:18px;border-radius:9px;background:var(--bad);color:#fff;font-size:11px;font-style:normal;display:grid;place-items:center;padding:0 5px;font-weight:800}
 .toast{position:fixed;left:50%;bottom:calc(var(--botnav) + 24px);transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;z-index:100;font-weight:700;font-size:14px;max-width:90vw;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:up .25s}
-.toast.err{background:var(--bad)}
-.toast.ok{background:var(--ok)}
-
-/* ===== BACK BUTTON ===== */
+.toast.err{background:var(--bad)}.toast.ok{background:var(--ok)}
 .backbar{display:flex;align-items:center;gap:10px;padding:14px 0 6px;margin-bottom:6px}
-.backbar button{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:99px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:13.5px;color:var(--navy);box-shadow:0 2px 8px rgba(11,18,38,.05)}
-.backbar button:active{transform:scale(.96)}
+.backbar button{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:99px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:13.5px;color:var(--navy)}
 .backbar .title{font:800 16px 'Sora';color:var(--text)}
-
-/* ===== DETAILS/FAQ ===== */
 details{background:var(--card);border-radius:14px;padding:14px 16px;margin-bottom:10px}
 summary{font-weight:800;cursor:pointer;font-size:14.5px}
 details p{margin-top:8px;color:var(--mute);font-size:14px}
-
-/* ===== NOTES ===== */
-.note{background:#EAF3FF;border-left:4px solid var(--blue);padding:12px 14px;border-radius:10px;font-size:13.5px;color:#233;margin-top:12px}
-.warn{background:#FFF4E5;border-left:4px solid #D9822B;padding:12px 14px;border-radius:10px;font-size:13.5px;color:#5A3A00;margin-top:12px}
-
-/* ===== PRIVACY BOX ===== */
-.privacy{
-  background:#fff;border:1.5px solid var(--line);border-radius:14px;
-  padding:16px;max-height:340px;overflow-y:auto;
-  font-size:13.5px;line-height:1.6;color:#333;
-  margin:10px 0;
-}
+.privacy{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px;max-height:340px;overflow-y:auto;font-size:13.5px;line-height:1.6;color:#333;margin:10px 0}
 .privacy h4{font:800 14.5px 'Sora';color:var(--navy);margin:14px 0 6px}
 .privacy h4:first-child{margin-top:0}
 .privacy p{margin-bottom:8px}
 .privacy ul{padding-left:20px;margin-bottom:8px}
 .privacy li{margin-bottom:4px}
 .privacy .en{border-top:1px dashed var(--line);margin-top:14px;padding-top:14px;color:#555;font-style:italic}
-
-/* ===== RESPONSIVE ULTRA ===== */
-@media(max-width:360px){
-  .wrap{padding:0 12px}
-  h2.sec{font-size:20px}
-  .hero h2{font-size:24px}
-  .qa span{width:44px;height:44px}
-  .qa{font-size:11px}
-  .topnav .brand{font-size:13px}
-  .topnav .brand i{width:26px;height:26px;font-size:14px}
-}
-@media(min-width:1200px){
-  .wrap{max-width:1200px}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-}
-
-/* Mode paysage téléphone */
-@media(max-height:500px) and (orientation:landscape){
-  .hero{padding:20px 0 40px}
-  .hero h2{font-size:22px}
-}
+.pay-steps{background:#F4F6FA;border-radius:12px;padding:14px;margin:12px 0}
+.pay-step{display:flex;gap:10px;margin-bottom:12px}
+.pay-step:last-child{margin-bottom:0}
+.pay-step .num{width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--maize);font-weight:800;display:grid;place-items:center;font-size:13px;flex-shrink:0}
+.pay-step .txt{flex:1;font-size:13.5px;line-height:1.5}
+.pay-step .txt b{color:var(--navy)}
+.ussd-box{background:var(--navy);color:#fff;border-radius:10px;padding:12px;text-align:center;font-family:'Sora';font-weight:800;font-size:17px;letter-spacing:.02em;margin-top:6px;user-select:all}
+.copy-btn{display:inline-flex;align-items:center;gap:5px;background:var(--maize);color:var(--navy);font-weight:800;font-size:12px;padding:6px 12px;border-radius:8px;margin-top:8px}
+@media(max-width:360px){.wrap{padding:0 12px}.hero h2{font-size:24px}.qa span{width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<!-- TOP NAVIGATION -->
 <nav class="topnav" id="topnav">
   <div class="inner">
     <div class="brand"><i>🤖</i><span>APEX ROBOTS</span></div>
@@ -344,86 +223,71 @@ const CONFIG = {
   BRAND: 'Apex Robots',
   CURRENCY: 'FCFA',
   ADMIN_CODE: 'APEX2024',
-  WHATSAPP: '237686444230',
-  TELEGRAM: '237686444230',
+  WHATSAPP: '237692574265',
+  TELEGRAM: '237692574265',
+  PROMOTER: 'M. TAWE BANTAR JOËL',
 
-  // Images professionnelles (Unsplash - libres de droits)
+  // ==== COMPTE MARCHAND OM ASSO ====
+  OM_ASSO_CODE: '1604864',
+  OM_ASSO_USSD: '#150*46*1604864#',
+  OM_ASSO_HOLDER: 'Apex Robots (via OM Asso)',
+
   HERO_IMG: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=1600&q=80&auto=format&fit=crop',
 
-  // 8 robots avec images pro thématiques
   PLANS: [
-    {
-      id:1, price:5000, daily:1500, days:8,
+    { id:1, price:5000, daily:1500, days:8,
       img:'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80&auto=format&fit=crop',
       name:B('Starter','Starter'),
-      desc:B('Le robot idéal pour débuter en toute sécurité.','The perfect bot to start safely.')
-    },
-    {
-      id:2, price:10000, daily:3000, days:8,
+      desc:B('Le robot idéal pour débuter en toute sécurité.','The perfect bot to start safely.') },
+    { id:2, price:10000, daily:3000, days:8,
       img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format&fit=crop',
       name:B('Bronze','Bronze'),
-      desc:B('Performance stable pour investisseurs réguliers.','Stable performance for regular investors.')
-    },
-    {
-      id:3, price:25000, daily:7500, days:8,
+      desc:B('Performance stable pour investisseurs réguliers.','Stable performance for regular investors.') },
+    { id:3, price:25000, daily:7500, days:8,
       img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop',
       name:B('Silver','Silver'),
       desc:B('Analyse avancée des marchés en temps réel.','Advanced real-time market analysis.'),
-      badge:B('Populaire','Popular')
-    },
-    {
-      id:4, price:50000, daily:15000, days:8,
+      badge:B('Populaire','Popular') },
+    { id:4, price:50000, daily:15000, days:8,
       img:'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80&auto=format&fit=crop',
       name:B('Gold','Gold'),
-      desc:B('Trading haute fréquence pour gains élevés.','High-frequency trading for high returns.')
-    },
-    {
-      id:5, price:100000, daily:30000, days:8,
+      desc:B('Trading haute fréquence pour gains élevés.','High-frequency trading for high returns.') },
+    { id:5, price:100000, daily:30000, days:8,
       img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format&fit=crop',
       name:B('Platine','Platinum'),
-      desc:B('Analyse multi-marchés par IA dédiée.','Dedicated AI multi-market analysis.')
-    },
-    {
-      id:6, price:250000, daily:75000, days:8,
+      desc:B('Analyse multi-marchés par IA dédiée.','Dedicated AI multi-market analysis.') },
+    { id:6, price:250000, daily:75000, days:8,
       img:'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80&auto=format&fit=crop',
       name:B('Diamant','Diamond'),
-      desc:B('Algorithme multi-paires ultra-performant.','Ultra-performing multi-pair algorithm.')
-    },
-    {
-      id:7, price:500000, daily:150000, days:8,
+      desc:B('Algorithme multi-paires ultra-performant.','Ultra-performing multi-pair algorithm.') },
+    { id:7, price:500000, daily:150000, days:8,
       img:'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=800&q=80&auto=format&fit=crop',
       name:B('Elite','Elite'),
-      desc:B('IA adaptative avec copie de trades pros.','Adaptive AI with pro trade copy.')
-    },
-    {
-      id:8, price:1000000, daily:300000, days:8,
+      desc:B('IA adaptative avec copie de trades pros.','Adaptive AI with pro trade copy.') },
+    { id:8, price:1000000, daily:300000, days:8,
       img:'https://images.unsplash.com/photo-1554260570-9140fd3b7614?w=800&q=80&auto=format&fit=crop',
       name:B('VIP','VIP'),
       desc:B('Puissance maximale et accompagnement dédié.','Maximum power and dedicated support.'),
-      badge:B('Complet','Complete')
-    }
+      badge:B('Complet','Complete') }
   ],
 
-  // ============ PAYS ============
+  // Pays avec format de numéro propre
   COUNTRIES: [
-    { code:'CM', name:'Cameroun',         dial:'+237', flag:'🇨🇲' },
-    { code:'CI', name:"Côte d'Ivoire",    dial:'+225', flag:'🇨🇮' },
-    { code:'SN', name:'Sénégal',          dial:'+221', flag:'🇸🇳' },
-    { code:'GA', name:'Gabon',            dial:'+241', flag:'🇬🇦' },
-    { code:'TD', name:'Tchad',            dial:'+235', flag:'🇹🇩' }
+    { code:'CM', name:'Cameroun',      dial:'+237', flag:'🇨🇲', len:9,  prefix:'6',        hint:'Ex: 677123456' },
+    { code:'CI', name:"Côte d'Ivoire", dial:'+225', flag:'🇨🇮', len:10, prefix:'',         hint:'Ex: 0701234567' },
+    { code:'SN', name:'Sénégal',       dial:'+221', flag:'🇸🇳', len:9,  prefix:'7',        hint:'Ex: 771234567' },
+    { code:'GA', name:'Gabon',         dial:'+241', flag:'🇬🇦', len:8,  prefix:'',         hint:'Ex: 60123456' },
+    { code:'TD', name:'Tchad',         dial:'+235', flag:'🇹🇩', len:8,  prefix:'6',        hint:'Ex: 60123456' }
   ],
 
-  // ============ VILLES DU CAMEROUN ============
   CAMEROON_CITIES: [
     'Douala','Yaoundé','Bafoussam','Bamenda','Garoua','Maroua','Ngaoundéré','Bertoua',
     'Buea','Limbe','Kribi','Edéa','Dschang','Bafang','Bangangté','Foumban',
     'Kumbo','Wum','Mbalmayo','Ebolowa','Sangmélima','Melong','Loum','Nkongsamba',
     'Mbouda','Bafut','Batouri','Yokadouma','Meiganga','Tibati','Poli','Guider',
-    'Mokolo','Kousseri','Mora','Yagoua','Kaélé','Bogo','Maroua','Figuil',
+    'Mokolo','Kousseri','Mora','Yagoua','Kaélé','Bogo','Figuil',
     'Lolodorf','Akonolinga','Ayos','Obala','Mfou','Monatélé','Ndikiniméki','Tonga'
   ],
-
-  // ============ VILLES DES AUTRES PAYS ============
   CITIES: {
     CI: ['Abidjan','Yamoussoukro','Bouaké','Daloa','San-Pédro','Korhogo','Man','Gagnoa','Abengourou','Divo'],
     SN: ['Dakar','Touba','Thiès','Rufisque','Kaolack','Mbour','Saint-Louis','Ziguinchor','Diourbel','Tambacounda'],
@@ -441,11 +305,18 @@ const planById = id => CONFIG.PLANS.find(p => p.id == id);
 const totalOf  = p => p.daily * p.days;
 const netOf    = p => totalOf(p) - p.price;
 const maxPrice = () => CONFIG.PLANS[CONFIG.PLANS.length - 1].price;
-const getCities = countryCode => {
-  if (countryCode === 'CM') return CONFIG.CAMEROON_CITIES;
-  return CONFIG.CITIES[countryCode] || [];
-};
-const getCountry = code => CONFIG.COUNTRIES.find(c => c.code === code) || CONFIG.COUNTRIES[0];
+const getCities = c => !c ? [] : (c === 'CM' ? CONFIG.CAMEROON_CITIES : (CONFIG.CITIES[c] || []));
+const getCountry = c => CONFIG.COUNTRIES.find(x => x.code === c) || null;
+
+/* Validation téléphone par pays */
+function validatePhoneForCountry(phone, countryCode){
+  const c = getCountry(countryCode);
+  if (!c) return false;
+  const digits = String(phone).replace(/\D/g, '');
+  if (digits.length !== c.len) return false;
+  if (c.prefix && !digits.startsWith(c.prefix)) return false;
+  return true;
+}
 
 /* ============================================================
    TRADUCTIONS FR / EN
@@ -456,14 +327,14 @@ fr:{
   login:'Connexion', register:'Inscription', logout:'Déconnexion', admin:'Admin',
 
   heroT:'8 robots qui travaillent pour toi, jour et nuit.',
-  heroS:"Choisis ton robot, entre ton numéro Mobile Money, valide sur ton téléphone et ton robot démarre automatiquement.",
-  tag:'Paiement Orange & MTN Money',
+  heroS:"Choisis ton robot, paie par OM Asso, et ton robot démarre automatiquement.",
+  tag:'Paiement Orange Money · OM Asso',
 
   levelsT:'Les 8 robots', levelsS:'Chaque robot génère un bénéfice quotidien pendant 8 jours.',
   how:'Comment ça marche',
   s1:'Choisis ton robot', s1d:'8 niveaux, de 5 000 à 1 000 000 FCFA.',
-  s2:'Paie par Mobile Money', s2d:'Entre ton numéro Orange ou MTN, tu reçois une notification.',
-  s3:'Ton robot démarre', s3d:"Valide avec ton code secret. L'activation est immédiate.",
+  s2:'Paie par OM Asso', s2d:'Compose le code USSD et envoie le montant exact.',
+  s3:'Ton robot démarre', s3d:'Valide ta transaction, ton robot démarre aussitôt.',
 
   calcT:'Simulateur rapide', calcD:'Déplace le curseur pour voir les gains selon le montant.',
 
@@ -471,29 +342,38 @@ fr:{
   net:'Bénéfice net', roi:'Rendement', choose:'Activer ce robot', owned:'Robot actif',
   getBooks:'Contacter le support', days_unit:'jours',
 
-  checkoutT:'Paiement Mobile Money', payWith:'Payer avec', phonePay:'Numéro Mobile Money',
-  phonePayTip:'Entre ton numéro MTN ou Orange (9 chiffres, ex : 677123456).',
+  checkoutT:'Paiement OM Asso', payWith:'Mode de paiement', phonePay:'Ton numéro Mobile Money',
+  phonePayTip:'Entre ton numéro de téléphone actif.',
   payBtn:a=>`Payer ${a}`,
-  secure:"Une notification va arriver sur ton téléphone. Saisis ton code secret pour valider.",
-  sending:'Envoi…', close:'Fermer', back:'Retour',
+  secure:"Le paiement se fait directement depuis ton téléphone via OM Asso.",
+  sending:'Traitement…', close:'Fermer', back:'Retour',
 
-  waitT:'Confirme sur ton téléphone',
-  waitD:"Une demande de paiement vient d'être envoyée. Saisis ton code secret pour valider.",
-  waiting:'En attente de confirmation…',
-  countdownTitle:'Vérification de sécurité',
-  countdownText:'Analyse de ta transaction en cours…',
+  payStepTitle:'Comment effectuer le paiement',
+  payStep1:'Compose ce code sur ton téléphone :',
+  payStep2:'Entre le montant exact :',
+  payStep3:'Confirme avec ton code secret.',
+  payStep4:'Colle la référence reçue dans le SMS ci-dessous.',
+  payCopyUssd:'📋 Copier le code USSD',
+  payCopyCode:'📋 Copier le code marchand',
+  payRefLabel:'Référence de la transaction',
+  payRefPlaceholder:'Ex: 1604864-XXXX-XXXX',
+  payConfirm:'J\'ai payé, valider ma commande',
+  payUssdHint:'Ouvre le clavier de ton téléphone et compose ce code.',
+
+  waitT:'Commande enregistrée',
+  waitD:'Ta commande est enregistrée et en attente de validation par le support. Nous vérifions ton paiement.',
+  countdownTitle:'Vérification en cours',
+  countdownText:'Nous enregistrons ta commande en toute sécurité…',
   countdownSec:'secondes',
 
-  failT:'Paiement non abouti',
-  failD:'Le paiement a été refusé, annulé, ou le solde est insuffisant.',
-  timeoutD:"Nous n'avons pas reçu la confirmation. Vérifie ton téléphone puis réessaie.",
-  retry:'Réessayer',
-
-  doneT:'Paiement confirmé', doneD:'Merci ! Ton robot démarre maintenant.',
-  code:'N° de commande', myOrders:'Voir mes robots', pay:'Payer', check:'Vérifier',
+  failT:'Commande non aboutie',
+  failD:'Une erreur est survenue. Contacte le support.',
+  doneT:'Commande enregistrée',
+  doneD:'Merci ! Ta commande est en cours de validation. Tu seras contacté dès confirmation.',
+  code:'N° de commande', myOrders:'Voir mes robots', pay:'Payer',
 
   st:{pending:'En attente', paid:'En cours', active:'Robot actif', completed:'Terminé', rejected:'Refusée'},
-  prog:'Progression', day:'Jour', earned:'Déjà gagné', remaining:'Reste à recevoir', ends:'Fin le',
+  day:'Jour', earned:'Déjà gagné', remaining:'Reste à recevoir', ends:'Fin le',
 
   noOrders:'Aucun robot actif', noOrdersD:'Active un robot pour commencer à générer des gains.',
   seeLevels:'Voir les robots',
@@ -502,58 +382,60 @@ fr:{
   contact:'Nous contacter',
 
   fullName:'Nom complet', phoneLogin:'Téléphone',
-  country:'Pays', city:'Ville', chooseCountry:'— Choisis ton pays —', chooseCity:'— Choisis ta ville —',
+  country:'Pays', city:'Ville',
+  chooseCountry:'— Choisis ton pays —',
+  chooseCity:'— Choisis ta ville —',
+  selectCountryFirst:"Choisis d'abord ton pays",
+  noCities:'Aucune ville disponible',
   pass:'Mot de passe', pass2:'Confirmer le mot de passe',
-  phoneTip:'9 chiffres commençant par 6 (ex : 677123456)',
+  passTip:'🔒 Min 5 caractères, avec au moins une lettre et un chiffre. Ex: Apex2',
   loginReq:'Connecte-toi pour continuer',
-  selectCityFirst:'Choisis d\'abord ton pays pour voir les villes.',
 
   faq:'Questions fréquentes',
-  q1:'Comment fonctionne un robot ?',
-  a1:"Chaque robot trade automatiquement pour toi. Tu reçois un bénéfice quotidien fixe pendant 8 jours.",
-  q2:'Comment je reçois mes gains ?',
-  a2:"Tes gains s'accumulent. À la fin des 8 jours, tu récupères ton capital + bénéfices.",
-  q3:'Comment payer ?',
-  a3:"Entre ton numéro Mobile Money, tu reçois une notification. Valide avec ton code secret.",
-  q4:'Mon paiement est-il vérifié ?',
-  a4:"Oui, il est confirmé automatiquement. Ton robot démarre dès la validation.",
+  q1:'Comment fonctionne un robot ?', a1:"Chaque robot trade automatiquement pour toi pendant 8 jours.",
+  q2:'Comment je paie ?', a2:"Tu composes le code USSD OM Asso, tu envoies le montant exact, puis tu colles la référence de la transaction.",
+  q3:'Comment je reçois mes gains ?', a3:"Tes gains s'accumulent. À la fin des 8 jours, tu récupères ton capital + bénéfices.",
+  q4:'Mon paiement est-il vérifié ?', a4:"Oui, nous vérifions chaque transaction avant d'activer ton robot.",
 
-  // Erreurs
-  e_fields:'Remplis tous les champs.', e_phone:'Numéro invalide : 9 chiffres commençant par 6.',
-  e_pass:'Mot de passe trop court (6 caractères minimum).', e_match:'Les mots de passe ne correspondent pas.',
+  e_fields:'Remplis tous les champs.', 
+  e_phone:'Numéro invalide pour ce pays.',
+  e_pass:'Mot de passe trop court (5 caractères minimum).', 
+  e_pass_format:'Le mot de passe doit contenir au moins une lettre et un chiffre.',
+  e_match:'Les mots de passe ne correspondent pas.',
   e_name:'Indique ton nom.', e_country:'Choisis ton pays.', e_city:'Choisis ta ville.',
   e_used:'Ce numéro a déjà un compte.', e_bad:'Numéro ou mot de passe incorrect.',
   e_gen:'Une erreur est survenue. Réessaie.',
-  e_privacy:'Tu dois accepter la politique de confidentialité pour continuer.',
   e_suspect:'Vérification de sécurité échouée. Contacte le support.',
+  e_ref:'Entre la référence de la transaction.',
 
-  // Confidentialité
   privacyT:'Politique de confidentialité',
   privacyIntro:"Avant de finaliser ton inscription, merci de lire et accepter notre politique de confidentialité.",
-  privacyAccept:'J\'accepte la politique de confidentialité',
+  privacyAccept:"J'accepte la politique de confidentialité",
   privacyRefuse:'Refuser',
   privacyAcceptBtn:'Accepter et continuer',
 
-  // Admin
+  trustTitle:'Paiement 100% sécurisé via OM Asso',
+  trustMsg:n=>`Votre dépôt est pris en charge par notre promoteur ${n}, pour le compte de l'entreprise Apex Robots.`,
+
   aAll:'Toutes', aActive:'Actifs', aPending:'En attente', aDone:'Terminés',
-  aDeliver:'En cours', toDeliver:'En cours', revenue:'Total encaissé',
+  aDeliver:'En cours', revenue:'Total encaissé',
   validate:'Valider', markDone:'Marquer terminé', reject:'Refuser',
-  chat:'WhatsApp client', clients:'Clients', active_robots:'Robots actifs',
-  ok_st:'Commande mise à jour'
+  ok_st:'Commande mise à jour',
+  copied:'Copié !'
 },
 en:{
   home:'Home', orders:'My bots', help:'Help', me:'Account',
   login:'Login', register:'Sign up', logout:'Logout', admin:'Admin',
 
   heroT:'8 robots working for you, day and night.',
-  heroS:'Choose your robot, enter your Mobile Money number, validate on your phone and your robot starts automatically.',
-  tag:'Orange & MTN Money payment',
+  heroS:'Choose your robot, pay with OM Asso, and your robot starts automatically.',
+  tag:'Orange Money payment · OM Asso',
 
   levelsT:'The 8 robots', levelsS:'Each robot generates a fixed daily profit for 8 days.',
   how:'How it works',
   s1:'Pick your robot', s1d:'8 levels, from 5,000 to 1,000,000 FCFA.',
-  s2:'Pay with Mobile Money', s2d:'Enter your Orange or MTN number, you receive a notification.',
-  s3:'Your robot starts', s3d:'Validate with your secret code. Activation is immediate.',
+  s2:'Pay with OM Asso', s2d:'Dial the USSD code and send the exact amount.',
+  s3:'Your robot starts', s3d:'Validate your transaction, your robot starts immediately.',
 
   calcT:'Quick simulator', calcD:'Drag the slider to preview your earnings.',
 
@@ -561,29 +443,38 @@ en:{
   net:'Net profit', roi:'Return', choose:'Activate this robot', owned:'Active robot',
   getBooks:'Contact support', days_unit:'days',
 
-  checkoutT:'Mobile Money payment', payWith:'Pay with', phonePay:'Mobile Money number',
-  phonePayTip:'Enter your MTN or Orange number (9 digits, e.g. 677123456).',
+  checkoutT:'OM Asso payment', payWith:'Payment method', phonePay:'Your Mobile Money number',
+  phonePayTip:'Enter your active phone number.',
   payBtn:a=>`Pay ${a}`,
-  secure:'A notification will arrive on your phone. Enter your secret code to approve.',
-  sending:'Sending…', close:'Close', back:'Back',
+  secure:'Payment is done directly from your phone via OM Asso.',
+  sending:'Processing…', close:'Close', back:'Back',
 
-  waitT:'Confirm on your phone',
-  waitD:'A payment request has been sent. Enter your secret code to approve.',
-  waiting:'Waiting for your confirmation…',
-  countdownTitle:'Security check',
-  countdownText:'Analyzing your transaction…',
+  payStepTitle:'How to pay',
+  payStep1:'Dial this code on your phone:',
+  payStep2:'Enter the exact amount:',
+  payStep3:'Confirm with your secret code.',
+  payStep4:'Paste the reference you received in the SMS below.',
+  payCopyUssd:'📋 Copy USSD code',
+  payCopyCode:'📋 Copy merchant code',
+  payRefLabel:'Transaction reference',
+  payRefPlaceholder:'E.g.: 1604864-XXXX-XXXX',
+  payConfirm:'I paid, validate my order',
+  payUssdHint:'Open your phone dialer and dial this code.',
+
+  waitT:'Order registered',
+  waitD:'Your order is registered and pending validation. We are verifying your payment.',
+  countdownTitle:'Processing',
+  countdownText:'Saving your order securely…',
   countdownSec:'seconds',
 
-  failT:'Payment not completed',
-  failD:'The payment was declined or cancelled.',
-  timeoutD:'We have not received the confirmation yet.',
-  retry:'Try again',
-
-  doneT:'Payment confirmed', doneD:'Thank you! Your robot starts now.',
-  code:'Order no.', myOrders:'View my bots', pay:'Pay', check:'Check',
+  failT:'Order failed',
+  failD:'An error occurred. Contact support.',
+  doneT:'Order registered',
+  doneD:'Thank you! Your order is being validated. You will be contacted once confirmed.',
+  code:'Order no.', myOrders:'View my bots', pay:'Pay',
 
   st:{pending:'Pending', paid:'Processing', active:'Robot active', completed:'Completed', rejected:'Rejected'},
-  prog:'Progress', day:'Day', earned:'Earned so far', remaining:'Remaining', ends:'Ends on',
+  day:'Day', earned:'Earned so far', remaining:'Remaining', ends:'Ends on',
 
   noOrders:'No active robots', noOrdersD:'Activate a robot to start earning.',
   seeLevels:'See the robots',
@@ -592,29 +483,31 @@ en:{
   contact:'Contact us',
 
   fullName:'Full name', phoneLogin:'Phone',
-  country:'Country', city:'City', chooseCountry:'— Choose your country —', chooseCity:'— Choose your city —',
+  country:'Country', city:'City',
+  chooseCountry:'— Choose your country —',
+  chooseCity:'— Choose your city —',
+  selectCountryFirst:'Choose your country first',
+  noCities:'No cities available',
   pass:'Password', pass2:'Confirm password',
-  phoneTip:'9 digits starting with 6 (e.g. 677123456)',
+  passTip:'🔒 Min 5 characters with at least one letter and one number. E.g.: Apex2',
   loginReq:'Log in to continue',
-  selectCityFirst:'Choose your country first to see cities.',
 
   faq:'FAQ',
-  q1:'How does a robot work?',
-  a1:'Each robot trades automatically for you. You receive a fixed daily profit for 8 days.',
-  q2:'How do I get my earnings?',
-  a2:'Your earnings accumulate. At the end of the 8 days, you recover your capital + profit.',
-  q3:'How do I pay?',
-  a3:'Enter your Mobile Money number, you receive a notification. Validate with your secret code.',
-  q4:'Is my payment verified?',
-  a4:'Yes, it is confirmed automatically. Your robot starts immediately.',
+  q1:'How does a robot work?', a1:'Each robot trades automatically for you for 8 days.',
+  q2:'How do I pay?', a2:'Dial the OM Asso USSD code, send the exact amount, then paste the transaction reference.',
+  q3:'How do I get my earnings?', a3:'Your earnings accumulate. At the end of the 8 days, you recover your capital + profit.',
+  q4:'Is my payment verified?', a4:'Yes, we verify every transaction before activating your robot.',
 
-  e_fields:'Please fill in all fields.', e_phone:'Invalid number: 9 digits starting with 6.',
-  e_pass:'Password too short (6 characters minimum).', e_match:'Passwords do not match.',
+  e_fields:'Please fill in all fields.',
+  e_phone:'Invalid number for this country.',
+  e_pass:'Password too short (5 characters minimum).',
+  e_pass_format:'Password must contain at least one letter and one number.',
+  e_match:'Passwords do not match.',
   e_name:'Enter your name.', e_country:'Choose your country.', e_city:'Choose your city.',
   e_used:'This number already has an account.', e_bad:'Wrong number or password.',
   e_gen:'Something went wrong. Please retry.',
-  e_privacy:'You must accept the privacy policy to continue.',
   e_suspect:'Security check failed. Contact support.',
+  e_ref:'Enter the transaction reference.',
 
   privacyT:'Privacy Policy',
   privacyIntro:'Before completing your registration, please read and accept our privacy policy.',
@@ -622,60 +515,42 @@ en:{
   privacyRefuse:'Decline',
   privacyAcceptBtn:'Accept and continue',
 
+  trustTitle:'100% secure payment via OM Asso',
+  trustMsg:n=>`Your deposit is handled by our promoter ${n}, on behalf of Apex Robots.`,
+
   aAll:'All', aActive:'Active', aPending:'Pending', aDone:'Completed',
-  aDeliver:'In progress', toDeliver:'In progress', revenue:'Total collected',
+  aDeliver:'In progress', revenue:'Total collected',
   validate:'Confirm', markDone:'Mark completed', reject:'Reject',
-  chat:'Client WhatsApp', clients:'Clients', active_robots:'Active robots',
-  ok_st:'Order updated'
+  ok_st:'Order updated',
+  copied:'Copied!'
 }
 };
 
 /* ============================================================
-   POLITIQUE DE CONFIDENTIALITÉ (FR + EN)
+   POLITIQUE DE CONFIDENTIALITÉ
 ============================================================ */
 const PRIVACY_HTML = `
 <div class="privacy" id="privacyBox">
   <h4>1. Collecte des informations</h4>
-  <p>Nous collectons uniquement les informations nécessaires à la création de votre compte et au traitement de vos investissements : nom complet, numéro de téléphone, pays, ville, et données relatives à vos transactions Mobile Money.</p>
-
+  <p>Nous collectons uniquement les informations nécessaires : nom complet, numéro de téléphone, pays, ville, et données relatives à vos transactions Mobile Money.</p>
   <h4>2. Utilisation des données</h4>
-  <p>Vos données sont utilisées exclusivement pour :</p>
-  <ul>
-    <li>Créer et sécuriser votre compte personnel</li>
-    <li>Traiter vos paiements et activer vos robots d'investissement</li>
-    <li>Vous contacter pour le support client</li>
-    <li>Respecter nos obligations légales et anti-fraude</li>
-  </ul>
-
+  <p>Vos données servent à créer et sécuriser votre compte, traiter vos paiements, activer vos robots, fournir le support, et respecter nos obligations légales.</p>
   <h4>3. Protection des données</h4>
-  <p>Vos mots de passe sont chiffrés (hash bcrypt). Vos données sont stockées sur des serveurs sécurisés (Supabase). Aucune donnée bancaire n'est conservée sur nos serveurs.</p>
-
+  <p>Vos mots de passe sont chiffrés (hash bcrypt). Vos données sont stockées sur des serveurs sécurisés (Supabase). Aucune donnée bancaire n'est conservée.</p>
   <h4>4. Partage des données</h4>
-  <p>Nous ne vendons ni ne partageons vos données personnelles avec des tiers, sauf obligation légale ou autorisation explicite de votre part. Les données de transaction sont partagées avec CamPay, notre partenaire de paiement certifié.</p>
-
+  <p>Nous ne vendons ni ne partageons vos données personnelles. Les données de transaction sont partagées avec OM Asso pour la vérification de vos paiements.</p>
   <h4>5. Vos droits</h4>
-  <p>Vous pouvez à tout moment :</p>
-  <ul>
-    <li>Accéder à vos données personnelles</li>
-    <li>Demander la correction ou la suppression de vos données</li>
-    <li>Retirer votre consentement</li>
-  </ul>
-
-  <h4>6. Cookies et stockage local</h4>
-  <p>Nous utilisons le stockage local de votre navigateur uniquement pour maintenir votre session de connexion. Aucun cookie publicitaire n'est utilisé.</p>
-
-  <h4>7. Contact</h4>
-  <p>Pour toute question relative à vos données, contactez-nous via WhatsApp au +237 6 86 44 42 30.</p>
-
+  <p>Vous pouvez accéder, corriger ou supprimer vos données à tout moment.</p>
+  <h4>6. Contact</h4>
+  <p>WhatsApp : +237 6 92 57 42 65.</p>
   <div class="en">
     <h4>Privacy Policy (English)</h4>
-    <p><strong>1. Information collection:</strong> We only collect the information needed to create your account and process your investments: full name, phone number, country, city, and Mobile Money transaction data.</p>
-    <p><strong>2. Data use:</strong> Your data is used exclusively to create and secure your account, process payments, activate your robots, provide customer support, and comply with legal obligations.</p>
-    <p><strong>3. Data protection:</strong> Passwords are hashed with bcrypt. Data is stored on secure servers (Supabase). No banking details are stored.</p>
-    <p><strong>4. Data sharing:</strong> We never sell your personal data. Transaction data is shared with CamPay, our certified payment partner.</p>
-    <p><strong>5. Your rights:</strong> You can access, correct, delete your data, or withdraw consent at any time.</p>
-    <p><strong>6. Local storage:</strong> We use localStorage only to keep you logged in. No advertising cookies.</p>
-    <p><strong>7. Contact:</strong> WhatsApp +237 6 86 44 42 30.</p>
+    <p><strong>1. Collection:</strong> We only collect necessary information: full name, phone, country, city, and Mobile Money transaction data.</p>
+    <p><strong>2. Use:</strong> To create/secure your account, process payments, activate robots, provide support, and comply with legal obligations.</p>
+    <p><strong>3. Protection:</strong> Passwords hashed with bcrypt. Data stored on secure servers (Supabase).</p>
+    <p><strong>4. Sharing:</strong> We never sell your data. Transaction data shared with OM Asso for payment verification.</p>
+    <p><strong>5. Rights:</strong> Access, correct or delete your data at any time.</p>
+    <p><strong>6. Contact:</strong> WhatsApp +237 6 92 57 42 65.</p>
   </div>
 </div>
 `;
@@ -684,7 +559,6 @@ const PRIVACY_HTML = `
    ÉTAT GLOBAL
 ============================================================ */
 const $ = s => document.querySelector(s);
-const $$ = s => document.querySelectorAll(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 const S = {
@@ -695,9 +569,10 @@ const S = {
   filter: 'pending',
   after: null,
   authMode: 'login',
-  selectedCountry: 'CM',
+  selectedCountry: '',  // inscription
   selectedCity: '',
-  pendingUser: null, // utilisateur en attente d'acceptation de la politique
+  loginCountry: '',     // connexion
+  pendingUser: null,
   menuOpen: false,
   lang: localStorage.getItem('aa_lang') || ((navigator.language || 'fr').startsWith('en') ? 'en' : 'fr')
 };
@@ -708,39 +583,30 @@ const t = (k, ...a) => {
 };
 const L = o => (o && typeof o === 'object') ? (o[S.lang] || o.fr || '') : (o ?? '');
 const fmt = n => Number(n || 0).toLocaleString('en-US').replace(/,/g, S.lang === 'en' ? ',' : ' ') + ' ' + CONFIG.CURRENCY;
-const normPhone = v => {
-  v = String(v).replace(/[\s.\-()]/g, '');
-  if (v.startsWith('+')) v = v.slice(1);
-  if (v.startsWith('237') && v.length === 12) v = v.slice(3);
-  return v;
-};
-const validPhone = v => /^6\d{8}$/.test(v);
 const code = o => String(o.id || '').slice(-6).toUpperCase();
 const waLink = (msg, num = CONFIG.WHATSAPP) => `https://wa.me/${num}?text=${encodeURIComponent(msg || '')}`;
 
 /* ============================================================
-   ICÔNES SVG
+   ICÔNES
 ============================================================ */
 const ICO = {
   home:'<path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/>',
   bot:'<rect x="4" y="8" width="16" height="12" rx="3"/><circle cx="9" cy="14" r="1.3" fill="currentColor"/><circle cx="15" cy="14" r="1.3" fill="currentColor"/><path d="M12 4v4M8 20v1M16 20v1"/>',
   help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 115 0c0 1.7-2.5 2-2.5 4M12 17h.01"/>',
   user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/>',
-  back:'<path d="M15 5l-7 7 7 7"/>',
-  chev:'<path d="M9 5l7 7-7 7"/>',
+  back:'<path d="M15 5l-7 7 7 7"/>', chev:'<path d="M9 5l7 7-7 7"/>',
   send:'<path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>',
   chat:'<path d="M21 12a8 8 0 01-11.7 7L3 21l2-5.3A8 8 0 1121 12z"/>',
   shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>',
   out:'<path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>',
   trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
   check:'<path d="M5 12l5 5 9-10"/>',
-  lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 118 0v3"/>',
   x:'<path d="M6 6l12 12M18 6L6 18"/>'
 };
 const ico = n => `<svg viewBox="0 0 24 24">${ICO[n]}</svg>`;
 
 /* ============================================================
-   TOAST NOTIFICATION
+   TOAST
 ============================================================ */
 function toast(msg, err){
   document.querySelectorAll('.toast').forEach(x => x.remove());
@@ -748,76 +614,71 @@ function toast(msg, err){
   d.className = 'toast' + (err ? ' err' : ' ok');
   d.textContent = msg;
   document.body.appendChild(d);
-  setTimeout(() => d.remove(), 3400);
+  setTimeout(() => d.remove(), 3600);
 }
 
 /* ============================================================
-   SESSION LOCALE
+   SESSION
 ============================================================ */
 function saveCurrentUser(u){
   if (u) localStorage.setItem('apex_current_user', JSON.stringify(u));
   else localStorage.removeItem('apex_current_user');
 }
 function restoreSession(){
-  try {
-    const s = localStorage.getItem('apex_current_user');
-    if (s) S.user = JSON.parse(s);
-  } catch {}
+  try { const s = localStorage.getItem('apex_current_user'); if (s) S.user = JSON.parse(s); } catch {}
 }
 
 /* ============================================================
-   ANTI-FRAUDE (Vérification côté client)
+   ANTI-FRAUDE
 ============================================================ */
-// Liste de motifs suspects à refuser
 const SUSPECT_PATTERNS = [
   /(?:script|select|insert|update|delete|drop|union|exec)/i,
   /[<>{}\[\]\\]/,
-  /(.)\1{5,}/,
-  /^.{0,2}$/
+  /(.)\1{5,}/
 ];
-
-function isSuspect(value, type = 'text'){
-  if (!value) return false;
-  const v = String(value).trim();
-  if (v.length < 2 || v.length > 80) return true;
-  for (const p of SUSPECT_PATTERNS) {
-    if (p.test(v)) return true;
-  }
+function isSuspect(v){
+  if (!v) return false;
+  const s = String(v).trim();
+  if (s.length < 2 || s.length > 80) return true;
+  for (const p of SUSPECT_PATTERNS) if (p.test(s)) return true;
   return false;
 }
-
-function validateAntiFraud({ name, phone, pass, country, city }){
+/* Mot de passe : min 5, au moins 1 lettre + 1 chiffre */
+function validPassword(p){
+  if (!p || p.length < 5) return false;
+  if (!/[a-zA-Z]/.test(p)) return false;
+  if (!/\d/.test(p)) return false;
+  return true;
+}
+function validateAntiFraud({ name, phone, pass, country, city, countryFormat }){
   const errors = [];
-  if (!name || isSuspect(name, 'name')) errors.push('name');
-  if (!phone || !validPhone(phone)) errors.push('phone');
-  if (!pass || pass.length < 6) errors.push('pass');
+  if (!name || isSuspect(name)) errors.push('name');
   if (!country) errors.push('country');
   if (!city) errors.push('city');
-  if (pass && /^\d+$/.test(pass)) errors.push('pass_weak');
-
+  if (country && !validatePhoneForCountry(phone, country)) errors.push('phone');
+  if (!validPassword(pass)) errors.push('pass');
   return { ok: errors.length === 0, errors };
 }
 
 /* ============================================================
-   CALCULS D'INVESTISSEMENT
+   CALCULS INVESTISSEMENT
 ============================================================ */
 function invStats(o){
   const p = planById(o.planId);
   if (!p) return { day:0, days:0, earned:0, remaining:0, total:0, pct:0, done:false, ends:null };
   const start = o.paidAt || o.createdAt;
-  const msDay = 86400000;
-  const elapsed = Math.floor((Date.now() - start) / msDay);
+  const elapsed = Math.floor((Date.now() - start) / 86400000);
   const dayNow = Math.min(p.days, Math.max(1, elapsed + 1));
   const earned = Math.min(p.days, dayNow) * p.daily;
   const total = totalOf(p);
   const remaining = Math.max(0, total - earned);
   const pct = Math.round(earned / total * 100);
-  const ends = start + p.days * msDay;
+  const ends = start + p.days * 86400000;
   return { day:dayNow, days:p.days, earned, remaining, total, pct, done:dayNow >= p.days, ends };
 }
 
 /* ============================================================
-   CHARGEMENT DES COMMANDES DEPUIS LE SERVEUR
+   CHARGEMENT DES COMMANDES
 ============================================================ */
 async function loadOrdersFromServer(){
   if (!S.user) { S.orders = []; return; }
@@ -833,15 +694,12 @@ async function loadOrdersFromServer(){
     }));
   } catch (e) { console.error(e); S.orders = []; }
 }/* ============================================================
-   HELPERS VUES
+   HELPERS
 ============================================================ */
 const stat = s => `<span class="status s-${s}">${t('st')[s]}</span>`;
 const activeRobot = id => S.orders.some(o => o.planId === id && ['paid','active','completed'].includes(o.status));
 const planLabel = o => `${t('level')} ${o.planId} · ${L(o.planName)}`;
 
-/* ============================================================
-   BARRE DE RETOUR
-============================================================ */
 function backBar(title){
   return `<div class="backbar">
     <button data-act="back">${ico('back')} ${t('back')}</button>
@@ -850,7 +708,7 @@ function backBar(title){
 }
 
 /* ============================================================
-   CARTE ROBOT (avec vraie image)
+   CARTE ROBOT
 ============================================================ */
 function planCard(p, i){
   const g = CONFIG.TIERS[i] || CONFIG.TIERS[0];
@@ -882,28 +740,24 @@ function vHome(){
   return `<header class="hero">
     <div class="hero-image" style="background-image:url('${CONFIG.HERO_IMG}')"></div>
     <div class="wrap">
-      <div>
-        <span class="tag">${ico('shield')} ${t('tag')}</span>
-        <h2>${t('heroT')}</h2>
-        <p>${t('heroS')}</p>
-        <div class="stats-hero">
-          <div class="s"><b>8</b><small>${t('levelsT').split(' ').slice(-1)[0] || 'Robots'}</small></div>
-          <div class="s"><b>5 000</b><small>FCFA min.</small></div>
-          <div class="s"><b>+30%</b><small>${t('roi')}</small></div>
-        </div>
+      <span class="tag">${ico('shield')} ${t('tag')}</span>
+      <h2>${t('heroT')}</h2>
+      <p>${t('heroS')}</p>
+      <div class="stats-hero">
+        <div class="s"><b>8</b><small>Robots</small></div>
+        <div class="s"><b>5 000</b><small>FCFA min.</small></div>
+        <div class="s"><b>+30%</b><small>${t('roi')}</small></div>
       </div>
     </div>
   </header>
-
   <div class="wrap quick">
     <div class="box">
-      <button class="qa" data-act="scroll"><span>${ico('bot')}</span>${t('levelsT').split(' ').slice(-1)[0] || 'Robots'}</button>
+      <button class="qa" data-act="scroll"><span>${ico('bot')}</span>Robots</button>
       <button class="qa" data-act="go" data-v="orders"><span>${ico('trend')}</span>${t('orders')}</button>
       <button class="qa" data-act="go" data-v="help"><span>${ico('help')}</span>${t('help')}</button>
       <button class="qa" data-act="go" data-v="me"><span>${ico('user')}</span>${t('me')}</button>
     </div>
   </div>
-
   <main class="wrap">
     <h2 class="sec">${t('how')}</h2>
     <div class="steps">
@@ -911,7 +765,6 @@ function vHome(){
       <div class="step"><em>2</em><div><b>${t('s2')}</b><small>${t('s2d')}</small></div></div>
       <div class="step"><em>3</em><div><b>${t('s3')}</b><small>${t('s3d')}</small></div></div>
     </div>
-
     <h2 class="sec">${t('calcT')}</h2>
     <p class="sub">${t('calcD')}</p>
     <div class="calc">
@@ -928,7 +781,6 @@ function vHome(){
         <div class="st"><small>${t('roi')}</small><b id="sr">—</b></div>
       </div>
     </div>
-
     <h2 class="sec" id="levels">${t('levelsT')}</h2>
     <p class="sub">${t('levelsS')}</p>
     <div class="plans">${CONFIG.PLANS.map(planCard).join('')}</div>
@@ -937,7 +789,7 @@ function vHome(){
 }
 
 /* ============================================================
-   CARTE INVESTISSEMENT (dans Mes robots)
+   CARTES COMMANDE
 ============================================================ */
 function invCard(o){
   const p = planById(o.planId);
@@ -974,7 +826,8 @@ function orderCard(o, admin){
     <div style="margin-top:6px;font-weight:700">${planLabel(o)}</div>
     <small style="color:var(--mute)">
       ${new Date(o.createdAt).toLocaleString(S.lang === 'en' ? 'en-GB' : 'fr-FR')}
-      · ${esc(o.method === 'orange' ? 'Orange Money' : 'MTN MoMo')}
+      · ${esc(o.method === 'orange' ? 'Orange Money' : 'OM Asso')}
+      ${o.reference ? ` · Réf: ${esc(o.reference)}` : ''}
       ${admin ? ` · ${esc(o.name || '')} · ${esc(o.payPhone || o.phone || '')}` : ''}
     </small>
     ${admin ? `
@@ -997,8 +850,7 @@ function vOrders(){
       : `<div class="empty">
           <div class="big">🤖</div>
           <h3>${t('noOrders')}</h3>
-          <p>${t('noOrdersD')}</p>
-          <br>
+          <p>${t('noOrdersD')}</p><br>
           <button class="btn sm" data-act="go" data-v="home" style="margin:auto">${t('seeLevels')}</button>
         </div>`}
   </main>`;
@@ -1022,12 +874,11 @@ function vHelp(){
 }
 
 /* ============================================================
-   VUE COMPTE (utilisateur connecté)
+   VUE COMPTE
 ============================================================ */
 function vMe(){
   const u = S.user;
   if (!u) return vAuth();
-
   if (u.admin) return vAdmin();
 
   const c = s => S.orders.filter(o => o.status === s).length;
@@ -1035,8 +886,10 @@ function vMe(){
     .filter(o => ['paid','active','completed'].includes(o.status))
     .reduce((sum, o) => sum + invStats(o).earned, 0);
 
-  const countryInfo = getCountry(u.country || 'CM');
-  const location = u.city ? `${countryInfo.flag} ${esc(u.city)}, ${esc(countryInfo.name)}` : `${countryInfo.flag} ${esc(countryInfo.name)}`;
+  const countryInfo = getCountry(u.country);
+  const location = countryInfo
+    ? `${countryInfo.flag} ${u.city ? esc(u.city) + ', ' : ''}${esc(countryInfo.name)}`
+    : '';
 
   return `<main class="wrap" style="padding-top:8px">
     ${backBar(t('account'))}
@@ -1045,7 +898,7 @@ function vMe(){
       <div style="min-width:0">
         <h3 style="font-size:20px">${esc(u.name)}</h3>
         <small style="color:#B7C3DD">${esc(u.phone)}</small><br>
-        <small style="color:#8FA0C7;font-size:12.5px">${location}</small>
+        ${location ? `<small style="color:#8FA0C7;font-size:12.5px">${location}</small>` : ''}
       </div>
     </div>
     <div class="nums">
@@ -1060,17 +913,33 @@ function vMe(){
 }
 
 /* ============================================================
-   VUE AUTHENTIFICATION (avec pays + villes)
+   VUE AUTH (Inscription + Connexion)
+   Avec fix : le select ne se ferme plus au clic
 ============================================================ */
 function vAuth(){
   const reg = S.authMode === 'register';
-  const cities = getCities(S.selectedCountry);
-  const countryOptions = CONFIG.COUNTRIES
-    .map(c => `<option value="${c.code}" ${S.selectedCountry === c.code ? 'selected' : ''}>${c.flag} ${esc(c.name)}</option>`)
-    .join('');
-  const cityOptions = cities.length
-    ? `<option value="">${t('chooseCity')}</option>` + cities.map(c => `<option value="${esc(c)}" ${S.selectedCity === c ? 'selected' : ''}>${esc(c)}</option>`).join('')
-    : '';
+  const countryCode = reg ? S.selectedCountry : S.loginCountry;
+  const cities = getCities(countryCode);
+  const countryInfo = countryCode ? getCountry(countryCode) : null;
+
+  const countryOptions = `<option value="">${t('chooseCountry')}</option>` +
+    CONFIG.COUNTRIES.map(c =>
+      `<option value="${c.code}" ${countryCode === c.code ? 'selected' : ''}>${c.flag} ${esc(c.name)}</option>`
+    ).join('');
+
+  let cityOptions;
+  if (!countryCode) {
+    cityOptions = `<option value="">${t('selectCountryFirst')}</option>`;
+  } else if (cities.length) {
+    cityOptions = `<option value="">${t('chooseCity')}</option>` +
+      cities.map(c => `<option value="${esc(c)}" ${S.selectedCity === c ? 'selected' : ''}>${esc(c)}</option>`).join('');
+  } else {
+    cityOptions = `<option value="">${t('noCities')}</option>`;
+  }
+
+  const dialCode = countryInfo ? countryInfo.dial : '+---';
+  const dialFlag = countryInfo ? countryInfo.flag : '🌍';
+  const phonePlaceholder = countryInfo ? countryInfo.hint.replace('Ex: ','') : '677123456';
 
   return `<div class="auth">
     <div class="hd">
@@ -1079,29 +948,39 @@ function vAuth(){
     </div>
     <div class="box">
       <div style="max-width:480px;margin:0 auto">
-        ${reg ? `<label for="a-name">${t('fullName')} <span class="req">*</span></label>
-          <input class="in" id="a-name" autocomplete="name" maxlength="60">` : ''}
 
-        ${reg ? `<label for="a-country">${t('country')} <span class="req">*</span></label>
-          <select class="in" id="a-country" data-act="changeCountry">${countryOptions}</select>
+        ${reg ? `
+          <label for="a-name">${t('fullName')} <span class="req">*</span></label>
+          <input class="in" id="a-name" autocomplete="name" maxlength="60">
+        ` : ''}
 
+        <label for="a-country">${t('country')} <span class="req">*</span></label>
+        <select class="in" id="a-country">${countryOptions}</select>
+
+        ${reg ? `
           <label for="a-city">${t('city')} <span class="req">*</span></label>
-          <select class="in" id="a-city">${cityOptions || `<option value="">${t('selectCityFirst')}</option>`}</select>` : ''}
+          <select class="in" id="a-city" ${!countryCode ? 'disabled' : ''}>${cityOptions}</select>
+        ` : ''}
 
         <label for="a-phone">${t('phoneLogin')} <span class="req">*</span></label>
-        <input class="in" id="a-phone" inputmode="tel" placeholder="677123456" autocomplete="username" maxlength="15">
-        ${reg ? `<div class="tip">${t('phoneTip')}</div>` : ''}
+        <div class="phone-group">
+          <span class="dial" id="dial-display">${dialFlag} ${dialCode}</span>
+          <input class="in" id="a-phone" inputmode="tel" placeholder="${phonePlaceholder}" autocomplete="username" maxlength="15">
+        </div>
 
         <label for="a-pass">${t('pass')} <span class="req">*</span></label>
         <input class="in" id="a-pass" type="password" autocomplete="${reg ? 'new-password' : 'current-password'}" maxlength="60">
+        ${reg ? `<div class="tip-warn">${t('passTip')}</div>` : ''}
 
-        ${reg ? `<label for="a-pass2">${t('pass2')} <span class="req">*</span></label>
-          <input class="in" id="a-pass2" type="password" autocomplete="new-password" maxlength="60">` : ''}
+        ${reg ? `
+          <label for="a-pass2">${t('pass2')} <span class="req">*</span></label>
+          <input class="in" id="a-pass2" type="password" autocomplete="new-password" maxlength="60">
+        ` : ''}
 
-        <button class="btn maize" style="margin-top:20px" data-act="auth">${reg ? t('signUp') : t('login')}</button>
+        <button class="btn maize" style="margin-top:20px" data-act="auth">${reg ? t('register') : t('login')}</button>
 
         <p style="text-align:center;margin-top:18px">
-          <button class="link" data-act="authmode">${reg ? t('haveAcc') : t('newAcc')}</button>
+          <button class="link" data-act="authmode">${reg ? t('login') + ' →' : t('register') + ' →'}</button>
         </p>
 
         ${S.after ? `<p style="text-align:center;margin-top:10px"><button data-act="cancelauth" style="color:var(--mute)">${t('close')}</button></p>` : ''}
@@ -1128,7 +1007,7 @@ function vAdmin(){
     ${backBar(t('admin'))}
     <div class="nums">
       <div class="st hl"><b>${n('pending')}</b><small>${t('pendingN')}</small></div>
-      <div class="st"><b>${n('active') + n('paid')}</b><small>${t('active_robots')}</small></div>
+      <div class="st"><b>${n('active') + n('paid')}</b><small>${t('activeN')}</small></div>
       <div class="st"><b style="font-size:14px">${fmt(revenue)}</b><small>${t('revenue')}</small></div>
     </div>
     <div class="chips">
@@ -1141,13 +1020,12 @@ function vAdmin(){
 }
 
 /* ============================================================
-   NAVIGATION (top + bottom)
+   NAVIGATION
 ============================================================ */
 function renderTopNav(){
   const u = S.user;
   const v = S.view;
-  const items = [];
-  items.push({ id:'home', label:t('home'), icon:'home' });
+  const items = [{ id:'home', label:t('home'), icon:'home' }];
   if (u?.admin) {
     items.push({ id:'admin', label:t('admin'), icon:'shield' });
   } else {
@@ -1161,10 +1039,16 @@ function renderTopNav(){
     return `<button data-act="go" data-v="${id}" class="${on}">${ico(icon)}<span>${label}</span></button>`;
   }).join('');
 
-  const authLinks = u
-    ? `<button data-act="logout" class="out">${ico('out')}<span>${t('logout')}</span></button>`
-    : `<button data-act="go" data-v="login" ${v === 'auth' && S.authMode === 'login' ? 'class="on"' : ''}>${ico('user')}<span>${t('login')}</span></button>
-       <button data-act="go" data-v="register" class="cta">${ico('check')}<span>${t('register')}</span></button>`;
+  let authLinks;
+  if (u) {
+    authLinks = `<button data-act="logout" class="out">${ico('out')}<span>${t('logout')}</span></button>`;
+  } else {
+    const loginOn = (v === 'auth' && S.authMode === 'login') ? 'on' : '';
+    const regOn = (v === 'auth' && S.authMode === 'register') ? 'cta' : '';
+    authLinks = `
+      <button data-act="goLogin" class="${loginOn}">${ico('user')}<span>${t('login')}</span></button>
+      <button data-act="goRegister" class="cta ${regOn}">${ico('check')}<span>${t('register')}</span></button>`;
+  }
 
   const langBtn = `<button data-act="lang" class="lang">${S.lang === 'fr' ? 'EN' : 'FR'}</button>`;
 
@@ -1198,22 +1082,16 @@ function renderBottomNav(){
 function render(){
   const u = S.user;
   const v = S.view;
-  const needAuth = (v === 'orders' || v === 'me') && !u;
-  const views = { home:vHome, orders:vOrders, help:vHelp, me:vMe, admin:vAdmin, auth:vAuth };
 
-  // Guard : redirige vers home si admin non connecté
   let guard = v;
   if (v === 'admin' && !u?.admin) guard = 'home';
+  if ((v === 'orders' || v === 'me') && !u) guard = 'auth';
 
-  // Guard : orders et me nécessitent connexion
-  if (needAuth) guard = 'auth';
-
+  const views = { home:vHome, orders:vOrders, help:vHelp, me:vMe, admin:vAdmin, auth:vAuth };
   $('#app').innerHTML = views[guard]();
 
   renderTopNav();
   renderBottomNav();
-
-  // Cacher la nav du bas sur les pages auth
   $('#botnav').style.display = (guard === 'auth') ? 'none' : '';
 
   document.documentElement.lang = S.lang;
@@ -1222,7 +1100,7 @@ function render(){
 }
 
 /* ============================================================
-   SLIDER (simulateur)
+   SLIDER
 ============================================================ */
 function bindSlider(){
   const sl = $('#slider');
@@ -1252,7 +1130,6 @@ function bindSlider(){
    NAVIGATION
 ============================================================ */
 async function go(v){
-  // Gérer les boutons connexion / inscription
   if (v === 'login') { S.authMode = 'login'; v = 'auth'; }
   if (v === 'register') { S.authMode = 'register'; v = 'auth'; }
 
@@ -1261,14 +1138,11 @@ async function go(v){
   window.scrollTo(0, 0);
 
   if (['orders','me','home'].includes(v)) await loadOrdersFromServer();
-  if (v === 'admin' || S.user?.admin) {
-    // Charger toutes les commandes pour admin (à connecter plus tard à une route admin)
-    await loadOrdersFromServer();
-  }
+  if (v === 'admin' || S.user?.admin) await loadOrdersFromServer();
 
   render();
 }/* ============================================================
-   COMPTE À REBOURS DE SÉCURITÉ (5 secondes)
+   COMPTE À REBOURS (5 secondes)
 ============================================================ */
 function startSecurityCountdown(callback, seconds = 5){
   let remaining = seconds;
@@ -1300,51 +1174,31 @@ function startSecurityCountdown(callback, seconds = 5){
 }
 
 /* ============================================================
-   POLITIQUE DE CONFIDENTIALITÉ (Accepter / Refuser)
+   POLITIQUE DE CONFIDENTIALITÉ
 ============================================================ */
 function showPrivacyPolicy(onAccept){
-  let accepted = false;
-
   $('#layer').innerHTML = `<div class="sheet-bg">
     <div class="sheet" role="dialog" aria-modal="true" style="max-width:600px">
       <h3>${ico('shield')} ${t('privacyT')}</h3>
       <p style="color:var(--mute);font-size:13.5px;margin:8px 0 10px">${t('privacyIntro')}</p>
-
       ${PRIVACY_HTML}
-
       <label class="check" for="priv-accept">
         <input type="checkbox" id="priv-accept">
         <span><b>${t('privacyAccept')}</b></span>
       </label>
-
       <button class="btn maize" id="btn-accept" style="margin-top:6px" disabled data-act="acceptPrivacy">
         ${ico('check')} ${t('privacyAcceptBtn')}
       </button>
-
       <button class="btn ghost" style="margin-top:8px" data-act="refusePrivacy">
         ${ico('x')} ${t('privacyRefuse')}
       </button>
     </div>
   </div>`;
-
-  // Activer le bouton Accepter quand la case est cochée
-  setTimeout(() => {
-    const cb = $('#priv-accept');
-    const btn = $('#btn-accept');
-    if (cb && btn) {
-      cb.addEventListener('change', () => {
-        accepted = cb.checked;
-        btn.disabled = !accepted;
-      });
-    }
-  }, 50);
-
-  // Stocker le callback pour l'utiliser dans l'action
   window.__privacyAcceptCallback = onAccept;
 }
 
 /* ============================================================
-   FEUILLE DE PAIEMENT
+   FEUILLE DE PAIEMENT OM ASSO
 ============================================================ */
 function openPay(planId, order = null){
   const p = planById(planId);
@@ -1368,20 +1222,51 @@ function openPay(planId, order = null){
         <span>${fmt(p.price)}</span>
       </div>
 
-      <label>${t('payWith')}</label>
-      <div class="pay">
-        <label><input type="radio" name="m" value="orange" checked><b style="color:#FF7900">●</b> Orange Money</label>
-        <label><input type="radio" name="m" value="mtn"><b style="color:#E8B800">●</b> MTN MoMo</label>
+      <div class="trust-box">
+        <div class="trust-icon">🛡️</div>
+        <div>
+          <b>${t('trustTitle')}</b>
+          <p>${t('trustMsg', CONFIG.PROMOTER)}</p>
+        </div>
       </div>
 
+      <h4 style="margin-top:18px;font:800 15px 'Sora'">${t('payStepTitle')}</h4>
+      <div class="pay-steps">
+        <div class="pay-step">
+          <div class="num">1</div>
+          <div class="txt">
+            <b>${t('payStep1')}</b>
+            <div class="ussd-box">${CONFIG.OM_ASSO_USSD}</div>
+            <button class="copy-btn" data-act="copy" data-txt="${CONFIG.OM_ASSO_USSD}">
+              ${t('payCopyUssd')}
+            </button>
+          </div>
+        </div>
+        <div class="pay-step">
+          <div class="num">2</div>
+          <div class="txt">
+            <b>${t('payStep2')}</b>
+            <div class="ussd-box" style="background:#1F9D63">${fmt(p.price)}</div>
+          </div>
+        </div>
+        <div class="pay-step">
+          <div class="num">3</div>
+          <div class="txt">${t('payStep3')}</div>
+        </div>
+        <div class="pay-step">
+          <div class="num">4</div>
+          <div class="txt">${t('payStep4')}</div>
+        </div>
+      </div>
+
+      <label for="c-ref">${t('payRefLabel')} <span class="req">*</span></label>
+      <input class="in" id="c-ref" placeholder="${t('payRefPlaceholder')}" maxlength="60">
+
       <label for="c-phone">${t('phonePay')}</label>
-      <input class="in" id="c-phone" inputmode="tel" placeholder="677123456" autocomplete="tel" value="${esc(S.user.phone || '')}" maxlength="15">
-      <div class="tip">${t('phonePayTip')}</div>
+      <input class="in" id="c-phone" inputmode="tel" placeholder="677123456" value="${esc(S.user.phone || '')}" maxlength="15">
 
-      <p class="tip" style="margin-top:12px">🔒 ${t('secure')}</p>
-
-      <button class="btn maize" id="c-go" style="margin-top:14px" data-act="pay">
-        ${t('payBtn', fmt(p.price))}
+      <button class="btn maize" id="c-go" style="margin-top:16px" data-act="pay">
+        ${ico('check')} ${t('payConfirm')}
       </button>
       <button class="btn ghost" style="margin-top:8px" data-act="close">${t('close')}</button>
     </div>
@@ -1401,20 +1286,10 @@ function showSuccessPayment(order){
         <small>${t('code')}</small>
         <b>#${code(order)}</b>
       </div>
-      <button class="btn maize" data-act="finish">${t('myOrders')}</button>
-    </div>
-  </div>`;
-}
-
-function showFailedPayment(reason){
-  $('#layer').innerHTML = `<div class="sheet-bg">
-    <div class="sheet" role="dialog" aria-modal="true" style="text-align:center">
-      <div style="font-size:52px">⚠️</div>
-      <h3>${t('failT')}</h3>
-      <p style="color:var(--mute);margin:6px 0 16px">
-        ${reason === 'timeout' ? t('timeoutD') : t('failD')}
-      </p>
-      <button class="btn ghost" data-act="close">${t('close')}</button>
+      <a class="btn wa" href="${waLink(`Bonjour, ma commande #${code(order)} (${planLabel(order)}) est en attente. Référence: ${order.reference || ''}`)}" target="_blank" rel="noopener">
+        ${ico('chat')} WhatsApp
+      </a>
+      <button class="btn ghost" style="margin-top:8px" data-act="finish">${t('myOrders')}</button>
     </div>
   </div>`;
 }
@@ -1422,42 +1297,48 @@ function showFailedPayment(reason){
 function closeSheet(){ $('#layer').innerHTML = ''; }
 
 /* ============================================================
-   ACTIONS UTILISATEUR
+   ACTIONS
 ============================================================ */
 const ACT = {
-  // Navigation
   go: d => go(d.v),
   back: () => { S.menuOpen = false; go('home'); },
   scroll: () => document.getElementById('levels')?.scrollIntoView({ behavior:'smooth' }),
   toggleMenu: () => { S.menuOpen = !S.menuOpen; renderTopNav(); },
+
+  goLogin: () => { S.authMode = 'login'; go('auth'); },
+  goRegister: () => { S.authMode = 'register'; go('auth'); },
+
   lang: () => {
     S.lang = S.lang === 'fr' ? 'en' : 'fr';
     localStorage.setItem('aa_lang', S.lang);
     render();
   },
 
-  // Changement de pays → met à jour les villes
-  changeCountry: (d, el) => {
-    S.selectedCountry = el.value;
-    S.selectedCity = '';
-    // Rerender la vue auth
-    render();
+  /* ============ Copier dans le presse-papier ============ */
+  copy: (d) => {
+    const txt = d.txt || '';
+    if (!txt) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(() => toast(t('copied'))).catch(() => fallbackCopy(txt));
+    } else {
+      fallbackCopy(txt);
+    }
   },
 
-  // Changement de mode auth
   authmode: () => {
     S.authMode = S.authMode === 'login' ? 'register' : 'login';
-    S.selectedCountry = 'CM';
+    S.selectedCountry = '';
     S.selectedCity = '';
+    S.loginCountry = '';
     render();
   },
 
   cancelauth: () => { S.after = null; go('home'); },
 
-  // ============ INSCRIPTION / CONNEXION ============
+  /* ============ INSCRIPTION / CONNEXION ============ */
   auth: async () => {
     const val = id => ($('#' + id)?.value || '').trim();
-    const phone = normPhone(val('a-phone'));
+    const phone = val('a-phone').replace(/\D/g, '');
     const pass = $('#a-pass').value;
 
     // Admin par code secret
@@ -1470,43 +1351,36 @@ const ACT = {
       return;
     }
 
-    // ============ INSCRIPTION ============
+    /* ======== INSCRIPTION ======== */
     if (S.authMode === 'register') {
       const name = val('a-name');
       const pass2 = $('#a-pass2').value;
-      const country = $('#a-country')?.value || S.selectedCountry;
+      const country = $('#a-country')?.value || '';
       const city = $('#a-city')?.value || '';
 
-      // Vérifications basiques
       if (!name) return toast(t('e_name'), true);
       if (isSuspect(name)) return toast(t('e_suspect'), true);
-      if (!validPhone(phone)) return toast(t('e_phone'), true);
-      if (!pass || pass.length < 6) return toast(t('e_pass'), true);
-      if (/^\d+$/.test(pass)) return toast(t('e_pass'), true);
-      if (pass !== pass2) return toast(t('e_match'), true);
       if (!country) return toast(t('e_country'), true);
       if (!city) return toast(t('e_city'), true);
+      if (!validatePhoneForCountry(phone, country)) return toast(t('e_phone'), true);
+      if (!validPassword(pass)) return toast(t('e_pass_format'), true);
+      if (pass !== pass2) return toast(t('e_match'), true);
 
-      // Anti-fraude complet
       const check = validateAntiFraud({ name, phone, pass, country, city });
       if (!check.ok) {
         console.warn('Anti-fraude bloqué:', check.errors);
         return toast(t('e_suspect'), true);
       }
 
-      // Créer l'utilisateur en attente
       S.pendingUser = { name, phone, pass, country, city };
-
-      // Afficher la politique de confidentialité
-      showPrivacyPolicy(async () => {
-        // L'utilisateur a accepté → on envoie au serveur
-        await ACT._doRegister();
-      });
+      showPrivacyPolicy(async () => { await ACT._doRegister(); });
       return;
     }
 
-    // ============ CONNEXION ============
-    if (!validPhone(phone)) return toast(t('e_phone'), true);
+    /* ======== CONNEXION ======== */
+    const lCountry = $('#a-country')?.value || '';
+    if (!lCountry) return toast(t('e_country'), true);
+    if (!validatePhoneForCountry(phone, lCountry)) return toast(t('e_phone'), true);
     if (!pass) return toast(t('e_fields'), true);
 
     try {
@@ -1522,7 +1396,7 @@ const ACT = {
         uid: data.user.id,
         name: data.user.name,
         phone: data.user.phone,
-        country: data.user.country || 'CM',
+        country: data.user.country || lCountry,
         city: data.user.city || ''
       };
       saveCurrentUser(S.user);
@@ -1543,7 +1417,6 @@ const ACT = {
     }
   },
 
-  // ============ ENREGISTREMENT EFFECTIF (après acceptation confidentialité) ============
   _doRegister: async () => {
     if (!S.pendingUser) return;
     const { name, phone, pass, country, city } = S.pendingUser;
@@ -1557,7 +1430,6 @@ const ACT = {
       const data = await res.json();
 
       if (!data.success) {
-        // Si le numéro existe déjà, message dédié
         if (res.status === 409) throw new Error(t('e_used'));
         throw new Error(data.error || t('e_gen'));
       }
@@ -1583,7 +1455,7 @@ const ACT = {
         return openPay(id);
       }
       go('home');
-      toast(t('privacyAccept') + ' ✓');
+      toast(S.lang === 'en' ? 'Welcome!' : 'Bienvenue !');
     } catch (e) {
       console.error(e);
       closeSheet();
@@ -1591,15 +1463,14 @@ const ACT = {
     }
   },
 
-  // Acceptation confidentialité
   acceptPrivacy: () => {
     if (typeof window.__privacyAcceptCallback === 'function') {
-      window.__privacyAcceptCallback();
+      const fn = window.__privacyAcceptCallback;
       window.__privacyAcceptCallback = null;
+      fn();
     }
   },
 
-  // Refus confidentialité
   refusePrivacy: () => {
     S.pendingUser = null;
     window.__privacyAcceptCallback = null;
@@ -1609,7 +1480,6 @@ const ACT = {
     toast(S.lang === 'en' ? 'You declined the privacy policy.' : 'Tu as refusé la politique.', true);
   },
 
-  // Déconnexion
   logout: () => {
     S.user = null;
     saveCurrentUser(null);
@@ -1619,7 +1489,6 @@ const ACT = {
     render();
   },
 
-  // Admin : changement de statut (local)
   setst: d => {
     const o = S.orders.find(x => x.id === d.id);
     if (!o) return;
@@ -1629,7 +1498,6 @@ const ACT = {
     toast(t('ok_st'));
   },
 
-  // ============ ACHAT D'UN ROBOT ============
   buy: d => {
     if (!S.user) {
       S.after = Number(d.id);
@@ -1639,62 +1507,67 @@ const ACT = {
     openPay(Number(d.id));
   },
 
-  // ============ PAIEMENT ============
+  /* ============ PAIEMENT OM ASSO ============ */
   pay: async () => {
-    const op = $('input[name=m]:checked')?.value || 'orange';
-    const phone = normPhone($('#c-phone').value);
+    const ref = ($('#c-ref')?.value || '').trim();
+    const phone = ($('#c-phone')?.value || '').replace(/\D/g, '');
 
-    if (!validPhone(phone)) return toast(t('e_phone'), true);
+    if (!ref || ref.length < 4) return toast(t('e_ref'), true);
+    if (!validatePhoneForCountry(phone, S.user.country)) return toast(t('e_phone'), true);
+    if (isSuspect(ref)) return toast(t('e_suspect'), true);
 
     const p = planById(S.planId);
-    const btn = $('#c-go');
-    btn.disabled = true;
-    btn.textContent = t('sending');
 
-    // 1) Vérifier que l'utilisateur existe côté serveur (anti-fraude)
-    try {
-      // Compte à rebours de sécurité (5s)
-      startSecurityCountdown(async () => {
-        try {
-          const res = await fetch('/api/orders', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              user_id: S.user.uid,
-              plan_id: p.id,
-              plan_name: L(p.name),
-              total: p.price,
-              method: op,
-              phone: phone,
-              reference: 'PENDING-' + Date.now()
-            })
-          });
-          const data = await res.json();
-          if (!data.success) throw new Error(data.error || t('e_gen'));
+    // Compte à rebours de sécurité de 5 secondes
+    startSecurityCountdown(async () => {
+      try {
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: S.user.uid,
+            plan_id: p.id,
+            plan_name: L(p.name),
+            total: p.price,
+            method: 'om_asso',
+            phone: phone,
+            reference: ref
+          })
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error(data.error || t('e_gen'));
 
-          await loadOrdersFromServer();
-          closeSheet();
-          showSuccessPayment(data.order);
-        } catch (err) {
-          console.error(err);
-          closeSheet();
-          toast(err.message || t('e_gen'), true);
-        }
-      }, 5);
-    } catch (err) {
-      console.error(err);
-      toast(err.message || t('e_gen'), true);
-      btn.disabled = false;
-      btn.textContent = t('payBtn', fmt(p.price));
-    }
+        await loadOrdersFromServer();
+        closeSheet();
+        showSuccessPayment(data.order);
+      } catch (err) {
+        console.error(err);
+        closeSheet();
+        toast(err.message || t('e_gen'), true);
+      }
+    }, 5);
   },
 
-  // Boutons divers
   close: () => closeSheet(),
   finish: () => { closeSheet(); go('orders'); },
   filter: d => { S.filter = d.f; render(); },
   check: () => toast('Vérification en attente', true)
 };
+
+/* ============================================================
+   FALLBACK copie
+============================================================ */
+function fallbackCopy(txt){
+  const ta = document.createElement('textarea');
+  ta.value = txt;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); toast(t('copied')); }
+  catch { toast('Copie échouée', true); }
+  document.body.removeChild(ta);
+}
 
 /* ============================================================
    ÉVÉNEMENTS GLOBAUX
@@ -1703,47 +1576,105 @@ document.addEventListener('click', e => {
   const el = e.target.closest('[data-act]');
   if (!el) return;
   if (el.classList.contains('sheet-bg') && e.target !== el) return;
-
   const fn = ACT[el.dataset.act];
-  if (typeof fn === 'function') {
-    fn(el.dataset, el, e);
-  }
+  if (typeof fn === 'function') fn(el.dataset, el, e);
 });
 
-// Changement de pays → recharge les villes
-document.addEventListener('change', e => {
-  if (e.target.id === 'a-country') {
-    ACT.changeCountry({}, e.target);
-  }
-  if (e.target.id === 'priv-accept') {
-    const btn = $('#btn-accept');
-    if (btn) btn.disabled = !e.target.checked;
-  }
-});
+/* ============================================================
+   CHANGEMENT DE PAYS (selects) — Fixe : le select reste ouvert
+   Utilise 'change' plutôt que 'click' pour ne pas interférer
+============================================================ */
 
-// Entrée sur les champs auth
+/* ============================================================
+   CLAVIER
+============================================================ */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeSheet();
-    S.menuOpen = false;
-    renderTopNav();
+    if (S.menuOpen) { S.menuOpen = false; renderTopNav(); }
   }
   if (e.key === 'Enter' && e.target.closest('.auth') && e.target.tagName === 'INPUT') {
     ACT.auth();
   }
-});
-
-// Fermer le menu mobile au clic ailleurs
-document.addEventListener('click', e => {
-  if (S.menuOpen && !e.target.closest('#topnav')) {
-    S.menuOpen = false;
-    renderTopNav();
-  }
 });/* ============================================================
-   DÉMARRAGE DE L'APPLICATION
+   CORRECTION : Gestion du changement de pays SANS re-render
+   (Évite que le select se referme au clic)
+============================================================ */
+// On retire l'ancien listener de changement en clonant... 
+// Plus simple : on réécrit le comportement via une fonction dédiée
+function onCountryChange(countryCode){
+  if (S.authMode === 'register') {
+    S.selectedCountry = countryCode;
+    S.selectedCity = '';
+  } else {
+    S.loginCountry = countryCode;
+  }
+
+  const info = getCountry(countryCode);
+
+  // 1) Met à jour l'indicatif affiché
+  const dialEl = document.getElementById('dial-display');
+  if (dialEl) {
+    dialEl.textContent = info ? `${info.flag} ${info.dial}` : '🌍 +---';
+  }
+
+  // 2) Met à jour le placeholder du téléphone
+  const phoneInput = document.getElementById('a-phone');
+  if (phoneInput) {
+    phoneInput.placeholder = info ? info.hint.replace('Ex: ', '') : '677123456';
+    phoneInput.maxLength = info ? info.len + 3 : 15;
+  }
+
+  // 3) Met à jour la ville (uniquement à l'inscription)
+  if (S.authMode === 'register') {
+    const citySel = document.getElementById('a-city');
+    if (citySel) {
+      if (!countryCode) {
+        citySel.innerHTML = `<option value="">${t('selectCountryFirst')}</option>`;
+        citySel.disabled = true;
+      } else {
+        const cities = getCities(countryCode);
+        if (cities.length) {
+          citySel.innerHTML = `<option value="">${t('chooseCity')}</option>` +
+            cities.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+        } else {
+          citySel.innerHTML = `<option value="">${t('noCities')}</option>`;
+        }
+        citySel.disabled = false;
+      }
+    }
+  }
+}
+
+// Nouveau listener 'change' qui n'entraîne PAS de re-render
+// ⚠️ On supprime l'ancien en réinitialisant via un flag
+window.__countryListenerAttached = false;
+
+function attachCountryListener(){
+  if (window.__countryListenerAttached) return;
+  window.__countryListenerAttached = true;
+
+  document.addEventListener('change', e => {
+    if (e.target.id === 'a-country') {
+      onCountryChange(e.target.value);
+    }
+    if (e.target.id === 'a-city') {
+      S.selectedCity = e.target.value;
+    }
+    if (e.target.id === 'priv-accept') {
+      const btn = $('#btn-accept');
+      if (btn) btn.disabled = !e.target.checked;
+    }
+  });
+}
+
+/* ============================================================
+   DÉMARRAGE
 ============================================================ */
 (async function boot(){
   restoreSession();
+
+  attachCountryListener();
 
   if (S.user?.admin) {
     S.view = 'admin';

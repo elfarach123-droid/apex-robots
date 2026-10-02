@@ -73,10 +73,16 @@ app.post('/api/register', async (req, res) => {
     // Hasher le mot de passe
     const password_hash = await bcrypt.hash(password, 10);
 
-    // Insérer (les colonnes country et city doivent exister dans la table users)
+    // Insérer
     const { data, error } = await supabase
       .from('users')
-      .insert([{ name, phone, password_hash, country: country || 'CM', city: city || '' }])
+      .insert([{
+        name,
+        phone,
+        password_hash,
+        country: country || 'CM',
+        city: city || ''
+      }])
       .select('id, name, phone, country, city, created_at')
       .single();
 
@@ -140,8 +146,13 @@ app.post('/api/orders', async (req, res) => {
     const { data, error } = await supabase
       .from('orders')
       .insert([{
-        user_id, plan_id, plan_name, total,
-        method, phone, reference,
+        user_id,
+        plan_id,
+        plan_name,
+        total,
+        method,
+        phone,
+        reference,
         status: 'pending'
       }])
       .select()
