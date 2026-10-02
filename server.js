@@ -41,10 +41,27 @@ function isSuspect(value){
 function validateRegistration({ name, phone, password, country, city }){
   const errors = [];
   if (!name || isSuspect(name)) errors.push('invalid_name');
-  if (!phone || !/^6\d{8}$/.test(phone)) errors.push('invalid_phone');
-  if (!password || password.length < 6 || /^\d+$/.test(password)) errors.push('weak_password');
   if (!country || isSuspect(country)) errors.push('invalid_country');
   if (!city || isSuspect(city)) errors.push('invalid_city');
+  
+  // Validation téléphone par pays
+  const phoneFormats = {
+    'CM': { len: 9,  prefix: '6' },
+    'CI': { len: 10, prefix: '' },
+    'SN': { len: 9,  prefix: '7' },
+    'GA': { len: 8,  prefix: '' },
+    'TD': { len: 8,  prefix: '6' }
+  };
+  const fmt = phoneFormats[country] || { len: 9, prefix: '' };
+  const digits = String(phone || '').replace(/\D/g, '');
+  if (!digits || digits.length !== fmt.len) errors.push('invalid_phone');
+  if (fmt.prefix && !digits.startsWith(fmt.prefix)) errors.push('invalid_phone');
+  
+  // Mot de passe : min 5, au moins 1 lettre + 1 chiffre
+  if (!password || password.length < 5) errors.push('weak_password');
+  if (!/[a-zA-Z]/.test(password)) errors.push('weak_password');
+  if (!/\d/.test(password)) errors.push('weak_password');
+  
   return errors;
 }
 
