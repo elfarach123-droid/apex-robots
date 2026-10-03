@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B1226">
+<meta name="robots" content="noindex,nofollow">
+<title>Console Admin · Apex Robots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1226;--blue:#2B59C3;--maize:#F4B942;--green:#1F9D63;--bg:#F2F4F8;--card:#fff;--text:#161F33;--mute:#667087;--line:#E0E5EE;--ok:#1F9D63;--bad:#D6452F;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+h1,h2,h3{font-family:'Sora';font-weight:800;line-height:1.15;letter-spacing:-.02em}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wrap{max-width:1000px;margin:0 auto;padding:16px}
+
+/* LOGIN */
+.login-page{min-height:100vh;background:linear-gradient(160deg,#0B1226 0%,#16264D 60%,#1B3A8C 100%);display:flex;align-items:center;justify-content:center;padding:20px}
+.login-card{background:#fff;border-radius:20px;padding:30px 24px;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.login-card .logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:6px}
+.login-card .logo i{width:44px;height:44px;border-radius:12px;background:var(--maize);display:grid;place-items:center;font-style:normal;font-size:22px}
+.login-card .logo b{font:800 22px 'Sora';color:var(--navy)}
+.login-card h2{text-align:center;color:var(--mute);font:600 13px 'Manrope';text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px}
+.login-card label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+.login-card input{width:100%;padding:14px;border-radius:12px;border:1.5px solid var(--line);font-size:15px;outline:0}
+.login-card input:focus{border-color:var(--navy)}
+.login-card button{width:100%;margin-top:20px;padding:15px;border-radius:12px;background:var(--navy);color:#fff;font-weight:800;font-size:15px}
+.login-card button:disabled{opacity:.5}
+.err{color:var(--bad);font-size:13.5px;margin-top:10px;text-align:center;font-weight:700}
+
+/* HEADER */
+.hdr{background:var(--navy);color:#fff;padding-top:env(safe-area-inset-top);position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.hdr .in{max-width:1000px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;height:60px}
+.hdr .brand{display:flex;align-items:center;gap:8px;font:800 16px 'Sora';margin-right:auto}
+.hdr .brand i{width:30px;height:30px;border-radius:8px;background:var(--maize);display:grid;place-items:center;font-style:normal;font-size:15px}
+.hdr button{padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.1);font-weight:700;font-size:13px;color:#fff}
+.hdr button:hover{background:rgba(255,255,255,.2)}
+
+/* TABS */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 16px 6px;max-width:1000px;margin:0 auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:9px 16px;border-radius:99px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:13.5px;white-space:nowrap;color:var(--mute)}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}}
+.st{background:#fff;border-radius:14px;padding:14px;text-align:center}
+.st b{display:block;font:800 22px 'Sora';color:var(--navy)}
+.st small{color:var(--mute);font-size:12px;font-weight:700;text-transform:uppercase}
+.st.hl{background:var(--navy)}
+.st.hl b{color:var(--maize)}
+.st.hl small{color:#A9B7D6}
+.st.ok b{color:var(--ok)}
+.st.warn b{color:#D9822B}
+.st.bad b{color:var(--bad)}
+
+/* CARDS */
+.card{background:#fff;border-radius:var(--r);padding:16px;margin-bottom:12px}
+.card .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.card .row b{flex:1;font:800 16px 'Sora';color:var(--navy)}
+.card .meta{font-size:13px;color:var(--mute);line-height:1.6}
+.card .meta b{color:var(--text)}
+.card .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn-sm{padding:9px 14px;border-radius:10px;font-weight:700;font-size:13px}
+.btn-ok{background:var(--ok);color:#fff}
+.btn-bad{background:var(--bad);color:#fff}
+.btn-wa{background:#25A244;color:#fff}
+.btn-info{background:#EAF0FB;color:var(--blue)}
+.badge{font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.b-pending{background:#FFF1D1;color:#8F5E00}
+.b-paid{background:#DCEBFA;color:#1D4F91}
+.b-active{background:#D9F3E6;color:#14774A}
+.b-completed{background:#E5E7EB;color:#374151}
+.b-rejected{background:#FCE0DA;color:#A52E1B}
+.empty{text-align:center;padding:50px 20px;color:var(--mute)}
+.empty .big{font-size:48px;margin-bottom:8px}
+.loading{text-align:center;padding:40px;color:var(--mute)}
+
+/* RANKING */
+.rank-item{display:flex;align-items:center;gap:12px;padding:12px;border-bottom:1px dashed var(--line)}
+.rank-item:last-child{border:0}
+.rank-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--maize);font:800 14px 'Sora';display:grid;place-items:center;flex-shrink:0}
+.rank-num.gold{background:linear-gradient(135deg,#F4B942,#D9822B);color:#fff}
+.rank-num.silver{background:linear-gradient(135deg,#C0C7D2,#8A93A3);color:#fff}
+.rank-num.bronze{background:linear-gradient(135deg,#CD7F32,#8B5A2B);color:#fff}
+.rank-info{flex:1;min-width:0}
+.rank-info b{display:block;font-size:14.5px}
+.rank-info small{color:var(--mute);font-size:12.5px}
+.rank-stat{text-align:right}
+.rank-stat b{display:block;font:800 16px 'Sora';color:var(--ok)}
+.rank-stat small{color:var(--mute);font-size:11px}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 20px;border-radius:12px;z-index:100;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.toast.err{background:var(--bad)}
+.toast.ok{background:var(--ok)}
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+const API = '';
+let TOKEN = localStorage.getItem('apex_admin_token') || '';
+let state = { tab:'dashboard', stats:null, orders:[], users:[], ranking:[] };
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => Number(n || 0).toLocaleString('en-US').replace(/,/g,' ') + ' FCFA';
+const code = id => String(id).slice(-6).toUpperCase();
+
+function toast(msg, err){
+  document.querySelectorAll('.toast').forEach(x => x.remove());
+  const d = document.createElement('div');
+  d.className = 'toast ' + (err ? 'err' : 'ok');
+  d.textContent = msg;
+  document.body.appendChild(d);
+  setTimeout(() => d.remove(), 3000);
+}
+
+async function api(path, options = {}){
+  const headers = { 'Content-Type':'application/json', ...(options.headers || {}) };
+  if (TOKEN) headers.Authorization = 'Bearer ' + TOKEN;
+  const r = await fetch(API + path, { ...options, headers });
+  if (r.status === 401) {
+    localStorage.removeItem('apex_admin_token');
+    TOKEN = '';
+    renderLogin('Session expirée. Reconnecte-toi.');
+    throw new Error('401');
+  }
+  return r.json();
+}
+
+/* ============ LOGIN ============ */
+function renderLogin(errMsg){
+  $('#app').innerHTML = `
+    <div class="login-page">
+      <div class="login-card">
+        <div class="logo"><i>🔒</i><b>APEX ADMIN</b></div>
+        <h2>Console privée</h2>
+        <label>Numéro de téléphone</label>
+        <input id="lg-phone" inputmode="tel" placeholder="698153808" autocomplete="username">
+        <label>Mot de passe</label>
+        <input id="lg-pass" type="password" placeholder="••••••••" autocomplete="current-password">
+        <button id="lg-go">Se connecter</button>
+        ${errMsg ? `<div class="err">${esc(errMsg)}</div>` : ''}
+      </div>
+    </div>
+  `;
+  $('#lg-go').onclick = doLogin;
+  $('#lg-pass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+  $('#lg-phone').addEventListener('keydown', e => { if (e.key === 'Enter') $('#lg-pass').focus(); });
+}
+
+async function doLogin(){
+  const phone = $('#lg-phone').value.trim();
+  const password = $('#lg-pass').value;
+  if (!phone || !password) return toast('Remplis tous les champs', true);
+  $('#lg-go').disabled = true;
+  $('#lg-go').textContent = 'Connexion…';
+  try {
+    const r = await fetch(API + '/admin-api/login', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({ phone, password })
+    });
+    const data = await r.json();
+    if (!data.success) throw new Error(data.error || 'Identifiants incorrects');
+    TOKEN = data.token;
+    localStorage.setItem('apex_admin_token', TOKEN);
+    renderApp();
+  } catch (e) {
+    renderLogin(e.message);
+  }
+}
+
+/* ============ APP ============ */
+function renderApp(){
+  $('#app').innerHTML = `
+    <div class="hdr">
+      <div class="in">
+        <div class="brand"><i>🔒</i>APEX ADMIN</div>
+        <button id="refresh">🔄 Rafraîchir</button>
+        <button id="logout">Déco</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab on" data-t="dashboard">📊 Tableau de bord</button>
+      <button class="tab" data-t="pending">⏳ Dépôts en attente</button>
+      <button class="tab" data-t="orders">📦 Toutes les commandes</button>
+      <button class="tab" data-t="users">👥 Utilisateurs</button>
+      <button class="tab" data-t="referrals">🎁 Parrainage</button>
+    </div>
+    <div class="wrap" id="content">
+      <div class="loading">Chargement…</div>
+    </div>
+  `;
+  document.querySelectorAll('.tab').forEach(t => {
+    t.onclick = () => { state.tab = t.dataset.t; renderTab(); };
+  });
+  $('#refresh').onclick = () => loadAll(true);
+  $('#logout').onclick = doLogout;
+  loadAll();
+}
+
+async function doLogout(){
+  try { await api('/admin-api/logout', { method:'POST' }); } catch {}
+  localStorage.removeItem('apex_admin_token');
+  TOKEN = '';
+  renderLogin();
+}
+
+async function loadAll(showToast){
+  try {
+    const [s, o, u, r] = await Promise.all([
+      api('/admin-api/stats'),
+      api('/admin-api/orders?status=all'),
+      api('/admin-api/users'),
+      api('/admin-api/referrals')
+    ]);
+    state.stats = s;
+    state.orders = o.orders || [];
+    state.users = u.users || [];
+    state.ranking = r.ranking || [];
+    renderTab();
+    if (showToast) toast('Données actualisées');
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+function renderTab(){
+  document.querySelectorAll('.tab').forEach(t => {
+    t.classList.toggle('on', t.dataset.t === state.tab);
+  });
+  const el = $('#content');
+  if (state.tab === 'dashboard') return renderDashboard(el);
+  if (state.tab === 'pending') return renderPending(el);
+  if (state.tab === 'orders') return renderOrders(el);
+  if (state.tab === 'users') return renderUsers(el);
+  if (state.tab === 'referrals') return renderReferrals(el);
+}
+
+/* ============ DASHBOARD ============ */
+function renderDashboard(el){
+  const s = state.stats || {};
+  el.innerHTML = `
+    <div class="stats">
+      <div class="st"><b>${s.totalUsers || 0}</b><small>Utilisateurs</small></div>
+      <div class="st"><b>${s.totalOrders || 0}</b><small>Commandes</small></div>
+      <div class="st warn"><b>${s.pending || 0}</b><small>En attente</small></div>
+      <div class="st ok"><b>${s.paid || 0}</b><small>Payées</small></div>
+    </div>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
+      <div class="st bad"><b>${s.rejected || 0}</b><small>Refusées</small></div>
+      <div class="st hl"><b style="font-size:16px">${fmt(s.revenue)}</b><small>Encaissé</small></div>
+    </div>
+    <div class="card">
+      <div class="row"><b>⚡ Actions rapides</b></div>
+      <div class="actions">
+        <button class="btn-sm btn-info" onclick="document.querySelector('[data-t=pending]').click()">Voir les dépôts en attente (${s.pending || 0})</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row"><b>🎁 Top parrains</b></div>
+      ${state.ranking.slice(0, 5).map((r, i) => `
+        <div class="rank-item">
+          <div class="rank-num ${i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : ''}">${i + 1}</div>
+          <div class="rank-info">
+            <b>${esc(r.name)}</b>
+            <small>${esc(r.phone)} · Code ${esc(r.code)}</small>
+          </div>
+          <div class="rank-stat">
+            <b>${r.filleuls}</b>
+            <small>filleul${r.filleuls > 1 ? 's' : ''}</small>
+          </div>
+        </div>
+      `).join('') || '<div class="empty" style="padding:20px"><small>Aucun parrainage</small></div>'}
+    </div>
+  `;
+}
+
+/* ============ PENDING ============ */
+function renderPending(el){
+  const pending = state.orders.filter(o => o.status === 'pending');
+  el.innerHTML = `
+    <div class="stats" style="grid-template-columns:1fr">
+      <div class="st warn"><b>${pending.length}</b><small>Dépôts en attente</small></div>
+    </div>
+    ${pending.length ? pending.map(renderOrderCard).join('') :
+      '<div class="empty"><div class="big">✅</div><h3>Tout est à jour</h3><p>Aucun dépôt en attente pour le moment.</p></div>'}
+  `;
+  bindOrderActions();
+}
+
+/* ============ ORDERS ============ */
+function renderOrders(el){
+  el.innerHTML = `
+    <div class="stats" style="grid-template-columns:1fr">
+      <div class="st"><b>${state.orders.length}</b><small>Total commandes</small></div>
+    </div>
+    ${state.orders.length ? state.orders.map(renderOrderCard).join('') :
+      '<div class="empty"><div class="big">📦</div><h3>Aucune commande</h3></div>'}
+  `;
+  bindOrderActions();
+}
+
+function renderOrderCard(o){
+  const u = o.user || {};
+  const badgeClass = 'b-' + (o.status || 'pending');
+  const statusText = {
+    pending:'⏳ En attente', paid:'💙 Payée', active:'🟢 Robot actif',
+    completed:'✔️ Terminée', rejected:'❌ Refusée'
+  }[o.status] || o.status;
+
+  const date = new Date(o.created_at).toLocaleString('fr-FR', {
+    day:'2-digit', month:'2-digit', year:'numeric',
+    hour:'2-digit', minute:'2-digit'
+  });
+
+  const waNum = '237' + (u.phone || '').replace(/\D/g,'');
+  const waMsg = encodeURIComponent(`Bonjour ${u.name || ''}, concernant votre commande #${code(o.id)} (${o.plan_name}, ${fmt(o.total)}).`);
+
+  return `
+    <div class="card">
+      <div class="row">
+        <b>#${code(o.id)} · ${esc(o.plan_name)}</b>
+        <span class="badge ${badgeClass}">${statusText}</span>
+      </div>
+      <div class="meta">
+        💵 <b>${fmt(o.total)}</b><br>
+        👤 <b>${esc(u.name || '?')}</b> · ${esc(u.phone || '?')}<br>
+        🌍 ${esc(u.city || '?')}, ${esc(u.country || '?')}<br>
+        📅 ${date}<br>
+        📱 Paiement : ${esc(o.phone || '?')}
+      </div>
+      <div class="actions">
+        ${o.status === 'pending' ? `
+          <button class="btn-sm btn-ok" data-act="ok" data-id="${o.id}">✅ Accepter</button>
+          <button class="btn-sm btn-bad" data-act="no" data-id="${o.id}">❌ Refuser</button>
+        ` : ''}
+        ${['paid','active'].includes(o.status) ? `
+          <button class="btn-sm btn-ok" data-act="completed" data-id="${o.id}">✔️ Marquer terminée</button>
+        ` : ''}
+        ${o.status === 'pending' || o.status === 'paid' ? `
+          <button class="btn-sm btn-bad" data-act="no" data-id="${o.id}">❌ Refuser</button>
+        ` : ''}
+        ${u.phone ? `<a class="btn-sm btn-wa" href="https://wa.me/${waNum}?text=${waMsg}" target="_blank" rel="noopener">💬 WhatsApp client</a>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function bindOrderActions(){
+  document.querySelectorAll('[data-act]').forEach(btn => {
+    btn.onclick = async () => {
+      const id = btn.dataset.id;
+      const act = btn.dataset.act;
+      let newStatus = null;
+      if (act === 'ok') newStatus = 'paid';
+      if (act === 'no') newStatus = 'rejected';
+      if (act === 'completed') newStatus = 'completed';
+      if (!newStatus) return;
+
+      const confirmMsg = newStatus === 'paid' ? 'Accepter ce dépôt ?' :
+                        newStatus === 'rejected' ? 'Refuser ce dépôt ?' :
+                        'Marquer comme terminé ?';
+      if (!confirm(confirmMsg)) return;
+
+      btn.disabled = true;
+      btn.textContent = '⏳';
+      try {
+        const r = await api('/admin-api/order/' + id + '/status', {
+          method:'POST',
+          body: JSON.stringify({ status: newStatus })
+        });
+        if (r.success) {
+          toast('Statut mis à jour ✅');
+          await loadAll();
+        } else {
+          throw new Error(r.error);
+        }
+      } catch (e) {
+        toast('Erreur : ' + e.message, true);
+        btn.disabled = false;
+      }
+    };
+  });
+}
+
+/* ============ USERS ============ */
+function renderUsers(el){
+  el.innerHTML = `
+    <div class="stats" style="grid-template-columns:1fr">
+      <div class="st"><b>${state.users.length}</b><small>Utilisateurs inscrits</small></div>
+    </div>
+    ${state.users.map(u => {
+      const date = new Date(u.created_at).toLocaleDateString('fr-FR');
+      const waNum = '237' + (u.phone || '').replace(/\D/g,'');
+      return `
+        <div class="card">
+          <div class="row">
+            <b>${esc(u.name)}</b>
+            ${u.sponsor ? `<span class="badge b-active">🎁 Parrainé</span>` : ''}
+          </div>
+          <div class="meta">
+            📱 <b>${esc(u.phone)}</b><br>
+            🌍 ${esc(u.city || '?')}, ${esc(u.country || '?')}<br>
+            🎟️ Code : <b>${esc(u.referral_code || '?')}</b><br>
+            ${u.sponsor ? `👤 Parrain : ${esc(u.sponsor.name)} (${esc(u.sponsor.phone)})<br>` : ''}
+            📅 Inscrit le ${date}
+          </div>
+          <div class="actions">
+            <a class="btn-sm btn-wa" href="https://wa.me/${waNum}" target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+        </div>
+      `;
+    }).join('') || '<div class="empty"><div class="big">👥</div><h3>Aucun utilisateur</h3></div>'}
+  `;
+}
+
+/* ============ REFERRALS ============ */
+function renderReferrals(el){
+  const totalFilleuls = state.ranking.reduce((s, r) => s + r.filleuls, 0);
+  const totalCommissions = state.ranking.reduce((s, r) => s + r.commission, 0);
+  el.innerHTML = `
+    <div class="stats">
+      <div class="st"><b>${state.ranking.length}</b><small>Parrains</small></div>
+      <div class="st"><b>${totalFilleuls}</b><small>Filleuls</small></div>
+      <div class="st hl" style="grid-column:span 2"><b style="font-size:16px">${fmt(totalCommissions)}</b><small>Commissions dues</small></div>
+    </div>
+    <div class="card">
+      <div class="row"><b>🏆 Classement des parrains</b></div>
+      ${state.ranking.length ? state.ranking.map((r, i) => {
+        const waNum = '237' + (r.phone || '').replace(/\D/g,'');
+        return `
+          <div class="rank-item">
+            <div class="rank-num ${i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : ''}">${i + 1}</div>
+            <div class="rank-info">
+              <b>${esc(r.name)}</b>
+              <small>${esc(r.phone)} · Code ${esc(r.code)}</small>
+            </div>
+            <div class="rank-stat">
+              <b>${r.filleuls}</b>
+              <small>${fmt(r.commission)}</small>
+            </div>
+            <a class="btn-sm btn-wa" style="margin-left:8px" href="https://wa.me/${waNum}" target="_blank">💬</a>
+          </div>
+        `;
+      }).join('') : '<div class="empty" style="padding:20px"><small>Aucun parrainage pour le moment</small></div>'}
+    </div>
+  `;
+}
+
+/* ============ INIT ============ */
+(async function init(){
+  if (!TOKEN) return renderLogin();
+  try {
+    const r = await fetch(API + '/admin-api/check', {
+      headers: { Authorization: 'Bearer ' + TOKEN }
+    });
+    if (r.status === 401) throw new Error();
+    renderApp();
+  } catch {
+    localStorage.removeItem('apex_admin_token');
+    TOKEN = '';
+    renderLogin();
+  }
+})();
+</script>
+</body>
+</html>
